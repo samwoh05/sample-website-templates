@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inês Varela. Set design and still life, Lisbon</title>
+  <meta name="description" content="Portfolio template for a fictional set designer. Sets and still lifes built by hand and shot in camera.">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Gloock&family=Manrope:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- Icon set: 24 viewBox, 1.5 stroke, round caps. Scene objects are drawn separately. -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-dr" viewBox="0 0 24 24"><path d="M7 7l10 10M17 9v8H9"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-ruler-pencil" viewBox="0 0 24 24"><path d="M3 3h5v18H3zM3 7h2.5M3 11h2.5M3 15h2.5M14 19V7l2.5-4L19 7v12zM14 16h5"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L20 3M17 6l3 3M14.5 8.5l2 2"/></symbol>
+    <symbol id="i-notebook" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM9 3v18M12.5 8H16M12.5 12H16"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5V13M12 16.5v.01"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <!-- Paper cloud cutout with its offset shadow. Illustration, not an icon. -->
+    <symbol id="s-cloud" viewBox="0 0 228 96">
+      <path transform="translate(6 6)" fill="#9A7A4E" d="M18 88C6 88 2 72 14 66C8 50 24 40 40 46C44 28 66 20 82 30C90 10 122 4 138 22C150 10 176 14 182 34C200 32 214 46 208 62C220 68 218 88 202 88Z"/>
+      <path fill="#F7F3EA" stroke="#1F1A17" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round" d="M18 88C6 88 2 72 14 66C8 50 24 40 40 46C44 28 66 20 82 30C90 10 122 4 138 22C150 10 176 14 182 34C200 32 214 46 208 62C220 68 218 88 202 88Z"/>
+    </symbol>
+    <!-- Night seen through an opening: moon, stars, a strip of night ground. -->
+    <symbol id="s-night" viewBox="0 0 100 220" preserveAspectRatio="xMidYMax slice">
+      <rect width="100" height="220" fill="#1B2238"/>
+      <circle cx="30" cy="46" r="16" fill="#F2E6C4"/>
+      <circle cx="68" cy="30" r="1.4" fill="#F2E6C4"/>
+      <circle cx="82" cy="62" r="1.1" fill="#F2E6C4"/>
+      <circle cx="56" cy="84" r="1.3" fill="#F2E6C4"/>
+      <circle cx="14" cy="104" r="1" fill="#F2E6C4"/>
+      <circle cx="74" cy="118" r="1.4" fill="#F2E6C4"/>
+      <circle cx="40" cy="132" r="1" fill="#F2E6C4"/>
+      <circle cx="88" cy="150" r="1.2" fill="#F2E6C4"/>
+      <rect y="186" width="100" height="34" fill="#141A2B"/>
+      <path d="M0 186.5H100" stroke="#F2E6C4" stroke-opacity=".35" stroke-width="1" vector-effect="non-scaling-stroke"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <a class="wordmark" href="#top">Inês Varela</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-panel">
+      <svg class="icon menu-btn__open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+      <svg class="icon menu-btn__close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      <span class="menu-btn__text">Menu</span>
+    </button>
+    <nav class="nav" id="nav-panel" aria-label="Main">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#work">Work</a></li>
+        <li><a class="nav__link" href="#services">Services</a></li>
+        <li><a class="nav__link" href="#words">Kind words</a></li>
+      </ul>
+      <a class="nav__cta" href="#contact">Commission a set</a>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+
+    <!-- HERO: monument type on the horizon, a door standing alone on the plain. -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <h1 class="hero__title" id="hero-title"><span class="hero__line1">I set tables<svg class="cloud cloud--s" aria-hidden="true" focusable="false"><use href="#s-cloud"/></svg></span><br>for the sky<span class="moon-stop"><span class="visually-hidden">.</span></span></h1>
+
+      <div class="hero__ground">
+        <p class="hero__slip">Sets and still lifes for brands that want their objects to look slightly wrong. Built by hand in Lisbon.</p>
+        <div class="hero__actions">
+          <a class="btn btn--accent btn--cast" href="#work">See the work <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-dr"/></svg></a>
+          <p class="hero__note">Taking commissions from March 2027.</p>
+        </div>
+      </div>
+
+      <div class="hero__scene" aria-hidden="true">
+        <div class="hero__horizon"></div>
+        <div class="hero__cast">I set tables<br>for the sky<span class="moon-stop"></span></div>
+
+        <div class="door">
+          <div class="door__cast"></div>
+          <div class="door__spill"></div>
+          <div class="door__frame">
+            <div class="door__opening"><svg class="door__night" focusable="false"><use href="#s-night"/></svg></div>
+          </div>
+          <div class="door__hinge"><div class="door__leaf"></div></div>
+        </div>
+
+        <svg class="cloud cloud--a" focusable="false"><use href="#s-cloud"/></svg>
+        <div class="cloud-b">
+          <svg class="cloud cloud--b" focusable="false"><use href="#s-cloud"/></svg>
+          <div class="cloud-b__thread">
+            <svg class="hang-key" viewBox="0 0 24 48" focusable="false"><circle cx="12" cy="9" r="7" fill="#F7F3EA" stroke="#1F1A17" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="#1F1A17" stroke-width="1.5"/><path d="M12 16v28M12 36h6M12 42h5" fill="none" stroke="#1F1A17" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT: a day room with a night window. -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about__inner">
+        <div class="about__text">
+          <p class="eyebrow">The studio</p>
+          <h2 id="about-title">Small rooms, wrong weather.</h2>
+          <p class="lead">I build sets that look like a calm dream. One table. One lamp. The rain is only falling on the bread.</p>
+          <p>I studied sculpture in Porto and spent six years making props for theatre. Now I build still life sets for photographers, brands and publishers. Everything is made by hand and shot in camera. I work with a small crew of carpenters and painters in a warehouse near the river in Marvila.</p>
+          <p>Most projects start with one wrong detail. A tap that pours sand. A key the size of a chair. I keep the rest quiet so the detail can do the work.</p>
+          <dl class="facts">
+            <div class="facts__row"><dt>Based in</dt><dd>Lisbon</dd></div>
+            <div class="facts__row"><dt>Works</dt><dd>Across Europe, sets travel flat</dd></div>
+            <div class="facts__row"><dt>Languages</dt><dd>Portuguese, English, French</dd></div>
+          </dl>
+        </div>
+
+        <div class="about__visual">
+          <div class="window" aria-hidden="true">
+            <div class="window__view"><svg class="window__night" focusable="false"><use href="#s-night"/></svg><span class="window__moon"></span></div>
+            <div class="window__sill"></div>
+          </div>
+          <div class="portrait">
+            <span class="portrait__wire" aria-hidden="true"></span>
+            <div class="portrait__frame">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--portrait" role="img" aria-label="Portrait of Inês in the studio: 900x1200" data-placeholder="true"><span class="ph__label">Portrait of Inês in the studio: 900x1200</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK: an exhibition on the plain. Five frames, five cells. -->
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="work__band">
+        <div class="work__head">
+          <h2 id="work-title">Sets on the plain.</h2>
+          <p class="work__intro">Five sets from the last three years. Each brief started from one wrong word. The struck word is where I began. The title is where I ended up.</p>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <article class="piece piece--p1 reveal" style="--i:0">
+          <div class="piece__stage">
+            <div class="piece__frame">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--16x10" role="img" aria-label="Project cover: Sunday weather: 1600x1000" data-placeholder="true"><span class="ph__label">Project cover: Sunday weather: 1600x1000</span></div>
+            </div>
+            <span class="piece__shadow" aria-hidden="true"></span>
+          </div>
+          <div class="piece__plaque">
+            <h3><!-- Replace with the case study URL --><a class="piece__link" href="#work">Sunday weather <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ur"/></svg></a></h3>
+            <p class="wrong"><span class="visually-hidden">Brief word: </span><s class="wrong__word">the ceiling</s></p>
+            <p class="piece__meta">Alvor Umbrella Co. / Campaign set / 2026</p>
+            <p class="piece__desc">Four umbrellas open indoors above a laid table. The rain falls only on the dinner.</p>
+          </div>
+        </article>
+
+        <article class="piece piece--p2 reveal" style="--i:1">
+          <div class="piece__stage">
+            <svg class="piece__cloud" aria-hidden="true" focusable="false"><use href="#s-cloud"/></svg>
+            <span class="piece__threads" aria-hidden="true"></span>
+            <div class="piece__frame">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--4x5" role="img" aria-label="Project cover: The quiet tap: 1200x1500" data-placeholder="true"><span class="ph__label">Project cover: The quiet tap: 1200x1500</span></div>
+            </div>
+            <span class="piece__shadow piece__shadow--detached" aria-hidden="true"></span>
+          </div>
+          <div class="piece__plaque">
+            <h3><!-- Replace with the case study URL --><a class="piece__link" href="#work">The quiet tap <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ur"/></svg></a></h3>
+            <p class="wrong"><span class="visually-hidden">Brief word: </span><s class="wrong__word">the hourglass</s></p>
+            <p class="piece__meta">Moura Bath / Catalogue still lifes / 2025</p>
+            <p class="piece__desc">Brass taps that pour fine sand into porcelain. Shot for the spring catalogue.</p>
+          </div>
+        </article>
+
+        <article class="piece piece--p3 reveal" style="--i:2">
+          <div class="piece__stage">
+            <div class="piece__frame">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--4x3" role="img" aria-label="Project cover: Twelve keys: 1200x900" data-placeholder="true"><span class="ph__label">Project cover: Twelve keys: 1200x900</span></div>
+            </div>
+            <span class="piece__plinth" aria-hidden="true"></span>
+            <span class="piece__shadow" aria-hidden="true"></span>
+          </div>
+          <div class="piece__plaque">
+            <h3><!-- Replace with the case study URL --><a class="piece__link" href="#work">Twelve keys <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ur"/></svg></a></h3>
+            <p class="wrong"><span class="visually-hidden">Brief word: </span><s class="wrong__word">the bird</s></p>
+            <p class="piece__meta">Editora Lume / Cover series / 2025</p>
+            <p class="piece__desc">Twelve covers. One oversized key per book, each in a room that should not hold it.</p>
+          </div>
+        </article>
+
+        <article class="piece piece--p4 reveal" style="--i:3">
+          <div class="piece__stage">
+            <div class="piece__frame">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--1x1" role="img" aria-label="Project cover: A lamp for a cloud: 1000x1000" data-placeholder="true"><span class="ph__label">Project cover: A lamp for a cloud: 1000x1000</span></div>
+            </div>
+            <span class="piece__shadow" aria-hidden="true"></span>
+          </div>
+          <div class="piece__plaque">
+            <h3><!-- Replace with the case study URL --><a class="piece__link" href="#work">A lamp for a cloud <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ur"/></svg></a></h3>
+            <p class="wrong"><span class="visually-hidden">Brief word: </span><s class="wrong__word">the moon</s></p>
+            <p class="piece__meta">Halde Lighting / Product film set / 2024</p>
+            <p class="piece__desc">A pendant lamp lit from inside a paper cloud. Built for a short product film.</p>
+          </div>
+        </article>
+
+        <article class="piece piece--p5 reveal" style="--i:4">
+          <div class="piece__stage">
+            <div class="piece__frame">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--16x9" role="img" aria-label="Project cover: Breakfast on the plain: 1600x900" data-placeholder="true"><span class="ph__label">Project cover: Breakfast on the plain: 1600x900</span></div>
+            </div>
+            <span class="piece__shadow" aria-hidden="true"></span>
+          </div>
+          <div class="piece__plaque">
+            <h3><!-- Replace with the case study URL --><a class="piece__link" href="#work">Breakfast on the plain <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-ur"/></svg></a></h3>
+            <p class="wrong"><span class="visually-hidden">Brief word: </span><s class="wrong__word">the kitchen</s></p>
+            <p class="piece__meta">Mesa magazine / Editorial story / 2024</p>
+            <p class="piece__desc">A full breakfast set in an empty quarry at dawn. Toast, coffee, nobody.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES: a staircase that stops in a cloud. -->
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="services__inner">
+        <div class="services__head">
+          <h2 id="services-title">What I make.</h2>
+          <p class="services__intro">Four ways to work together. Most clients book a full set.</p>
+        </div>
+
+        <div class="stairs-wrap">
+          <ol class="stairs">
+            <li class="step reveal" style="--i:0">
+              <svg class="icon icon--step" aria-hidden="true" focusable="false"><use href="#i-ruler-pencil"/></svg>
+              <h3>Set design.</h3>
+              <p>Full sets for photo and film, from sketch to build to strike. I bring the crew.</p>
+            </li>
+            <li class="step reveal" style="--i:1">
+              <svg class="icon icon--step" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>
+              <h3>Still life art direction.</h3>
+              <p>I direct the objects on shoot day. Placement, scale, light, the one thing that is wrong.</p>
+            </li>
+            <li class="step reveal" style="--i:2">
+              <svg class="icon icon--step" aria-hidden="true" focusable="false"><use href="#i-key"/></svg>
+              <h3>Props and miniatures.</h3>
+              <p>Handmade props at any scale. Oversized keys, tiny chairs, taps that pour sand.</p>
+            </li>
+            <li class="step reveal" style="--i:3">
+              <svg class="icon icon--step" aria-hidden="true" focusable="false"><use href="#i-notebook"/></svg>
+              <h3>Concepts for campaigns.</h3>
+              <p>A short book of sketches and references before anything is built. Good for pitches.</p>
+            </li>
+          </ol>
+          <div class="stairs__cloud reveal" style="--i:4">
+            <svg class="stairs__cloud-shape" aria-hidden="true" focusable="false"><use href="#s-cloud"/></svg>
+            <p class="stairs__cloud-text"><a class="text-link" href="#contact">Something else? Ask me.</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KIND WORDS: one eye, three quotes in orbit. -->
+    <section class="words" id="words" aria-labelledby="words-title">
+      <div class="words__inner">
+        <h2 id="words-title">Kind words.</h2>
+        <div class="words__grid">
+          <svg class="words__sight" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+            <path d="M34 30L45 44M66 50H59M38 70L46 57" fill="none" stroke="#1F1A17" stroke-width="1" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <svg class="eye" viewBox="0 -14 360 228" aria-hidden="true" focusable="false">
+            <defs><clipPath id="eye-clip"><path d="M10 100Q180-40 350 100Q180 240 10 100Z"/></clipPath></defs>
+            <path d="M10 100Q180-40 350 100Q180 240 10 100Z" fill="#F7F3EA"/>
+            <g clip-path="url(#eye-clip)">
+              <g class="eye__look" id="eye-look">
+                <circle cx="180" cy="100" r="54" fill="#8FB8D8" stroke="#1F1A17" stroke-width="3"/>
+                <circle cx="180" cy="100" r="22" fill="#1F1A17"/>
+                <circle cx="194" cy="88" r="7" fill="#F7F3EA"/>
+              </g>
+            </g>
+            <path d="M10 100Q180-40 350 100Q180 240 10 100Z" fill="none" stroke="#1F1A17" stroke-width="3" stroke-linejoin="round"/>
+            <use href="#s-cloud" x="150" y="-14" width="150" height="63"/>
+          </svg>
+
+          <figure class="quote quote--1">
+            <blockquote><p>“The rain fell where Inês said it would. Every take. We still do not know how.”</p></blockquote>
+            <figcaption><span class="quote__name">Rui Antunes</span> <span class="quote__role">Creative director, Alvor Umbrella Co.</span></figcaption>
+          </figure>
+          <figure class="quote quote--2">
+            <blockquote><p>“She found the one wrong object in each story and made the rest of the page go quiet.”</p></blockquote>
+            <figcaption><span class="quote__name">Hanna Odegaard</span> <span class="quote__role">Photo editor, Mesa magazine</span></figcaption>
+          </figure>
+          <figure class="quote quote--3">
+            <blockquote><p>“Our lamp looked like it had always lived in that cloud. Clients ask where we bought the cloud.”</p></blockquote>
+            <figcaption><span class="quote__name">Tomas Leal</span> <span class="quote__role">Founder, Halde Lighting</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT: a second door. The form lives in the lit doorway. -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact__inner">
+        <div class="contact__head">
+          <p class="eyebrow">Commissions</p>
+          <h2 id="contact-title">Bring me one wrong object.</h2>
+          <p class="contact__intro">Tell me about the set. I reply within a week.</p>
+        </div>
+
+        <div class="cdoor">
+          <span class="cdoor__cast" aria-hidden="true"></span>
+          <svg class="fallen-key" viewBox="0 0 64 24" aria-hidden="true" focusable="false"><circle cx="11" cy="12" r="7" fill="#F7F3EA" stroke="#1F1A17" stroke-width="1.5"/><circle cx="11" cy="12" r="2.5" fill="none" stroke="#1F1A17" stroke-width="1.5"/><path d="M18 12h40M50 12v7M56 12v6" fill="none" stroke="#1F1A17" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span class="cdoor__key-shadow" aria-hidden="true"></span>
+          <div class="cdoor__frame">
+            <div class="cdoor__light">
+              <form class="brief-form" action="#contact" method="get">
+                <p class="field__hint form-note">All fields are required unless marked optional.</p>
+                <div class="field">
+                  <label for="f-name">Your name</label>
+                  <input id="f-name" name="name" type="text" autocomplete="name" required data-msg="Add your name.">
+                  <p class="field__error" id="f-name-error" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span class="field__error-text"></span></p>
+                </div>
+                <div class="field">
+                  <label for="f-email">Email</label>
+                  <input id="f-email" name="email" type="email" autocomplete="email" required data-msg="Add an email so I can reply." data-msg-type="That email looks incomplete. Check the @ and the domain.">
+                  <p class="field__error" id="f-email-error" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span class="field__error-text"></span></p>
+                </div>
+                <div class="field">
+                  <label for="f-org">Studio or brand (optional)</label>
+                  <input id="f-org" name="organization" type="text" autocomplete="organization">
+                </div>
+                <fieldset class="field choices">
+                  <legend>What do you need?</legend>
+                  <div class="choices__row">
+                    <input class="choice__input" type="radio" id="need-set" name="need" value="set-design" checked>
+                    <label class="choice" for="need-set"><svg class="icon choice__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Set design</label>
+                    <input class="choice__input" type="radio" id="need-art" name="need" value="art-direction">
+                    <label class="choice" for="need-art"><svg class="icon choice__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Art direction</label>
+                    <input class="choice__input" type="radio" id="need-props" name="need" value="props">
+                    <label class="choice" for="need-props"><svg class="icon choice__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Props</label>
+                    <input class="choice__input" type="radio" id="need-unsure" name="need" value="not-sure">
+                    <label class="choice" for="need-unsure"><svg class="icon choice__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Not sure yet</label>
+                  </div>
+                </fieldset>
+                <div class="field">
+                  <label for="f-wrong">The wrong object</label>
+                  <p class="field__hint" id="f-wrong-hint">One line is enough. A tap that pours sand, for example.</p>
+                  <textarea id="f-wrong" name="wrong-object" rows="6" required aria-describedby="f-wrong-hint" data-msg="Tell me the wrong object, even in one line."></textarea>
+                  <p class="field__error" id="f-wrong-error" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span class="field__error-text"></span></p>
+                </div>
+                <button class="btn btn--accent btn--submit" type="submit">Send the brief</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+          <div class="cdoor__hinge" aria-hidden="true"><div class="cdoor__leaf"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER: the wordmark stands on the horizon while the moon sets. -->
+  <footer class="footer">
+    <div class="footer__stage">
+      <p class="footer__mark">Inês Varela</p>
+      <div class="footer__cast" aria-hidden="true">Inês Varela</div>
+      <span class="footer__moon" aria-hidden="true"></span>
+    </div>
+    <div class="footer__inner">
+      <div class="footer__row">
+        <p class="footer__tag">Set design and still life. Lisbon.</p>
+        <ul class="footer__links">
+          <!-- Replace with real profile URLs -->
+          <li><a href="https://www.instagram.com/">Instagram</a></li>
+          <li><a href="https://www.are.na/">Are.na</a></li>
+          <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+          <li><a href="mailto:studio@inesvarela.example">studio@inesvarela.example</a></li>
+          <li><a href="#top">Back to top <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg></a></li>
+        </ul>
+      </div>
+      <p class="footer__note">A portfolio template. All names, clients and projects are fictional.</p>
+    </div>
+  </footer>
+</body>
+</html>

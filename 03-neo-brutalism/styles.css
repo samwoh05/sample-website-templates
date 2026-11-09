@@ -1,0 +1,2392 @@
+/* Design read: neo-brutalist portfolio for a loud packaging and poster designer. Cream ground, 4px ink outlines, zero-blur 6/10px shadows, four flat fills with fixed jobs, Archivo 900 at poster scale, stickers slapped on at angles, buttons that press flat into an ink plate. DESIGN_VARIANCE 8, MOTION_INTENSITY 4, VISUAL_DENSITY 5. */
+
+/*
+  HERO FIT MATHS
+  Measured advance widths, Archivo latin, wght 900, letter-spacing -0.02em, kerning ignored:
+    "LOUD PACKS."      wdth 100: 7.24em, wdth 112: 7.98em
+    "LOUDER POSTERS."  wdth 100: 10.05em, wdth 112: 11.08em
+  Slab B outer width = 11.08em x font-size + 64px (padding and border) + --slab-shift + 10px shadow.
+    1440: fs 86.4px. 957 + 64 + 184 + 10 = 1215, inside 1280. Two lines.
+    1366: fs 82px.   908 + 64 + 184 + 10 = 1166, inside 1286.
+    1280: fs 76.8px. 851 + 64 + 184 + 10 = 1109, inside 1203.
+    1024: fs 61.4px. 680 + 64 + 184 + 10 = 938, inside 963.
+    1600 and up: fs capped at 88px. 975 + 64 + 184 + 10 = 1233, inside 1280.
+    768: fs 46px.    510 + 64 + 61 + 10 = 645, inside 722.
+    375: fs 40px at stretch 100%. "LOUD PACKS." = 290 + 40 = 330, one line in 343.
+         Slab A therefore gets max-width 100% (it never shifts). "LOUDER POSTERS." wraps once
+         inside slab B. Three lines total, the phone maximum.
+  Slab height is about fs x 0.92 + 32px: about 111px at 1440 and 107px at 1366.
+  If you swap the display font, measure these again.
+*/
+
+/* ==========================================================================
+   1. Tokens
+   ========================================================================== */
+:root {
+  /* Palette. Text on every fill is ink. */
+  --cream: #FFF4DE;
+  --cream-deep: #F5E3BF;
+  --paper: #FFFFFF;
+  --ink: #111111;
+  --ink-soft: #3D3D3D;
+  --yellow: #FFD23F; /* DO: primary actions only */
+  --pink: #FF7EB6;   /* LOOK HERE: labelling stickers, warnings, errors */
+  --lime: #B6F36B;   /* STATE: availability, selected, current, success */
+  --cobalt: #5B7CFF; /* BIG PANEL: hero slab A and the ticker band only */
+
+  /* Semantic aliases */
+  --bg: var(--cream);
+  --surface: var(--paper);
+  --text: var(--ink);
+  --text-muted: var(--ink-soft);
+  --border: var(--ink);
+  --action: var(--yellow);
+  --flag: var(--pink);
+  --state: var(--lime);
+  --panel: var(--cobalt);
+
+  /* Type */
+  --font-display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, Menlo, monospace;
+
+  /* Spacing, 8px rhythm */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+  --s7: 96px;
+  --s8: 128px;
+  --section-pad: clamp(64px, 9vw, 128px);
+  --col-gap: 16px;
+
+  /* Shape */
+  --radius: 0;
+  --bw: 4px;
+  --bw-sm: 3px;
+  --sh-sm: 4px 4px 0 var(--ink);
+  --sh: 6px 6px 0 var(--ink);
+  --sh-lg: 6px 6px 0 var(--ink);
+
+  /* Layers */
+  --z-base: 1;
+  --z-card: 10;
+  --z-sticker: 20;
+  --z-card-focus: 40;
+  --z-header: 100;
+  --z-menu: 110;
+  --z-skip: 1000;
+
+  /* Layout */
+  --header-h: 64px;
+  --slab-shift: 16px;
+
+  /* Motion */
+  --ease-in: cubic-bezier(.55, 0, 1, .45);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --sh-lg: 10px 10px 0 var(--ink);
+    --col-gap: 24px;
+    --slab-shift: 8vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 72px;
+    --slab-shift: 184px;
+  }
+}
+
+/* ==========================================================================
+   2. Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 24px); /* focus and anchors clear the sticky header */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  font-stretch: 100%;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure, blockquote {
+  margin: 0;
+}
+
+ul, ol {
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
+
+svg {
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  border-radius: var(--radius);
+}
+
+a, button, select, label[for], [role="tab"] {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--pink);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 4px solid var(--ink);
+  outline-offset: 4px;
+  border-radius: var(--radius);
+}
+
+#main:focus {
+  outline: none;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+.icon--20 {
+  width: 20px;
+  height: 20px;
+}
+
+.icon--32 {
+  width: 32px;
+  height: 32px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 3vw, 40px);
+}
+
+/* Page-scale grid: a 4px rule under every section. */
+main > section {
+  border-bottom: var(--bw) solid var(--ink);
+  overflow-x: clip;
+}
+
+/* The footer draws the last rule, so the contact section does not double it. */
+main > section:last-child {
+  border-bottom: 0;
+}
+
+.section {
+  padding-block: var(--section-pad);
+}
+
+/* ==========================================================================
+   3. Type
+   ========================================================================== */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 100%;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: .95;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .section-title {
+    font-stretch: 112%;
+  }
+}
+
+.lead {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+@media (min-width: 640px) {
+  .lead {
+    font-size: 1.25rem;
+  }
+}
+
+.label,
+.sticker,
+.chip,
+.ph__label,
+.proj__client {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: .875rem;
+  line-height: 1.2;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   4. Components
+   ========================================================================== */
+
+/* Pressable: the element is the ink plate, the face sits on top and presses flat. */
+.press {
+  --plate: 6px;
+  --face: var(--paper);
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: var(--plate) 0 0 var(--plate);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.press__face {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 22px;
+  border: var(--bw-sm) solid var(--ink);
+  background: var(--face);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 106%;
+  font-size: 1.0625rem;
+  line-height: 1.1;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  transform: translate(calc(var(--plate) * -1), calc(var(--plate) * -1));
+  transition: transform 70ms linear;
+}
+
+.press--yellow { --face: var(--yellow); }
+.press--paper { --face: var(--paper); }
+
+.press--sm { --plate: 4px; }
+
+.press--sm .press__face {
+  min-height: 44px;
+  padding: 8px 14px;
+}
+
+/* Small phones: tighter faces so labels stay on one line. */
+@media (max-width: 399.98px) {
+  .press__face {
+    font-stretch: 100%;
+    font-size: 1rem;
+    letter-spacing: 0;
+    padding-inline: 16px;
+  }
+}
+
+@media (hover: hover) {
+  .press:hover .press__face {
+    transform: translate(calc(var(--plate) * -1 - 2px), calc(var(--plate) * -1 - 2px));
+  }
+}
+
+.press:active .press__face,
+.press[aria-pressed="true"] .press__face,
+.press[aria-selected="true"] .press__face {
+  transform: translate(0, 0);
+}
+
+.press[aria-pressed="true"],
+.press[aria-selected="true"] {
+  --face: var(--lime);
+}
+
+.press:focus-visible {
+  outline: none;
+}
+
+.press:focus-visible .press__face {
+  outline: 4px solid var(--ink);
+  outline-offset: 4px;
+}
+
+/* Tilted pressables (footer stickers): rotation lives on the plate so both turn together. */
+.press--tilt {
+  --r: 0deg;
+  transform: rotate(var(--r));
+  transition: transform 90ms linear;
+}
+
+@media (hover: hover) {
+  .press--tilt:hover {
+    transform: rotate(0deg);
+  }
+}
+
+.press--tilt:focus-visible {
+  transform: rotate(0deg);
+}
+
+.press--tilt:focus-visible .press__face {
+  transform: translate(calc(var(--plate) * -1 - 2px), calc(var(--plate) * -1 - 2px));
+}
+
+.press--tilt:active .press__face {
+  transform: translate(0, 0);
+}
+
+/* Sticker: non-interactive label */
+.sticker {
+  --r: -3deg;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 12px;
+  border: var(--bw-sm) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--sh-sm);
+  color: var(--ink);
+  transform: rotate(var(--r));
+}
+
+.sticker--pink { background: var(--pink); }
+.sticker--lime { background: var(--lime); }
+.sticker--paper { background: var(--paper); }
+
+/* Message stickers carry sentences, so they use body type. */
+.sticker--msg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  flex: none;
+  background: var(--ink);
+}
+
+/* Chip: deliverables */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border: var(--bw-sm) solid var(--ink);
+  background: var(--paper);
+}
+
+/* Placeholder */
+.ph {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: var(--ar, 16/10);
+  background-color: var(--cream-deep);
+  background-image: repeating-linear-gradient(135deg, rgba(17, 17, 17, .10) 0 2px, transparent 2px 14px);
+}
+
+.ph__size {
+  white-space: nowrap;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.ph__label {
+  display: block;
+  max-width: 80%;
+  padding: 8px 12px;
+  border: var(--bw-sm) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--sh-sm);
+  color: var(--ink);
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+/* ==========================================================================
+   5. Skip link
+   ========================================================================== */
+.skip {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: var(--z-skip);
+  margin: 0;
+  transform: translateY(-200%);
+}
+
+.skip:focus,
+.skip:focus-visible {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   6. Header and nav
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  height: var(--header-h);
+  background: var(--cream);
+  border-bottom: var(--bw) solid var(--ink);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 100%;
+}
+
+.wordmark {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: var(--bw-sm) solid var(--ink);
+  background: var(--paper);
+  box-shadow: var(--sh-sm);
+  color: var(--ink);
+  font-weight: 900;
+  font-stretch: 112%;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: rotate(-2deg);
+  transition: transform 80ms linear;
+}
+
+.wordmark:hover,
+.wordmark:focus-visible {
+  transform: rotate(0deg);
+}
+
+.site-nav {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 24px;
+}
+
+.site-nav__list {
+  display: flex;
+  gap: 8px;
+  margin-inline: auto;
+}
+
+.site-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: var(--bw-sm) solid transparent;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .site-nav__link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+  }
+}
+
+.site-nav__link[aria-current] {
+  background: var(--lime);
+  border-color: var(--ink);
+}
+
+.site-nav__cta {
+  flex: none;
+}
+
+.menu-btn {
+  display: none;
+  flex: none;
+}
+
+.menu-btn .press__face {
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.menu-btn .icon-close,
+.menu-btn[aria-expanded="true"] .icon-menu {
+  display: none;
+}
+
+.menu-btn[aria-expanded="true"] .icon-close {
+  display: block;
+}
+
+/* Very narrow phones: the Menu label goes visually hidden so the header fits. */
+@media (max-width: 359.98px) {
+  .menu-btn__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .wordmark {
+    padding: 8px 10px;
+    font-size: .9375rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .site-header__inner {
+    gap: 24px;
+  }
+
+  .wordmark {
+    font-size: 1.125rem;
+  }
+}
+
+/* Under 1024px with JS: a drop-down panel. Without JS: links wrap to a second row. */
+@media (max-width: 1023.98px) {
+  html.js .menu-btn {
+    display: inline-block;
+  }
+
+  html.js .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + var(--bw));
+    left: 0;
+    right: 0;
+    z-index: var(--z-menu);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 8px clamp(16px, 3vw, 40px) 24px;
+    background: var(--cream);
+    border-bottom: var(--bw) solid var(--ink);
+    box-shadow: var(--sh);
+  }
+
+  html.js .site-nav.is-open {
+    display: flex;
+  }
+
+  html.js .site-nav__list {
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+  }
+
+  html.js .site-nav__list li + li {
+    border-top: var(--bw-sm) solid var(--ink);
+  }
+
+  html.js .site-nav__link {
+    width: 100%;
+    min-height: 56px;
+    font-size: 1.125rem;
+  }
+
+  html.js .site-nav__cta {
+    display: block;
+    margin-right: 0;
+  }
+
+  html.js .site-nav__cta .press__face {
+    justify-content: center;
+  }
+
+  html:not(.js) .site-header {
+    position: relative;
+    height: auto;
+  }
+
+  html:not(.js) .site-header__inner {
+    flex-wrap: wrap;
+    padding-block: 10px;
+  }
+
+  html:not(.js) .site-nav {
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+
+  html:not(.js) .site-nav__list {
+    flex-wrap: wrap;
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
+   7. Hero
+   ========================================================================== */
+.hero {
+  padding-block: 24px 32px;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(rgba(17, 17, 17, .10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, .10) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* The ticker draws the rule under the hero. */
+main > .hero {
+  border-bottom: 0;
+}
+
+.hero__head {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 100%;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: .92;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+}
+
+.slab {
+  --r: 0deg;
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: calc(100% - var(--slab-shift));
+  padding: 10px 16px 12px;
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh-lg);
+  transform: translateY(0) rotate(var(--r));
+}
+
+.slab--a {
+  --r: -1deg;
+  z-index: 1;
+  max-width: 100%;
+  background: var(--cobalt);
+}
+
+.slab--b {
+  z-index: 2;
+  margin-top: -8px;
+  margin-left: var(--slab-shift);
+  background: var(--paper);
+}
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 12px;
+  margin-top: 20px;
+}
+
+.hero__tag--state { --r: 6deg; }
+.hero__tag--place { --r: -4deg; }
+
+.hero__foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+.hero__sub {
+  max-width: 34ch;
+}
+
+.hero__cta {
+  margin-top: calc(24px + var(--plate));
+}
+
+.hero__fan {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-right: 12px;
+  isolation: isolate;
+}
+
+.fan__item {
+  --plate: 8px;
+  --r: 0deg;
+  --y: 0px;
+  flex: none;
+  width: min(29vw, 120px);
+  margin-left: -4px; /* light overlap below 1024px so no poster covers a label */
+  transform: translateY(var(--y)) rotate(var(--r));
+  transition: transform 90ms linear;
+}
+
+.fan__item:first-child {
+  margin-left: var(--plate);
+}
+
+.fan__item:nth-child(1) { --r: -5deg; }
+.fan__item:nth-child(2) { --r: 3deg; --y: -18px; }
+.fan__item:nth-child(3) { --r: -2deg; --y: 6px; }
+
+.fan__item .press__face {
+  display: block;
+  min-height: 0;
+  padding: 6px;
+  border-width: var(--bw);
+  background: var(--paper);
+}
+
+.fan__item .ph__label {
+  max-width: 100%;
+  padding: 4px 5px;
+  font-size: .75rem;
+  letter-spacing: .02em;
+  overflow-wrap: normal;
+}
+
+@media (hover: hover) {
+  .fan__item:hover {
+    z-index: 5;
+    transform: translateY(var(--y)) rotate(0deg);
+  }
+}
+
+.fan__item:focus-visible {
+  z-index: 5;
+  transform: translateY(var(--y)) rotate(0deg);
+}
+
+.fan__item:focus-visible .press__face {
+  transform: translate(-10px, -10px);
+}
+
+.fan__item:active .press__face {
+  transform: translate(0, 0);
+}
+
+@media (min-width: 640px) {
+  .hero__title {
+    font-stretch: 112%;
+  }
+
+  .slab {
+    padding: 10px 28px 14px;
+  }
+
+  .slab--b {
+    margin-top: -12px;
+  }
+
+  .hero__fan {
+    justify-content: flex-end;
+  }
+
+  .fan__item {
+    width: clamp(150px, 19vw, 220px);
+    margin-left: -10px;
+  }
+
+  .fan__item .press__face {
+    padding: 8px;
+  }
+
+  .fan__item .ph__label {
+    max-width: calc(100% - 16px);
+    font-size: .875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__tags {
+    display: block;
+    margin: 0;
+  }
+
+  .hero__tag {
+    position: absolute;
+    z-index: var(--z-sticker);
+  }
+
+  .hero__tag--state {
+    top: 8px;
+    right: 0;
+  }
+
+  .hero__tag--place {
+    left: 8px;
+    bottom: 24px;
+  }
+
+  .hero__foot {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: end;
+  }
+
+  .hero__intro {
+    grid-column: 1 / 7;
+  }
+
+  .hero__fan {
+    grid-column: 7 / 13;
+    justify-self: end;
+  }
+
+  /* Posters tuck under slab B's border and shadow, never a near miss. */
+  .hero__head {
+    z-index: 2;
+  }
+
+  .hero__fan {
+    margin-top: -24px;
+  }
+
+  .fan__item {
+    margin-left: -28px;
+  }
+
+  .fan__item .ph__label {
+    max-width: 84%;
+    padding: 6px 8px;
+    letter-spacing: .04em;
+  }
+}
+
+/* Short desktop screens: keep the hero and ticker in the first viewport. */
+@media (min-width: 1024px) and (max-height: 720px) {
+  .hero {
+    padding-top: 16px;
+  }
+
+  .hero__title {
+    font-size: 5.2vw;
+  }
+
+  .fan__item {
+    width: 12vw;
+  }
+}
+
+/* ==========================================================================
+   8. Ticker band (the only marquee)
+   ========================================================================== */
+main > .ticker {
+  position: relative;
+  height: 56px;
+  background: var(--cobalt);
+  border-top: var(--bw) solid var(--ink);
+  border-bottom: var(--bw) solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.ticker__viewport {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.ticker__track {
+  display: flex;
+  flex: none;
+  width: max-content;
+}
+
+.ticker__list {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 32px;
+  padding-right: 32px;
+}
+
+.ticker__list li {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  white-space: nowrap;
+}
+
+.ticker__control {
+  display: none;
+}
+
+.ticker__toggle .press__face {
+  justify-content: center;
+  width: 44px;
+  min-height: 44px;
+  padding: 0;
+}
+
+.ticker__toggle .icon-play,
+.ticker__toggle[aria-pressed="true"] .icon-pause {
+  display: none;
+}
+
+.ticker__toggle[aria-pressed="true"] .icon-play {
+  display: block;
+}
+
+/* The loop runs only with JS, because the pause button needs JS. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .ticker__track {
+    animation: ticker 45s linear infinite;
+  }
+
+  .ticker:hover .ticker__track,
+  .ticker:focus-within .ticker__track,
+  .ticker.is-paused .ticker__track {
+    animation-play-state: paused;
+  }
+
+  html.js .ticker__control {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding-inline: 12px;
+    background: var(--cobalt);
+    border-left: var(--bw) solid var(--ink);
+  }
+
+  html.js .ticker__toggle {
+    margin: var(--plate) 0 0 var(--plate);
+  }
+}
+
+/* Still ticker: a static wrapped list under reduced motion or without JS. */
+html:not(.js) main > .ticker {
+  height: auto;
+  padding: 12px 16px;
+}
+
+html:not(.js) .ticker__viewport,
+html:not(.js) .ticker__track {
+  display: block;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+html:not(.js) .ticker__list {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 8px;
+  padding: 0;
+}
+
+html:not(.js) .ticker__list[aria-hidden="true"] {
+  display: none;
+}
+
+html:not(.js) .ticker__list li {
+  white-space: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main > .ticker {
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .ticker__viewport,
+  .ticker__track {
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  .ticker__list {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 8px;
+    padding: 0;
+  }
+
+  .ticker__list[aria-hidden="true"] {
+    display: none;
+  }
+
+  .ticker__list li {
+    white-space: normal;
+  }
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
+   9. Selected work: sticky folder pile
+   ========================================================================== */
+.work__head {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.work__intro {
+  max-width: 34ch;
+}
+
+.stack {
+  display: grid;
+  gap: 64px;
+}
+
+.stack__item {
+  padding-top: 32px; /* room for the folder tab */
+}
+
+.proj {
+  position: relative;
+  display: grid;
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh-lg);
+}
+
+/* Folder tab: sits on the card's top edge and covers the border, so it reads as one shape. */
+.proj__client {
+  position: absolute;
+  bottom: 100%;
+  left: 16px;
+  max-width: calc(100% - 32px);
+  height: 36px;
+  padding: 8px 14px;
+  overflow: hidden;
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  border-bottom: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.proj__media {
+  border-bottom: var(--bw) solid var(--ink);
+}
+
+.proj__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+}
+
+.proj__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.proj__title {
+  font-weight: 800;
+  font-stretch: 100%;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.05;
+}
+
+.proj__body {
+  max-width: 46ch;
+}
+
+.proj__cta {
+  margin-top: auto;
+}
+
+@media (min-width: 640px) {
+  .proj__info {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .work__head {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: end;
+  }
+
+  .work__head .section-title {
+    grid-column: 1 / 9;
+  }
+
+  .work__intro {
+    grid-column: 9 / 13;
+  }
+
+  .proj {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+
+  /* The image fills the cell. The text column sets the card height. */
+  .proj__media {
+    position: relative;
+    min-height: 340px;
+    border-bottom: 0;
+    border-right: var(--bw) solid var(--ink);
+  }
+
+  .proj__media .ph {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+
+/* Laptop widths outside the pile: one feature card, then a 2x2 grid. */
+@media (min-width: 1024px) and (max-width: 1279.98px),
+       (min-width: 1024px) and (max-height: 759.98px) {
+  .stack {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 32px;
+  }
+
+  .stack__item:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .stack__item:not(:first-child) .proj {
+    grid-template-columns: minmax(0, 1fr);
+    height: 100%;
+  }
+
+  .stack__item:not(:first-child) .proj__media {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: var(--bw) solid var(--ink);
+  }
+
+  .stack__item:not(:first-child) .proj__media .ph {
+    position: static;
+    aspect-ratio: 16/10;
+  }
+}
+
+/* The pile only runs where every card fits under its sticky top. */
+@media (min-width: 1280px) and (min-height: 760px) {
+  .stack {
+    display: block;
+  }
+
+  .stack__item {
+    position: sticky;
+    top: calc(var(--header-h) + 52px + var(--i) * 24px);
+    z-index: calc(var(--z-card) + var(--i));
+    margin-bottom: 64px;
+    padding-top: 0;
+  }
+
+  /* A focused button is never hidden under a later card. */
+  .stack__item:focus-within {
+    z-index: var(--z-card-focus);
+  }
+
+  /* Adds to the html scroll-padding, so anchors land on each card's sticky top. */
+  .proj {
+    scroll-margin-top: calc(28px + var(--i) * 24px);
+    min-height: min(540px, calc(100vh - var(--header-h) - 196px));
+    min-height: min(540px, calc(100svh - var(--header-h) - 196px));
+  }
+
+  .proj__media {
+    min-height: 0;
+  }
+
+  .proj__info {
+    padding: 28px;
+  }
+
+  /* Tabs stagger so all five stay visible across the top of the pile. */
+  .proj__client {
+    left: calc(16px + var(--i) * 20%);
+    width: calc(20% - 24px);
+    max-width: none;
+  }
+}
+
+/* ==========================================================================
+   10. About: back-of-pack ruled panel
+   ========================================================================== */
+.pack {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--bw);
+  background: var(--ink);
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh-lg);
+}
+
+.pack__cell {
+  min-width: 0;
+  background: var(--paper);
+}
+
+.pack__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding: 24px;
+  background: var(--cream);
+}
+
+.pack__title {
+  font-stretch: 112%;
+}
+
+.pack__contents {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+.pack__portrait {
+  background: var(--cream-deep);
+}
+
+.pack__portrait .ph {
+  max-height: 440px;
+}
+
+.pack__bio {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  padding: 24px;
+}
+
+.pack__bio p {
+  max-width: 65ch;
+}
+
+.pack__facts {
+  padding: 8px 24px;
+}
+
+.facts__row {
+  display: grid;
+  gap: 4px;
+  padding-block: 14px;
+}
+
+.facts__row + .facts__row {
+  border-top: var(--bw-sm) solid var(--ink);
+}
+
+.facts dt {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: .875rem;
+  line-height: 1.2;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.pack__warn {
+  padding: 24px;
+  background: var(--pink);
+}
+
+.pack__warn-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pack__warn-title {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.05;
+}
+
+.pack__warn-text {
+  max-width: 60ch;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+@media (min-width: 640px) {
+  .pack {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .pack__head {
+    grid-column: 1 / -1;
+    padding: 24px 32px;
+  }
+
+  .pack__title {
+    font-stretch: 125%;
+  }
+
+  /* The portrait fills its cell. The text cells set the height. */
+  .pack__portrait {
+    position: relative;
+    min-height: 360px;
+    grid-column: 1 / 6;
+    grid-row: 2 / 4;
+  }
+
+  .pack__portrait .ph {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    aspect-ratio: auto;
+  }
+
+  .pack__bio {
+    grid-column: 6 / 13;
+    grid-row: 2;
+    padding: 32px;
+  }
+
+  .pack__facts {
+    grid-column: 6 / 13;
+    grid-row: 3;
+  }
+
+  .pack__warn {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    padding: 32px;
+  }
+
+  .pack__warn-text {
+    font-size: 1.375rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pack__portrait {
+    grid-column: 1 / 5;
+    grid-row: 2 / 4;
+  }
+
+  .pack__bio {
+    grid-column: 5 / 10;
+    grid-row: 2;
+  }
+
+  .pack__facts {
+    grid-column: 10 / 13;
+    grid-row: 2;
+  }
+
+  .pack__warn {
+    grid-column: 5 / 13;
+    grid-row: 3;
+  }
+}
+
+/* ==========================================================================
+   11. Services: vertical tab control panel
+   ========================================================================== */
+.svc__title {
+  margin-bottom: 48px;
+}
+
+.svc__layout {
+  display: grid;
+  gap: 32px;
+}
+
+/* Tabs only exist with JS. Without it, the four panels stack. */
+.svc-tabs {
+  display: none;
+}
+
+html.js .svc-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.svc-tab {
+  width: calc(100% - var(--plate));
+  text-align: left;
+}
+
+.svc-tab .press__face {
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 56px;
+  padding: 10px 10px;
+  font-stretch: 100%;
+  font-size: 1rem;
+}
+
+.svc-tab .svc-tab__check {
+  width: 20px;
+  height: 20px;
+  visibility: hidden;
+}
+
+.svc-tab[aria-selected="true"] .svc-tab__check {
+  visibility: visible;
+}
+
+.panels {
+  display: grid;
+  gap: 32px;
+}
+
+/* Every panel shares one grid cell, so switching tabs never shifts the layout. */
+html.js .panels {
+  gap: 0;
+}
+
+html.js .panels > .svc-panel {
+  grid-area: 1 / 1;
+}
+
+html.js .panels > [hidden] {
+  display: block;
+  visibility: hidden;
+}
+
+html:not(.js) .panels > [hidden] {
+  display: block;
+}
+
+.svc-panel {
+  min-width: 0;
+  padding: 24px;
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh-lg);
+}
+
+.svc-panel__name {
+  margin-bottom: 20px;
+}
+
+/* With JS the selected tab already names the panel. */
+html.js .svc-panel__name {
+  display: none;
+}
+
+.svc-panel__title {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.05;
+}
+
+.svc-panel__lead {
+  max-width: 50ch;
+  margin-top: 12px;
+}
+
+.svc-panel__grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: var(--bw-sm) solid var(--ink);
+}
+
+.svc-panel__sub {
+  margin-bottom: 12px;
+}
+
+.ticks {
+  display: grid;
+  gap: 10px;
+}
+
+.ticks li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ticks .icon {
+  margin-top: .2em;
+}
+
+.svc-facts {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.svc-facts dt {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: .875rem;
+  line-height: 1.2;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.svc-facts dd {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.svc-panel__cta {
+  margin-top: calc(32px + var(--plate));
+}
+
+@media (min-width: 640px) {
+  .svc-tab .press__face {
+    padding: 10px 14px;
+    font-stretch: 106%;
+    font-size: 1.0625rem;
+  }
+
+  .svc-tab .svc-tab__check {
+    width: 24px;
+    height: 24px;
+  }
+
+  .svc-panel__grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .svc__layout {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  html.js .svc-tabs {
+    grid-column: 1 / 5;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  html.js .panels {
+    grid-column: 5 / 13;
+  }
+
+  html:not(.js) .panels {
+    grid-column: 1 / -1;
+  }
+
+  .svc-tab .press__face {
+    min-height: 88px;
+    padding: 16px 22px;
+    font-stretch: 112%;
+    font-size: 1.375rem;
+  }
+
+  .svc-panel {
+    padding: 40px;
+  }
+}
+
+/* ==========================================================================
+   12. Kind words: comic strip
+   ========================================================================== */
+.quotes__title {
+  margin-bottom: 48px;
+}
+
+.strip {
+  display: grid;
+  gap: 20px;
+}
+
+.strip__panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  background-color: var(--paper);
+  background-image: radial-gradient(rgba(17, 17, 17, .16) 1.5px, transparent 1.75px);
+  background-size: 12px 12px;
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh);
+}
+
+.bubble {
+  position: relative;
+  margin-bottom: 32px;
+  padding: 20px 24px;
+  background: var(--paper);
+  border: var(--bw-sm) solid var(--ink);
+  box-shadow: var(--sh-sm);
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1.35;
+}
+
+/* Speech tail: an ink triangle with a paper triangle inset 3px, hanging below the bubble. */
+.bubble::before,
+.bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.bubble::before {
+  left: 29px;
+  width: 28px;
+  height: 25px;
+  background: var(--ink);
+}
+
+.bubble::after {
+  left: 32px;
+  width: 20px;
+  height: 18px;
+  background: var(--paper);
+}
+
+.strip__panel--a .bubble {
+  font-weight: 800;
+  font-size: 1.375rem;
+  line-height: 1.25;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: auto;
+  padding: 8px 12px;
+  background: var(--paper);
+  border: var(--bw-sm) solid var(--ink);
+}
+
+.caption__initials {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  background: var(--cream-deep);
+  border: var(--bw-sm) solid var(--ink);
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.caption__who {
+  display: grid;
+  min-width: 0;
+}
+
+.caption__name {
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.caption__role {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 640px) {
+  .strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .strip__panel--a {
+    grid-column: 1 / -1;
+  }
+
+  .strip__panel--a .bubble {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .strip {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .strip__panel--a { grid-column: 1 / 7; }
+  .strip__panel--b { grid-column: 7 / 10; }
+  .strip__panel--c { grid-column: 10 / 13; }
+
+  .strip__panel--b .bubble,
+  .strip__panel--c .bubble {
+    padding: 20px;
+  }
+
+  .strip__panel--b .caption,
+  .strip__panel--c .caption {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ==========================================================================
+   13. Contact: fill-in-the-blanks sentence form
+   ========================================================================== */
+.brief {
+  position: relative;
+  padding: clamp(24px, 4vw, 56px);
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh-lg);
+}
+
+.brief__title {
+  max-width: 18ch;
+}
+
+.brief__badge {
+  --r: 5deg;
+  margin-top: 16px;
+}
+
+.brief__hint {
+  margin-top: 24px;
+}
+
+.sentence {
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  text-wrap: wrap;
+}
+
+/* Phone: each blank takes a line, leaving room for the full stop that follows it. */
+.blank {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  width: calc(100% - .75em);
+  margin: 32px 0 8px;
+  vertical-align: baseline;
+}
+
+.blank__label {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  padding: 2px 8px;
+  background: var(--paper);
+  border: var(--bw-sm) solid var(--ink);
+  border-bottom: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: .875rem;
+  line-height: 1.3;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 1; /* paints over the field's focus ring, so the tab stays joined */
+}
+
+.field {
+  display: block;
+  width: 100%;
+  min-height: 56px;
+  margin: 0;
+  padding: 4px 12px;
+  background: var(--paper);
+  border: var(--bw-sm) solid var(--ink);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font: inherit;
+  font-size: max(1.125rem, 1em);
+  line-height: 1.2;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.field[aria-invalid="true"] {
+  border-style: dashed;
+}
+
+.select-wrap {
+  position: relative;
+  display: block;
+}
+
+.field--select {
+  padding-right: 48px;
+}
+
+.select-wrap__chev {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.blank__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: var(--pink);
+  border: var(--bw-sm) solid var(--ink);
+  box-shadow: var(--sh-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+
+.blank__error[hidden] {
+  display: none;
+}
+
+.blank__error .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.notes {
+  margin-top: 32px;
+}
+
+.notes__label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.notes__field {
+  display: block;
+  width: 100%;
+  min-height: 9rem;
+  padding: 12px;
+  background: var(--paper);
+  border: var(--bw-sm) solid var(--ink);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  resize: vertical;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.notes__field::placeholder,
+.field::placeholder {
+  color: var(--ink-soft);
+  opacity: 1;
+}
+
+.form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.form__status .sticker {
+  --r: -2deg;
+}
+
+.form__status .icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 640px) {
+  .brief__badge {
+    position: absolute;
+    top: -18px;
+    right: 24px;
+    z-index: var(--z-sticker);
+    margin: 0;
+  }
+
+  .sentence {
+    margin-top: 32px;
+    font-size: clamp(1.375rem, 2.6vw, 2.25rem);
+    line-height: 2.4;
+  }
+
+  .blank {
+    display: inline-flex;
+    width: min-content;
+    margin: 28px 6px 8px;
+    vertical-align: baseline;
+  }
+
+  .field--name {
+    width: 12ch;
+  }
+
+  .field--company {
+    width: max(12ch, 11.5rem);
+  }
+
+  .field--email {
+    width: 18ch;
+  }
+
+  .field--select {
+    width: auto;
+  }
+}
+
+/* ==========================================================================
+   14. Footer: sticker sheet
+   ========================================================================== */
+.site-footer {
+  padding-block: 64px;
+  border-top: var(--bw) solid var(--ink);
+  overflow-x: clip;
+}
+
+.sheet {
+  padding: 24px;
+  background: var(--paper);
+  border: var(--bw) solid var(--ink);
+  box-shadow: var(--sh-lg);
+  outline: 2px dashed var(--ink);
+  outline-offset: -14px;
+}
+
+.sheet__title {
+  margin-bottom: 24px;
+}
+
+.sheet__grid {
+  display: grid;
+  gap: 32px;
+  align-items: center;
+}
+
+.sheet__email {
+  --r: -2deg;
+  justify-self: stretch;
+  max-width: calc(100% - var(--plate));
+}
+
+.sheet__email .press__face {
+  font-size: clamp(1.125rem, 2.2vw, 1.75rem);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.sheet__email-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.sheet__social {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 16px;
+}
+
+.sheet__social .press {
+  width: calc(100% - var(--plate));
+}
+
+.sheet__social .press__face {
+  justify-content: space-between;
+  padding: 12px 14px;
+}
+
+.sheet__social li:nth-child(1) .press { --r: -4deg; }
+.sheet__social li:nth-child(2) .press { --r: 3deg; }
+.sheet__social li:nth-child(3) .press { --r: 2deg; }
+.sheet__social li:nth-child(4) .press { --r: -3deg; }
+
+@media (max-width: 639.98px) {
+  .sheet__email .press__face {
+    gap: 8px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    font-stretch: 100%;
+  }
+
+  .sheet__social .press__face {
+    justify-content: center;
+    padding: 10px;
+    font-stretch: 100%;
+    font-size: 1rem;
+  }
+
+  .sheet__social .icon {
+    display: none;
+  }
+}
+
+.colophon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 32px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+@media (min-width: 640px) {
+  .sheet {
+    padding: 40px;
+  }
+
+  .sheet__email {
+    justify-self: start;
+  }
+
+  .colophon {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sheet__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+
+  .sheet__email {
+    grid-column: 1 / 7;
+  }
+
+  .sheet__social {
+    grid-column: 7 / 13;
+  }
+}
+
+/* ==========================================================================
+   15. Motion. Only transform and opacity animate. Every item has a still fallback.
+   ========================================================================== */
+@keyframes stamp {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--y, 0px) - 18px)) rotate(calc(var(--r, 0deg) + 2deg));
+  }
+}
+
+@keyframes slap {
+  from {
+    opacity: 0;
+    transform: rotate(0deg) scale(1.3);
+  }
+}
+
+@keyframes thunk {
+  from {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* M1 hero stamp: headline first, then the work. */
+  .slab,
+  .fan__item {
+    animation: stamp 110ms var(--ease-in) backwards;
+  }
+
+  .slab--b { animation-delay: 90ms; }
+  .fan__item:nth-child(1) { animation-delay: 260ms; }
+  .fan__item:nth-child(2) { animation-delay: 330ms; }
+  .fan__item:nth-child(3) { animation-delay: 400ms; }
+
+  /* M2 sticker slap: the hand-applied layer lands last. */
+  .hero__tag,
+  .is-slapped {
+    animation: slap 100ms var(--ease-in) backwards;
+  }
+
+  .hero__tag--state { animation-delay: 520ms; }
+  .hero__tag--place { animation-delay: 600ms; }
+
+  /* M7 service tab change: the new slab drops into place. */
+  .svc-panel.is-thunk {
+    animation: thunk 90ms ease-out;
+  }
+
+  /* M8 comic panels: stagger in reading order. Hidden only when JS says it is ready. */
+  .strip__panel {
+    transition: transform 120ms var(--ease-in), opacity 120ms linear;
+    transition-delay: calc(var(--n, 0) * 60ms);
+  }
+
+  html.js.reveal-ready .strip:not(.is-in) .strip__panel {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (max-width: 1023.98px) {
+  /* M9 mobile menu */
+  html.js .site-nav.is-open {
+    animation: drop 90ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .strip__panel {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   16. Forced colours
+   ========================================================================== */
+@media (forced-colors: active) {
+  .press {
+    background: CanvasText;
+  }
+
+  .press__face {
+    border-color: CanvasText;
+    background: Canvas;
+  }
+
+  [aria-selected="true"] .press__face,
+  [aria-current] {
+    outline: 3px solid Highlight;
+  }
+
+  .dot {
+    background: CanvasText;
+  }
+
+  .ph {
+    border: 2px solid CanvasText;
+  }
+}
+
+/* ==========================================================================
+   17. Print
+   ========================================================================== */
+@media print {
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .site-header {
+    position: static;
+    height: auto;
+  }
+
+  .menu-btn,
+  .ticker__control,
+  .skip,
+  .svc-tabs {
+    display: none !important;
+  }
+
+  .site-nav {
+    display: flex !important;
+    position: static !important;
+  }
+
+  .hero {
+    background-image: none;
+  }
+
+  main > .ticker {
+    height: auto;
+    padding: 8px 16px;
+  }
+
+  .ticker__track {
+    width: auto;
+    transform: none !important;
+  }
+
+  .ticker__list {
+    flex-wrap: wrap;
+  }
+
+  .ticker__list[aria-hidden="true"] {
+    display: none;
+  }
+
+  .ticker__list li {
+    white-space: normal;
+  }
+
+  .stack {
+    display: grid !important;
+  }
+
+  .stack__item {
+    position: static !important;
+    padding-top: 32px !important;
+    break-inside: avoid;
+  }
+
+  .proj {
+    height: auto !important;
+  }
+
+  .panels {
+    gap: 24px !important;
+  }
+
+  .panels > .svc-panel {
+    grid-area: auto !important;
+  }
+
+  .panels > [hidden] {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  .strip__panel {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .press__face {
+    transform: none !important;
+  }
+
+  .sheet__email-text {
+    overflow-wrap: anywhere;
+  }
+}

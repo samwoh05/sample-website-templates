@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nika Varga-Osei. Interface designer, Rotterdam</title>
+  <meta name="description" content="Nika Varga-Osei designs and codes interactive sites, data displays and identity systems from a studio in Rotterdam.">
+  <meta name="theme-color" content="#05070A">
+  <meta name="color-scheme" content="dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=JetBrains+Mono:wght@400;500;700&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <!-- Icon set: 24px grid, 1.5px stroke, square caps, miter joins -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-crosshair" viewBox="0 0 24 24"><path d="M12 2v7M12 15v7M2 12h7M15 12h7"/><rect x="10" y="10" width="4" height="4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4l12 8-12 8z"/></symbol>
+    <symbol id="i-reboot" viewBox="0 0 24 24"><path d="M20 12v8H4V4h10M11 1l3 3-3 3"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M12 7v7M12 16.5v1.5"/></symbol>
+    <symbol id="i-caret" viewBox="0 0 24 24"><path class="fill" d="M8 6h2v2h2v2h2v4h-2v2h-2v2H8z"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary">
+      <a class="wordmark" href="#top"><span class="sq" aria-hidden="true"></span>NV.SYS</a>
+      <ul class="nav__links" role="list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+        Menu
+        <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <div class="menu win" id="menu" hidden>
+        <span class="win__br" aria-hidden="true"></span>
+        <div class="win__bar" aria-hidden="true"><span class="win__title">menu.lnk</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+        <ul class="menu__list" role="list">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__stage wrap">
+        <div class="hexcol" aria-hidden="true"><span>4E 56</span><span>2E 53</span><span>59 53</span><span>20 52</span><span>54 4D</span><span class="lit">2F 30</span><span>31 3A</span><span>47 4C</span><span>4F 42</span><span>45 0A</span><span>6E 69</span><span>6B 61</span><span>2D 76</span><span class="lit">6F 3E</span><span>5F 21</span><span>3F 7E</span><span>A6 FF</span><span>00 3D</span><span>F2 FF</span><span>05 07</span><span>0A 12</span><span>1B 21</span><span class="lit">51 92</span><span>04 48</span><span>4E 56</span><span>2E 53</span><span>59 53</span><span>20 52</span><span>54 4D</span><span>2F 30</span></div>
+
+        <div class="hero__text">
+          <h1 id="hero-title" tabindex="-1"><span class="h1-line"><span>Loud screens,</span></span><br><span class="h1-line"><span>clean <span class="glitch">signal.<span class="glitch__a" aria-hidden="true">signal.</span><span class="glitch__b" aria-hidden="true">signal.</span></span></span></span></h1>
+          <p class="hero__sub">Nika Varga-Osei designs and codes interactive sites, data displays and identity systems from a studio in Rotterdam.</p>
+          <div class="hero__ctas">
+            <a href="#work" class="btn btn--primary">View selected work <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+            <a href="#contact" class="btn btn--ghost">Open a channel</a>
+          </div>
+        </div>
+
+        <div class="hero__windows">
+          <div class="win status boot-win" style="--d:0">
+            <span class="win__br" aria-hidden="true"></span>
+            <div class="win__bar" aria-hidden="true"><span class="win__title">status.sys</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+            <div class="win__body">
+              <dl class="status__dl">
+                <div><dt>Status</dt><dd>Booking from Jan 2027</dd></div>
+                <div><dt>Base</dt><dd>Rotterdam, NL</dd></div>
+                <div><dt>Reply</dt><dd>Within two working days</dd></div>
+                <div><dt>Local time</dt><dd><time data-clock datetime="14:32">14:32 CET</time></dd></div>
+              </dl>
+              <svg class="bc bc--hero" viewBox="0 0 200 32" width="200" height="32" aria-hidden="true" focusable="false"><rect x="0" y="0" width="2" height="32"/><rect x="4" y="0" width="1" height="32"/><rect x="6" y="0" width="1" height="32"/><rect x="8" y="0" width="2" height="32"/><rect x="11" y="0" width="3" height="32"/><rect x="16" y="0" width="1" height="32"/><rect x="18" y="0" width="1" height="32"/><rect class="acc" x="22" y="0" width="1" height="32"/><rect x="25" y="0" width="1" height="32"/><rect x="29" y="0" width="1" height="32"/><rect x="31" y="0" width="1" height="32"/><rect x="33" y="0" width="3" height="32"/><rect x="39" y="0" width="1" height="32"/><rect x="42" y="0" width="1" height="32"/><rect x="45" y="0" width="2" height="32"/><rect class="acc" x="50" y="0" width="1" height="32"/><rect x="52" y="0" width="3" height="32"/><rect x="56" y="0" width="3" height="32"/><rect x="61" y="0" width="1" height="32"/><rect x="64" y="0" width="2" height="32"/><rect x="67" y="0" width="3" height="32"/><rect x="71" y="0" width="3" height="32"/><rect x="75" y="0" width="3" height="32"/><rect class="acc" x="80" y="0" width="1" height="32"/><rect x="84" y="0" width="1" height="32"/><rect x="86" y="0" width="1" height="32"/><rect x="90" y="0" width="2" height="32"/><rect x="93" y="0" width="1" height="32"/><rect x="96" y="0" width="2" height="32"/><rect x="100" y="0" width="1" height="32"/><rect x="102" y="0" width="3" height="32"/><rect class="acc" x="108" y="0" width="2" height="32"/><rect x="113" y="0" width="2" height="32"/><rect x="116" y="0" width="1" height="32"/><rect x="120" y="0" width="1" height="32"/><rect x="122" y="0" width="1" height="32"/><rect x="126" y="0" width="1" height="32"/><rect x="128" y="0" width="2" height="32"/><rect x="131" y="0" width="1" height="32"/><rect class="acc" x="133" y="0" width="2" height="32"/><rect x="136" y="0" width="3" height="32"/><rect x="142" y="0" width="3" height="32"/><rect x="148" y="0" width="1" height="32"/><rect x="150" y="0" width="2" height="32"/><rect x="155" y="0" width="2" height="32"/><rect x="158" y="0" width="1" height="32"/><rect x="160" y="0" width="2" height="32"/><rect class="acc" x="165" y="0" width="2" height="32"/><rect x="170" y="0" width="2" height="32"/><rect x="173" y="0" width="1" height="32"/><rect x="177" y="0" width="2" height="32"/><rect x="181" y="0" width="3" height="32"/><rect x="185" y="0" width="1" height="32"/><rect x="187" y="0" width="1" height="32"/><rect x="189" y="0" width="1" height="32"/><rect class="acc" x="192" y="0" width="1" height="32"/><rect x="196" y="0" width="1" height="32"/></svg>
+              <p class="status__tag" aria-hidden="true">NV-SYS-RTM</p>
+            </div>
+          </div>
+
+          <div class="win viewer boot-win" style="--d:1">
+            <span class="win__br" aria-hidden="true"></span>
+            <div class="win__bar">
+              <span class="win__title" aria-hidden="true">viewer.exe / globe.wire</span>
+              <span class="live" aria-hidden="true"><span class="live__dot"></span>live</span>
+              <button class="globe-toggle" type="button" aria-pressed="false" aria-label="Pause motion">
+                <svg class="icon icon--pause" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg>
+                <svg class="icon icon--play" aria-hidden="true" focusable="false"><use href="#i-play"/></svg>
+              </button>
+            </div>
+            <div class="viewer__body">
+              <svg class="globe" viewBox="0 0 400 400" role="img" aria-label="Wireframe globe marking Rotterdam">
+                <circle class="g-outer" cx="200" cy="200" r="170"/>
+                <g class="g-lat">
+                  <ellipse cx="200" cy="200" rx="170" ry="30"/>
+                  <ellipse cx="200" cy="134.9" rx="157.1" ry="28"/>
+                  <ellipse cx="200" cy="265.1" rx="157.1" ry="28"/>
+                  <ellipse cx="200" cy="79.8" rx="120.2" ry="21.6"/>
+                  <ellipse cx="200" cy="320.2" rx="120.2" ry="21.6"/>
+                  <ellipse cx="200" cy="42.9" rx="65.1" ry="11.7"/>
+                  <ellipse cx="200" cy="357.1" rx="65.1" ry="11.7"/>
+                </g>
+                <g class="mer" style="--i:0;--s:1"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <g class="mer" style="--i:1;--s:.7"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <g class="mer" style="--i:2;--s:0"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <g class="mer" style="--i:3;--s:-.7"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <g class="mer" style="--i:4;--s:-1"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <g class="mer" style="--i:5;--s:-.7"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <g class="mer" style="--i:6;--s:0"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <g class="mer" style="--i:7;--s:.7"><ellipse cx="200" cy="200" rx="170" ry="170"/></g>
+                <ellipse class="g-orbit" cx="200" cy="200" rx="198" ry="52" transform="rotate(-18 200 200)"/>
+                <g class="g-loc">
+                  <path class="g-arms" d="M196 96h-18M216 96h18M206 86V68M206 106v18"/>
+                  <rect class="g-pt" x="202" y="92" width="8" height="8"/>
+                  <path class="g-lead" d="M206 68V24h20"/>
+                  <text class="g-read" x="230" y="28">51.92 N / 4.48 E</text>
+                </g>
+              </svg>
+              <div class="load" aria-hidden="true">
+                <span class="load__label" data-load-label>Ready</span>
+                <span class="load__bar" aria-hidden="true"><span class="load__fill"></span></span>
+                <span class="load__pct" data-load-pct>100%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker">
+        <div class="ticker__track">
+          <ul class="ticker__list" aria-label="Disciplines" role="list">
+            <li>Interface design</li><li>Creative front-end</li><li>Data display</li><li>Identity systems</li><li>Stage screens</li><li>Rotterdam and remote</li>
+          </ul>
+          <ul class="ticker__list ticker__dup" aria-hidden="true" role="list">
+            <li>Interface design</li><li>Creative front-end</li><li>Data display</li><li>Identity systems</li><li>Stage screens</li><li>Rotterdam and remote</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <p class="eyebrow">dir: /work</p>
+        <h2 id="work-title">Selected work</h2>
+        <p class="work__meta">5 entries. Sorted by year, newest first.</p>
+
+        <div class="work__layout">
+          <div class="work__list">
+            <div class="dir__head" aria-hidden="true"><span>name</span><span>client / year / type</span></div>
+            <ol class="dir" role="list">
+              <li class="dir__item" data-active>
+                <article class="dir__row">
+                  <figure class="dir__fig">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Lowfreq Atlas: map screen with frequency dial and broadcast dots. 1600 x 1000" style="aspect-ratio: 1600 / 1000">
+                      <svg class="ph__x" aria-hidden="true" focusable="false"><use href="#i-crosshair"/></svg>
+                      <span class="ph__label">Lowfreq Atlas: map screen with frequency dial and broadcast dots.</span>
+                      <span class="ph__tag">1600 x 1000</span>
+                    </div>
+                  </figure>
+                  <h3 class="dir__name"><svg class="icon caret" aria-hidden="true" focusable="false"><use href="#i-caret"/></svg><a href="projects/lowfreq-atlas.html" data-slug="lowfreq-atlas">lowfreq-atlas/</a></h3>
+                  <div class="dir__text">
+                    <p class="dir__meta"><span class="vh">Client: </span>Station Ruis / <span class="vh">Year: </span>2026 / <span class="vh">Type: </span>Data site</p>
+                    <p class="dir__desc">A map of thirty years of pirate radio, playable by frequency.</p>
+                  </div>
+                </article>
+              </li>
+              <li class="dir__item">
+                <article class="dir__row">
+                  <figure class="dir__fig">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Quarry 3000: stage screen and poster set in the quarry at night. 1600 x 1000" style="aspect-ratio: 1600 / 1000">
+                      <svg class="ph__x" aria-hidden="true" focusable="false"><use href="#i-crosshair"/></svg>
+                      <span class="ph__label">Quarry 3000: stage screen and poster set in the quarry at night.</span>
+                      <span class="ph__tag">1600 x 1000</span>
+                    </div>
+                  </figure>
+                  <h3 class="dir__name"><svg class="icon caret" aria-hidden="true" focusable="false"><use href="#i-caret"/></svg><a href="projects/quarry-3000.html" data-slug="quarry-3000">quarry-3000/</a></h3>
+                  <div class="dir__text">
+                    <p class="dir__meta"><span class="vh">Client: </span>Quarry 3000 festival / <span class="vh">Year: </span>2025 / <span class="vh">Type: </span>Identity system</p>
+                    <p class="dir__desc">A festival identity built from survey data of the quarry it runs in.</p>
+                  </div>
+                </article>
+              </li>
+              <li class="dir__item">
+                <article class="dir__row">
+                  <figure class="dir__fig">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Tidegate Monitor: dashboard on a phone held outdoors in rain. 1600 x 1000" style="aspect-ratio: 1600 / 1000">
+                      <svg class="ph__x" aria-hidden="true" focusable="false"><use href="#i-crosshair"/></svg>
+                      <span class="ph__label">Tidegate Monitor: dashboard on a phone held outdoors in rain.</span>
+                      <span class="ph__tag">1600 x 1000</span>
+                    </div>
+                  </figure>
+                  <h3 class="dir__name"><svg class="icon caret" aria-hidden="true" focusable="false"><use href="#i-caret"/></svg><a href="projects/tidegate-monitor.html" data-slug="tidegate-monitor">tidegate-monitor/</a></h3>
+                  <div class="dir__text">
+                    <p class="dir__meta"><span class="vh">Client: </span>Waterschap Noordrand / <span class="vh">Year: </span>2025 / <span class="vh">Type: </span>Public dashboard</p>
+                    <p class="dir__desc">Water levels for fourteen sluice gates, readable on a phone in the rain.</p>
+                  </div>
+                </article>
+              </li>
+              <li class="dir__item">
+                <article class="dir__row">
+                  <figure class="dir__fig">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Kilobyte Noodle Bar: pixel menu board above the counter. 1600 x 1000" style="aspect-ratio: 1600 / 1000">
+                      <svg class="ph__x" aria-hidden="true" focusable="false"><use href="#i-crosshair"/></svg>
+                      <span class="ph__label">Kilobyte Noodle Bar: pixel menu board above the counter.</span>
+                      <span class="ph__tag">1600 x 1000</span>
+                    </div>
+                  </figure>
+                  <h3 class="dir__name"><svg class="icon caret" aria-hidden="true" focusable="false"><use href="#i-caret"/></svg><a href="projects/kilobyte-noodle-bar.html" data-slug="kilobyte-noodle-bar">kilobyte-noodle-bar/</a></h3>
+                  <div class="dir__text">
+                    <p class="dir__meta"><span class="vh">Client: </span>Kilobyte Noodle Bar / <span class="vh">Year: </span>2024 / <span class="vh">Type: </span>Identity system</p>
+                    <p class="dir__desc">Menu boards and receipts drawn on a sixteen-pixel grid.</p>
+                  </div>
+                </article>
+              </li>
+              <li class="dir__item">
+                <article class="dir__row">
+                  <figure class="dir__fig">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Spoolwerk: archive browser with cassette grid and waveform. 1600 x 1000" style="aspect-ratio: 1600 / 1000">
+                      <svg class="ph__x" aria-hidden="true" focusable="false"><use href="#i-crosshair"/></svg>
+                      <span class="ph__label">Spoolwerk: archive browser with cassette grid and waveform.</span>
+                      <span class="ph__tag">1600 x 1000</span>
+                    </div>
+                  </figure>
+                  <h3 class="dir__name"><svg class="icon caret" aria-hidden="true" focusable="false"><use href="#i-caret"/></svg><a href="projects/spoolwerk.html" data-slug="spoolwerk">spoolwerk/</a></h3>
+                  <div class="dir__text">
+                    <p class="dir__meta"><span class="vh">Client: </span>Spoolwerk Tape Archive / <span class="vh">Year: </span>2024 / <span class="vh">Type: </span>Archive interface</p>
+                    <p class="dir__desc">A browser for four thousand digitised cassettes, sorted by tape hiss.</p>
+                  </div>
+                </article>
+              </li>
+            </ol>
+          </div>
+
+          <div class="win preview" aria-hidden="true">
+            <span class="win__br"></span>
+            <div class="win__bar"><span class="win__title">preview.exe</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+            <div class="preview__body" data-preview></div>
+            <p class="preview__foot" data-preview-meta>1600 x 1000 / lowfreq-atlas</p>
+            <span class="preview__scan"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="win term">
+          <span class="win__br" aria-hidden="true"></span>
+          <div class="win__bar" aria-hidden="true"><span class="win__title">session: whoami</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+          <div class="win__body term__body">
+            <div class="win portrait">
+              <span class="win__br" aria-hidden="true"></span>
+              <div class="win__bar" aria-hidden="true"><span class="win__title">portrait.jpg</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+              <div class="portrait__body">
+                <!-- Replace with Envato Elements image -->
+                <div class="ph" data-placeholder="true" role="img" aria-label="Portrait: Nika at her desk, monitors lit, low room light. 640 x 800" style="aspect-ratio: 640 / 800">
+                  <svg class="ph__x" aria-hidden="true" focusable="false"><use href="#i-crosshair"/></svg>
+                  <span class="ph__label">Portrait: Nika at her desk, monitors lit, low room light.</span>
+                  <span class="ph__tag">640 x 800</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="term__log">
+              <h2 id="about-title">Who is running this</h2>
+              <div class="log">
+                <p class="log__cmd"><span class="pr" aria-hidden="true">&gt;</span> whoami</p>
+                <p>Nika Varga-Osei. Designer and creative technologist.</p>
+                <p class="log__cmd"><span class="pr" aria-hidden="true">&gt;</span> man nika</p>
+                <p class="synopsis"><code>nika [--interfaces] [--front-end] [--data-display] [--identity]</code></p>
+                <p class="log__cmd"><span class="pr" aria-hidden="true">&gt;</span> cat bio.txt</p>
+                <p>I design interfaces and then build them. I started in a Rotterdam internet cafe. I fixed strangers' homepages for free drinks.</p>
+                <p>Ten years later I run a one-person studio. I work with archives, festivals, public services and anyone with too much data and a deadline.</p>
+                <p class="log__cmd"><span class="pr" aria-hidden="true">&gt;</span> ls tools/</p>
+                <ul class="ls" role="list">
+                  <li>Figma</li><li>Blender</li><li>Three.js</li><li>Vanilla JS</li><li>TouchDesigner</li><li>Pen and paper</li>
+                </ul>
+                <p class="log__cmd"><span class="pr" aria-hidden="true">&gt;</span> uptime</p>
+                <p>Independent since 2019.</p>
+                <p class="log__cmd log__end" aria-hidden="true"><span class="pr">&gt;</span> <span class="caret-block"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <h2 id="services-title">What I build</h2>
+
+        <div class="board">
+          <div class="chip">
+            <p class="chip__name">Six weeks and up</p>
+            <p class="chip__text">Solo or with your team. Design and code from one desk.</p>
+          </div>
+
+          <svg class="trace trace--a" aria-hidden="true" focusable="false"><g transform="translate(0 48)"><rect x="0" y="0" width="24" height="1.5"/><rect x="23.25" y="0" width="1.5" height="60%"/><rect x="24" y="60%" width="24" height="1.5"/><rect class="pad" x="21" y="-3" width="6" height="6"/><rect class="pad" x="21" y="60%" width="6" height="6" transform="translate(0 -3)"/></g></svg>
+          <svg class="trace trace--b" aria-hidden="true" focusable="false"><g transform="translate(0 -48)"><rect x="0" y="40%" width="24" height="1.5"/><rect x="23.25" y="40%" width="1.5" height="60%"/><rect x="24" y="100%" width="24" height="1.5"/><rect class="pad" x="21" y="40%" width="6" height="6" transform="translate(0 -3)"/><rect class="pad" x="21" y="100%" width="6" height="6" transform="translate(0 -3)"/></g></svg>
+          <svg class="trace trace--c" aria-hidden="true" focusable="false"><g transform="translate(0 -48)"><rect x="0" y="100%" width="24" height="1.5"/><rect x="23.25" y="45%" width="1.5" height="55%"/><rect x="24" y="45%" width="24" height="1.5"/><rect class="pad" x="21" y="100%" width="6" height="6" transform="translate(0 -3)"/><rect class="pad" x="21" y="45%" width="6" height="6" transform="translate(0 -3)"/></g></svg>
+          <svg class="trace trace--d" aria-hidden="true" focusable="false"><g transform="translate(0 48)"><rect x="0" y="50%" width="24" height="1.5"/><rect x="23.25" y="0" width="1.5" height="50%"/><rect x="24" y="0" width="24" height="1.5"/><rect class="pad" x="21" y="50%" width="6" height="6" transform="translate(0 -3)"/><rect class="pad" x="21" y="-3" width="6" height="6"/></g></svg>
+
+          <article class="win mod mod--a" style="--n:0">
+            <span class="win__br" aria-hidden="true"></span>
+            <div class="win__bar" aria-hidden="true"><span class="win__title">mod.a</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+            <div class="win__body">
+              <h3>Interface design</h3>
+              <p>Sites and apps with a strong system under them. Wireframes to final screens.</p>
+              <p class="mod__deliv">Deliverables: flows, UI kit, prototypes.</p>
+            </div>
+          </article>
+          <article class="win mod mod--b" style="--n:1">
+            <span class="win__br" aria-hidden="true"></span>
+            <div class="win__bar" aria-hidden="true"><span class="win__title">mod.b</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+            <div class="win__body">
+              <h3>Creative front-end</h3>
+              <p>Hand-built HTML, CSS, canvas and WebGL. Fast on cheap phones.</p>
+              <p class="mod__deliv">Deliverables: production code, handover docs.</p>
+            </div>
+          </article>
+          <article class="win mod mod--c" style="--n:2">
+            <span class="win__br" aria-hidden="true"></span>
+            <div class="win__bar" aria-hidden="true"><span class="win__title">mod.c</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+            <div class="win__body">
+              <h3>Data display</h3>
+              <p>Dashboards and maps for people who need the answer at a glance.</p>
+              <p class="mod__deliv">Deliverables: chart system, live views.</p>
+            </div>
+          </article>
+          <article class="win mod mod--d" style="--n:3">
+            <span class="win__br" aria-hidden="true"></span>
+            <div class="win__bar" aria-hidden="true"><span class="win__title">mod.d</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+            <div class="win__body">
+              <h3>Identity systems</h3>
+              <p>Logos, type and motion rules designed for screens first.</p>
+              <p class="mod__deliv">Deliverables: marks, type pairings, motion specs.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quotes" id="quotes" aria-labelledby="quotes-title">
+      <div class="wrap quotes__grid">
+        <div class="quotes__intro">
+          <h2 id="quotes-title">Incoming messages</h2>
+          <p>Three sample messages from fictional clients.</p>
+          <div class="quotes__ctrl">
+            <button class="btn btn--ghost btn--sm" type="button" data-next>Next message <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button>
+            <p class="quotes__count" aria-live="polite"><span class="vh">Message </span><span data-count>1</span><span aria-hidden="true"> / </span><span class="vh"> of </span>3<span class="vh" data-from>, Maren Holt, operations lead, Waterschap Noordrand</span></p>
+          </div>
+        </div>
+        <ol class="stack" role="list">
+          <li class="stack__item" data-order="0">
+            <figure class="win alert">
+              <span class="win__br" aria-hidden="true"></span>
+              <div class="win__bar" aria-hidden="true"><span class="win__title">message_from: waterschap</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+              <div class="win__body alert__body">
+                <span class="alert__icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-alert"/></svg></span>
+                <div>
+                  <blockquote><p>Nika shipped the dashboard two weeks before storm season. Our field staff check it on the dyke.</p></blockquote>
+                </div>
+              </div>
+              <figcaption class="alert__cite">Maren Holt, operations lead, Waterschap Noordrand</figcaption>
+            </figure>
+          </li>
+          <li class="stack__item" data-order="1">
+            <figure class="win alert">
+              <span class="win__br" aria-hidden="true"></span>
+              <div class="win__bar" aria-hidden="true"><span class="win__title">message_from: quarry3000</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+              <div class="win__body alert__body">
+                <span class="alert__icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-alert"/></svg></span>
+                <div>
+                  <blockquote><p>The stage screens ran nine hours without a crash. The identity still holds up on a phone.</p></blockquote>
+                </div>
+              </div>
+              <figcaption class="alert__cite">Dex Amadou, producer, Quarry 3000</figcaption>
+            </figure>
+          </li>
+          <li class="stack__item" data-order="2">
+            <figure class="win alert">
+              <span class="win__br" aria-hidden="true"></span>
+              <div class="win__bar" aria-hidden="true"><span class="win__title">message_from: spoolwerk</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+              <div class="win__body alert__body">
+                <span class="alert__icon" aria-hidden="true"><svg class="icon" focusable="false"><use href="#i-alert"/></svg></span>
+                <div>
+                  <blockquote><p>She found the hiss in our archive and turned it into the interface. Nobody else pitched that.</p></blockquote>
+                </div>
+              </div>
+              <figcaption class="alert__cite">Ilse Brandt, archivist, Spoolwerk Tape Archive</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact__grid">
+        <div class="contact__intro">
+          <p class="eyebrow">port: open</p>
+          <h2 id="contact-title">Open a<br>channel</h2>
+          <p>Booking projects from January 2027. Replies within two working days.</p>
+          <p><a class="mail" href="mailto:hello@nvsys.example"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>hello@nvsys.example</a></p>
+          <ul class="elsewhere" role="list">
+            <li><a href="https://www.are.na/">Are.na <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"/></svg></a></li>
+            <li><a href="https://github.com/">GitHub <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"/></svg></a></li>
+            <li><a href="https://www.cosmos.so/">Cosmos <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"/></svg></a></li>
+          </ul>
+        </div>
+
+        <div class="win console">
+          <span class="win__br" aria-hidden="true"></span>
+          <div class="win__bar" aria-hidden="true"><span class="win__title">transmit.sh</span><span class="win__btns"><i></i><i></i><i></i></span></div>
+          <div class="win__body console__body">
+            <form class="form" novalidate>
+              <p class="hint form__req">All fields except project type are required.</p>
+              <div class="field">
+                <label for="f-name"><span class="pr" aria-hidden="true">&gt;</span> Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required data-error="Error: enter your name.">
+              </div>
+              <div class="field">
+                <label for="f-email"><span class="pr" aria-hidden="true">&gt;</span> Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required data-error="Error: enter an email address like name@studio.nl.">
+              </div>
+              <div class="field">
+                <label for="f-type"><span class="pr" aria-hidden="true">&gt;</span> Project type</label>
+                <div class="select">
+                <select id="f-type" name="type">
+                  <option>Interface design</option>
+                  <option>Creative front-end</option>
+                  <option>Data display</option>
+                  <option>Identity system</option>
+                  <option>Something else</option>
+                </select>
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-caret"/></svg>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-msg"><span class="pr" aria-hidden="true">&gt;</span> Message</label>
+                <textarea id="f-msg" name="message" rows="6" required aria-describedby="f-msg-hint" data-error="Error: write a short message."></textarea>
+                <p class="hint" id="f-msg-hint">A few lines is enough.</p>
+              </div>
+              <button class="btn btn--primary btn--submit" type="submit">Transmit message <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button>
+              <p class="form__status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <svg class="bc bc--foot" viewBox="0 0 1200 96" preserveAspectRatio="none" aria-hidden="true" focusable="false"><rect x="0" y="0" width="6" height="96"/><rect x="24" y="0" width="6" height="96"/><rect x="36" y="0" width="6" height="96"/><rect x="60" y="0" width="6" height="96"/><rect x="72" y="0" width="12" height="96"/><rect x="102" y="0" width="12" height="96"/><rect x="132" y="0" width="6" height="96"/><rect class="acc" x="150" y="0" width="6" height="96"/><rect x="168" y="0" width="6" height="96"/><rect x="186" y="0" width="12" height="96"/><rect x="210" y="0" width="6" height="96"/><rect x="234" y="0" width="6" height="96"/><rect x="252" y="0" width="12" height="96"/><rect x="270" y="0" width="6" height="96"/><rect x="288" y="0" width="6" height="96"/><rect class="acc" x="300" y="0" width="18" height="96"/><rect x="324" y="0" width="6" height="96"/><rect x="336" y="0" width="6" height="96"/><rect x="360" y="0" width="6" height="96"/><rect x="384" y="0" width="6" height="96"/><rect x="396" y="0" width="6" height="96"/><rect x="420" y="0" width="6" height="96"/><rect x="438" y="0" width="6" height="96"/><rect class="acc" x="456" y="0" width="6" height="96"/><rect x="474" y="0" width="6" height="96"/><rect x="486" y="0" width="18" height="96"/><rect x="510" y="0" width="6" height="96"/><rect x="522" y="0" width="18" height="96"/><rect x="552" y="0" width="18" height="96"/><rect x="576" y="0" width="12" height="96"/><rect x="594" y="0" width="6" height="96"/><rect class="acc" x="612" y="0" width="18" height="96"/><rect x="648" y="0" width="6" height="96"/><rect x="660" y="0" width="12" height="96"/><rect x="678" y="0" width="6" height="96"/><rect x="690" y="0" width="6" height="96"/><rect x="714" y="0" width="6" height="96"/><rect x="738" y="0" width="6" height="96"/><rect x="750" y="0" width="6" height="96"/><rect class="acc" x="768" y="0" width="6" height="96"/><rect x="780" y="0" width="12" height="96"/><rect x="798" y="0" width="6" height="96"/><rect x="816" y="0" width="18" height="96"/><rect x="840" y="0" width="6" height="96"/><rect x="852" y="0" width="6" height="96"/><rect x="864" y="0" width="6" height="96"/><rect x="876" y="0" width="12" height="96"/><rect class="acc" x="894" y="0" width="12" height="96"/><rect x="912" y="0" width="18" height="96"/><rect x="936" y="0" width="6" height="96"/><rect x="948" y="0" width="6" height="96"/><rect x="966" y="0" width="18" height="96"/><rect x="990" y="0" width="12" height="96"/><rect x="1014" y="0" width="18" height="96"/><rect x="1044" y="0" width="6" height="96"/><rect class="acc" x="1062" y="0" width="6" height="96"/><rect x="1086" y="0" width="12" height="96"/><rect x="1110" y="0" width="6" height="96"/><rect x="1134" y="0" width="12" height="96"/><rect x="1152" y="0" width="6" height="96"/><rect x="1164" y="0" width="6" height="96"/><rect x="1176" y="0" width="6" height="96"/><rect x="1188" y="0" width="6" height="96"/></svg>
+    <div class="taskbar">
+      <div class="wrap taskbar__row">
+        <div class="taskbar__start">
+          <a class="tb-btn" href="#top"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg>Top</a>
+          <button class="tb-btn" type="button" id="reboot"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-reboot"/></svg>Reboot</button>
+        </div>
+        <nav class="taskbar__nav" aria-label="Footer">
+          <ul role="list">
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="tray">
+          <span>Rotterdam <time data-clock datetime="14:32">14:32</time></span>
+          <span>51.92 N / 4.48 E</span>
+        </div>
+      </div>
+    </div>
+    <p class="wrap legal">&copy; 2026 Nika Varga-Osei. Fictional portfolio template. Placeholder images only.</p>
+  </footer>
+</body>
+</html>

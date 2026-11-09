@@ -1,0 +1,888 @@
+/*
+  The Long Afternoon: a surrealism portfolio template.
+
+  Design read: A calm, uncanny daylight diorama. A flat sky over an ochre plain,
+  monumental serif type standing on the horizon with long hard cast shadows, and
+  one dream object per section (door, window, framed canvases, staircase into
+  cloud, eye, door again) doing the storytelling.
+  DESIGN_VARIANCE 9, MOTION_INTENSITY 5, VISUAL_DENSITY 3.
+
+  Hero fit budget
+  1440x900: hero 900, horizon 61% = 549. h1 block 2 x 144 x 0.92 = 265, so the
+    h1 top sits near 284. Nav ends at 72. The sand area (351) holds the slip
+    (about 94), a 24 gap and the 52 button: about 170.
+  1366x768: hero 768, horizon 468, h1 about 251, top about 217. "I set tables"
+    is about 6.4em, roughly 875px at 137px. The door starts at 74% (1011px).
+  1024 to 1279: door height 38% of the hero.
+  600 to 1023: horizon 56%, h1 11vw, door at the right edge at 32% height.
+  375x812: nav 64, horizon 44% (357). h1 13vw (about 48.75px), two lines about
+    90 tall, top near 267. The door stands in open sky on a paper cloud between
+    y 84 and 250. Slip at horizon + 32 ends near 541, button ends near 617, note
+    ends near 657. About 150px of plain remains.
+
+  Cast shadow maths (one sun, low at upper left, shadows fall down and right)
+  transform: skewX(56deg) scaleY(-0.5) with the origin on the horizon line.
+  Transforms apply right to left. scaleY(-0.5) about the baseline mirrors the
+  letters downward under the horizon at half height. skewX(56deg) then shifts
+  every point right by tan(56deg), about 1.48, times its depth below the
+  horizon. At 1440 the far tip lands about 132px below and 195px right of the
+  letter tops it mirrors. Tune scaleY between -0.45 and -0.55. If the shadow
+  points the wrong way, the origin or the order is wrong; do not flip signs.
+*/
+
+:root {
+  /* Painted world */
+  --sky: #8FB8D8;
+  --sky-high: #7AA8CD;
+  --cloud: #F7F3EA;
+  --sand: #E3C79A;
+  --sand-haze: #DDBF8F;
+  --sand-light: #EFE2C8;
+  --tread: #D9CBB0;
+  --cast: #9A7A4E;
+  --ink: #1F1A17;
+  --ink-soft: #5A4E44;
+  --night: #1B2238;
+  --night-ground: #141A2B;
+  --moon: #F2E6C4;
+  --accent: #B5311C;
+  --accent-ink: #FFFFFF;
+
+  /* Semantic aliases */
+  --bg: var(--cloud);
+  --text: var(--ink);
+  --text-muted: var(--ink-soft);
+  --action: var(--accent);
+  --focus: var(--ink);
+  --line: var(--ink);
+
+  /* Type */
+  --font-display: "Gloock", "Georgia", serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-wrong: "Cormorant Garamond", "Georgia", serif;
+  --fs-hero: clamp(3rem, 10vw, 9.5rem);
+  --fs-h2: clamp(2.5rem, 5.5vw, 5rem);
+  --fs-h3: clamp(1.5rem, 2.2vw, 2rem);
+  --fs-quote-lg: clamp(1.75rem, 3vw, 2.75rem);
+  --fs-wrong: clamp(1.25rem, 1.1rem + 0.5vw, 1.625rem);
+  --fs-lead: 1.25rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 1rem;
+  --fs-label: 0.875rem;
+
+  /* Shape and elevation: square corners, flat shadows, no blur */
+  --radius: 0;
+  --paper: 6px 6px 0 var(--cast);
+  --skew: 56deg;
+  --sink: 0.09em; /* distance from the line box bottom to the baseline */
+
+  /* Layers */
+  --z-ground: 0;
+  --z-object: 10;
+  --z-type: 20;
+  --z-cloud: 30;
+  --z-nav: 100;
+  --z-skip: 1000;
+
+  /* Spacing, 8px rhythm */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s6: 48px;
+  --s8: 64px;
+  --s12: 96px;
+  --s16: 128px;
+  --gutter: 16px;
+  --max: 1320px;
+  --pad-x: max(var(--gutter), calc((100% - var(--max)) / 2));
+
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+}
+
+@media (min-width: 600px) { :root { --gutter: 32px; } }
+@media (min-width: 1280px) { :root { --gutter: 64px; } }
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  overflow-x: clip;
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; margin: 0; }
+h2 { font-size: var(--fs-h2); line-height: 1; letter-spacing: -0.01em; text-wrap: balance; }
+h3 { font-size: var(--fs-h3); line-height: 1.15; }
+p { margin: 0 0 var(--s2); max-width: 64ch; }
+a { color: inherit; cursor: pointer; }
+button, input, textarea { font: inherit; color: inherit; }
+button, label[for], [type="radio"] { cursor: pointer; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+svg { display: block; }
+main:focus { outline: none; }
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.icon {
+  width: 20px; height: 20px; flex: none;
+  fill: none; stroke: currentColor; stroke-width: 1.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--cloud);
+}
+
+.skip-link {
+  position: absolute; left: var(--s2); top: -200px; z-index: var(--z-skip);
+  background: var(--cloud); color: var(--ink); border: 2px solid var(--ink);
+  padding: 12px 16px; font-weight: 700; text-decoration: none;
+}
+.skip-link:focus { top: var(--s2); }
+
+.eyebrow {
+  font-size: var(--fs-label); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; margin: 0 0 var(--s2);
+}
+.lead { font-size: var(--fs-lead); line-height: 1.5; }
+
+/* Underlined text links: ink line, accent line on hover */
+.text-link, .footer__links a {
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;
+  text-decoration-color: var(--ink);
+}
+.text-link:hover, .footer__links a:hover {
+  text-decoration-color: var(--accent); text-decoration-thickness: 2px;
+}
+
+/* Buttons: square, ink outline, one accent */
+.btn {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--s1);
+  min-height: 52px; padding: 0 28px; border: 2px solid var(--ink); border-radius: var(--radius);
+  font-weight: 700; font-size: 1rem; text-decoration: none; line-height: 1.2;
+  transition: transform 200ms var(--ease-out);
+}
+.btn--accent { background: var(--accent); color: var(--accent-ink); }
+.btn:active { transform: translateY(1px); transition-duration: 80ms; }
+.btn--cast::after {
+  content: ""; position: absolute; z-index: -1; left: -2px; right: -2px; top: calc(100% + 2px); height: 18px;
+  background: var(--cast); transform-origin: 0 0; transform: skewX(var(--skew));
+  transition: transform 200ms var(--ease-out);
+}
+.btn--cast:hover { transform: translateY(-2px); }
+.btn--cast:hover::after { transform: skewX(var(--skew)) scaleX(1.15); }
+.btn--cast:active { transform: translateY(1px); }
+.btn .icon { width: 20px; height: 20px; }
+
+/* ------------------------------------------------------------------ */
+/* Header and nav: absolute over the hero sky                          */
+/* ------------------------------------------------------------------ */
+.site-header {
+  position: absolute; top: 0; left: 0; right: 0; z-index: var(--z-nav);
+  min-height: 64px; padding: 10px var(--pad-x);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: var(--s3);
+}
+.wordmark {
+  font-family: var(--font-display); font-size: 1.375rem; line-height: 1; text-decoration: none;
+  min-height: 44px; display: inline-flex; align-items: center;
+}
+.nav { display: flex; flex-wrap: wrap; align-items: center; column-gap: var(--s3); row-gap: var(--s1); }
+.nav__list { display: flex; flex-wrap: wrap; column-gap: var(--s3); }
+.nav__link {
+  position: relative; display: inline-flex; align-items: center; min-height: 44px;
+  font-weight: 500; font-size: 1rem; text-decoration: none;
+}
+.nav__link::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 8px; height: 2px; background: var(--ink);
+  transform: scaleX(0); transform-origin: left center; transition: transform 200ms var(--ease-out);
+}
+.nav__link:hover::after, .nav__link:focus-visible::after { transform: scaleX(1); }
+.nav__cta {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+  background: var(--cloud); border: 2px solid var(--ink); border-radius: var(--radius);
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+}
+.nav__cta:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+.menu-btn {
+  display: none; align-items: center; gap: var(--s1);
+  min-width: 44px; min-height: 44px; padding: 0 12px;
+  background: var(--cloud); border: 2px solid var(--ink); border-radius: var(--radius); font-weight: 700;
+}
+.menu-btn .icon { width: 22px; height: 22px; }
+.menu-btn__close { display: none; }
+.menu-btn[aria-expanded="true"] .menu-btn__open { display: none; }
+.menu-btn[aria-expanded="true"] .menu-btn__close { display: block; }
+
+@media (max-width: 959.98px) {
+  .js .site-header { height: 64px; padding-top: 0; padding-bottom: 0; flex-wrap: nowrap; }
+  .js .menu-btn { display: inline-flex; }
+  /* The panel drops like a painted backdrop hung on two ropes */
+  .js .nav {
+    position: absolute; top: 64px; left: var(--gutter); right: var(--gutter);
+    flex-direction: column; align-items: stretch; padding: var(--s2) var(--s3) var(--s3);
+    background: var(--cloud); border: 2px solid var(--ink); box-shadow: var(--paper);
+    visibility: hidden; opacity: 0; transform: translateY(-24px);
+    transition: transform 260ms var(--ease-out), opacity 200ms linear, visibility 0s linear 260ms;
+  }
+  .js .nav::before, .js .nav::after {
+    content: ""; position: absolute; bottom: 100%; width: 1px; height: 64px; background: var(--ink);
+  }
+  .js .nav::before { left: 28px; }
+  .js .nav::after { right: 28px; }
+  .js .nav.is-open { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+  .js .nav__list { flex-direction: column; }
+  .js .nav__link { min-height: 56px; width: 100%; font-size: 1.5rem; border-bottom: 1px solid var(--ink); }
+  .js .nav__link::after { bottom: 12px; right: auto; width: 4em; background: var(--accent); }
+  .js .nav__cta { margin-top: var(--s3); justify-content: center; min-height: 52px; }
+}
+@media (min-width: 960px) {
+  /* min-height, not height: with large text the nav wraps and the header grows */
+  .site-header { min-height: 72px; padding-top: 0; padding-bottom: 0; }
+}
+/* No JS below 960px: the wrapped link list sits in flow above the hero, not over the scene */
+@media (max-width: 959.98px) {
+  html:not(.js) .site-header { position: relative; background: var(--sky-high); padding-bottom: var(--s2); }
+}
+
+/* ------------------------------------------------------------------ */
+/* Hero: monument type on the horizon                                  */
+/* ------------------------------------------------------------------ */
+.hero {
+  --horizon: 44%;
+  position: relative;
+  height: 100svh; min-height: 640px;
+  overflow: clip;
+  background: linear-gradient(to bottom,
+    var(--sky-high) 0,
+    var(--sky) var(--horizon),
+    var(--sand-haze) var(--horizon) calc(var(--horizon) + 3%),
+    var(--sand) calc(var(--horizon) + 3%) 100%);
+}
+@media (max-width: 599.98px) {
+  /* Phones: the horizon is a fixed length and the ground text sits in flow,
+     so a larger default text size grows the hero instead of being clipped. */
+  .hero { --horizon: calc(0.44 * max(640px, 100svh)); height: auto; min-height: max(640px, 100svh); overflow: visible; overflow-x: clip; }
+}
+@media (min-width: 600px) {
+  /* The horizon is a fixed length and the ground text sits in flow, so larger
+     text grows the hero downward instead of being clipped. */
+  .hero {
+    --hero-h: max(640px, min(100svh, 920px));
+    --horizon: calc(0.56 * var(--hero-h));
+    height: auto; min-height: var(--hero-h);
+  }
+}
+@media (min-width: 1024px) { .hero { --horizon: calc(0.61 * var(--hero-h)); } }
+
+.hero__title, .hero__cast {
+  position: absolute; left: var(--pad-x);
+  bottom: calc(100% - var(--horizon)); margin: 0 0 calc(-1 * var(--sink));
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 13vw; line-height: 0.92; letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.hero__title { z-index: var(--z-type); color: var(--ink); }
+@media (min-width: 600px) { .hero__title, .hero__cast { font-size: 11vw; } }
+@media (min-width: 1024px) { .hero__title, .hero__cast { font-size: var(--fs-hero); } }
+
+.hero__line1 { position: relative; }
+.moon-stop {
+  display: inline-block; width: 0.2em; height: 0.2em; margin-left: 0.05em;
+  border-radius: 50%; background: var(--moon); border: 2px solid var(--ink);
+  vertical-align: baseline;
+}
+
+/* The cast: the same words, mirrored down and skewed right on the sand */
+.hero__cast {
+  color: var(--cast); user-select: none; pointer-events: none;
+  transform-origin: 0 calc(100% - var(--sink));
+  transform: skewX(var(--skew)) scaleY(-0.32);
+}
+.hero__cast .moon-stop { background: var(--cast); border-color: var(--cast); }
+@media (min-width: 600px) { .hero__cast { transform: skewX(var(--skew)) scaleY(-0.5); } }
+
+.hero__ground {
+  position: absolute; z-index: var(--z-type);
+  left: var(--pad-x); right: var(--pad-x); top: calc(var(--horizon) + 32px);
+}
+@media (max-width: 599.98px) {
+  .hero__ground { position: relative; left: auto; right: auto; top: auto; padding: calc(var(--horizon) + 32px) var(--pad-x) var(--s6); }
+}
+@media (min-width: 600px) {
+  .hero__ground { position: relative; left: auto; right: auto; top: auto; padding: calc(var(--horizon) + 40px) var(--pad-x) var(--s6); }
+}
+.hero__slip {
+  display: inline-block; max-width: 34ch; margin: 0;
+  background: var(--cloud); padding: 16px 20px; box-shadow: var(--paper);
+  font-size: var(--fs-lead); line-height: 1.5;
+}
+.hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 24px; }
+.hero__note { margin: 0; color: var(--ink-soft); font-weight: 500; font-size: 1rem; }
+
+.hero__scene { position: absolute; inset: 0; overflow: clip; contain: paint; pointer-events: none; }
+.hero__horizon {
+  position: absolute; left: 0; right: 0; top: var(--horizon); height: 1px;
+  background: var(--ink); opacity: 0.3;
+}
+
+/* Paper clouds */
+.cloud { position: absolute; height: auto; aspect-ratio: 228 / 96; }
+.cloud--a { width: 130px; top: 84px; left: var(--gutter); z-index: var(--z-cloud); }
+.cloud-b { position: absolute; z-index: var(--z-object); width: 132px; top: 196px; right: 8px; }
+.cloud-b .cloud--b { position: relative; width: 100%; }
+.cloud-b__thread { display: none; }
+.cloud--s {
+  width: 0.85em; right: -0.95em; top: -0.18em; z-index: var(--z-cloud);
+}
+@media (min-width: 600px) {
+  .cloud--a { width: 180px; top: 13%; left: 34%; }
+  .cloud-b { width: 160px; top: max(9%, 96px); right: auto; left: 64%; }
+}
+@media (min-width: 1024px) {
+  .cloud--a { width: 220px; left: 30%; }
+  .cloud-b { top: max(6%, 96px); left: 80%; }
+  .cloud-b__thread {
+    display: block; position: absolute; left: 150px; top: calc(100% - 6px);
+    width: 1px; height: 90px; background: var(--ink);
+  }
+  .hang-key { position: absolute; top: 100%; left: -12px; width: 24px; height: 48px; }
+}
+
+/* The door: a frame standing alone, open on a night */
+.door {
+  position: absolute; z-index: var(--z-object);
+  top: 84px; right: calc(var(--gutter) + 20px); height: 120px; aspect-ratio: 9 / 20;
+}
+.door__frame {
+  position: absolute; inset: 0; background: var(--cloud); border: 3px solid var(--ink);
+}
+.door__frame::before { /* lintel */
+  content: ""; position: absolute; left: -9px; right: -9px; top: -12px; height: 12px;
+  background: var(--cloud); border: 3px solid var(--ink);
+}
+.door__opening {
+  position: absolute; top: 10%; left: 13%; right: 13%; bottom: -3px;
+  border: 2px solid var(--ink); border-bottom: 0; overflow: hidden; background: var(--night);
+}
+.door__night { width: 100%; height: 100%; }
+.door__hinge { position: absolute; top: 10%; left: 13%; right: 13%; bottom: -3px; perspective: 900px; }
+.door__leaf {
+  position: absolute; inset: 0; background: var(--cloud); border: 3px solid var(--ink);
+  transform-origin: left center; transform: rotateY(-118deg);
+}
+.door__leaf::after { /* knob */
+  content: ""; position: absolute; right: 12%; top: 52%; width: 9%; aspect-ratio: 1;
+  min-width: 5px; border-radius: 50%; background: var(--ink);
+}
+.door__spill {
+  position: absolute; left: 13%; right: 13%; top: 100%; height: 12px; background: var(--night-ground);
+  clip-path: polygon(0 0, 100% 0, 112% 100%, 6% 100%);
+}
+/* Phone: the door floats in open sky; its shadow lies detached on the plain */
+.door__cast {
+  position: absolute; left: 0; width: 100%; height: 40px;
+  top: calc(var(--horizon) - 84px + 6px); /* door top is 84px: lie just under the horizon */ background: var(--cast);
+  transform-origin: 0 0; transform: skewX(var(--skew)) scaleY(0.4);
+}
+@media (min-width: 600px) {
+  .door { top: auto; right: var(--pad-x); bottom: calc(100% - var(--horizon) - 6%); height: 32%; }
+  .door__cast {
+    top: 0; height: 100%; transform-origin: 0 100%;
+    transform: skewX(var(--skew)) scaleY(-0.35);
+  }
+  .door__spill { display: block; }
+}
+@media (min-width: 1024px) { .door { right: auto; left: 74%; height: 38%; } }
+@media (min-width: 1280px) { .door { height: 46%; } }
+
+/* ------------------------------------------------------------------ */
+/* Placeholders: tiny painted canvases                                 */
+/* ------------------------------------------------------------------ */
+.ph {
+  position: relative; display: grid; place-items: center; width: 100%;
+  padding: var(--s2);
+  background: linear-gradient(to bottom,
+    var(--sky) 0 62%, var(--ink) 62% calc(62% + 1px), var(--sand) calc(62% + 1px) 100%);
+}
+.ph__label {
+  background: var(--cloud); border: 1px solid var(--ink); padding: 8px 12px;
+  font-size: var(--fs-label); font-weight: 700; line-height: 1.35; text-align: center; max-width: 100%;
+}
+.ph--portrait { aspect-ratio: 3 / 4; }
+.ph--16x10 { aspect-ratio: 16 / 10; }
+.ph--4x5 { aspect-ratio: 4 / 5; }
+.ph--4x3 { aspect-ratio: 4 / 3; }
+.ph--1x1 { aspect-ratio: 1 / 1; }
+.ph--16x9 { aspect-ratio: 16 / 9; }
+
+/* ------------------------------------------------------------------ */
+/* About: a day room with a night window                               */
+/* ------------------------------------------------------------------ */
+.about {
+  padding: var(--s8) var(--pad-x) var(--s12);
+  background: linear-gradient(to top, var(--ink) 0 1px, var(--cloud) 1px 100%);
+}
+.about__inner { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s8); }
+.about h2 { margin-bottom: var(--s3); }
+.about__text { max-width: 60ch; min-width: 0; overflow-wrap: break-word; }
+.facts { margin: var(--s4) 0 0; border-bottom: 1px solid var(--ink); }
+.facts__row {
+  display: grid; grid-template-columns: minmax(min(7.5rem, 33%), 1fr) minmax(0, 2fr); gap: var(--s2);
+  padding: 12px 0; border-top: 1px solid var(--ink);
+}
+.facts dt { color: var(--ink-soft); font-weight: 500; }
+.facts dd { margin: 0; min-width: 0; overflow-wrap: break-word; }
+
+.about__visual { position: relative; max-width: 360px; width: 100%; padding: 0 48px 48px 0; }
+.window {
+  position: relative; aspect-ratio: 4 / 5; background: var(--cloud);
+  border: 2px solid var(--ink); box-shadow: inset 0 0 0 12px var(--cloud), inset 0 0 0 14px var(--ink);
+}
+.window__view { position: absolute; inset: 14px; overflow: hidden; background: var(--night); }
+.window__night { width: 100%; height: 100%; }
+.window__moon { /* the moon in the upper left pane */
+  position: absolute; left: 12%; top: 9%; width: 20%; aspect-ratio: 1; border-radius: 50%; background: var(--moon);
+}
+.window__view::before, .window__view::after { /* the cross mullion */
+  content: ""; position: absolute; background: var(--cloud); border: 2px solid var(--ink);
+}
+.window__view::before { top: -2px; bottom: -2px; left: 50%; width: 12px; transform: translateX(-50%); }
+.window__view::after { left: -2px; right: -2px; top: 46%; height: 12px; }
+.window__sill {
+  position: absolute; left: -20px; right: -20px; top: 100%; height: 22px;
+  background: var(--cloud); border: 2px solid var(--ink); box-shadow: var(--paper);
+}
+@media (max-width: 599.98px) { .window__sill { left: -12px; right: -12px; } }
+.portrait {
+  position: absolute; right: 0; bottom: 0; width: 56%; z-index: var(--z-object);
+}
+.portrait__frame {
+  position: relative; background: var(--cloud); border: 3px solid var(--ink); padding: 12px;
+  box-shadow: 8px 8px 0 var(--cast);
+}
+.portrait__wire { /* thin wire up to a nail */
+  position: absolute; left: 14%; right: 14%; bottom: calc(100% - 2px); height: 56px;
+  background:
+    linear-gradient(to top right, transparent calc(50% - 1px), var(--ink) calc(50% - 0.5px), var(--ink) calc(50% + 0.5px), transparent calc(50% + 1px)) left / 50% 100% no-repeat,
+    linear-gradient(to top left, transparent calc(50% - 1px), var(--ink) calc(50% - 0.5px), var(--ink) calc(50% + 0.5px), transparent calc(50% + 1px)) right / 50% 100% no-repeat;
+}
+.portrait__wire::before {
+  content: ""; position: absolute; left: 50%; top: -5px; width: 10px; height: 10px;
+  transform: translateX(-50%); border-radius: 50%; background: var(--ink);
+}
+.portrait .ph__label { font-size: var(--fs-label); }
+
+@media (min-width: 960px) {
+  .about { padding: var(--s16) var(--pad-x) var(--s16); }
+  .about__inner { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s4); align-items: start; }
+  .about__visual { grid-column: 1 / 6; grid-row: 1; max-width: none; padding: 0 48px 48px 0; margin-top: var(--s6); }
+  .about__text { grid-column: 7 / 13; grid-row: 1; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Selected work: an exhibition on the plain                           */
+/* ------------------------------------------------------------------ */
+.work { background: var(--sand); }
+.work__band {
+  background: var(--sky); border-bottom: 1px solid var(--ink);
+  padding: var(--s8) var(--pad-x) var(--s6); min-height: 240px;
+}
+.work__head { display: grid; gap: var(--s3); align-items: end; }
+.work__intro { max-width: 56ch; margin: 0; color: var(--ink); }
+@media (min-width: 960px) {
+  .work__band { padding-top: var(--s12); }
+  .work__head { grid-template-columns: 5fr 7fr; gap: var(--s6); }
+}
+
+.gallery {
+  display: grid; grid-template-columns: minmax(0, 1fr); column-gap: var(--s4);
+  padding: var(--s8) var(--pad-x) var(--s4); overflow-x: clip;
+}
+.piece {
+  position: relative; isolation: isolate;
+  display: grid; grid-row: span 2; grid-template-rows: subgrid;
+}
+.piece__stage {
+  position: relative; align-self: end; display: flex; flex-direction: column; align-items: center;
+  padding-top: var(--s4);
+}
+.piece__stage::before { /* this row's horizon */
+  content: ""; position: absolute; left: -100vw; right: -100vw; bottom: 0; height: 1px;
+  background: var(--ink); opacity: 0.25; z-index: -2;
+}
+.piece__frame {
+  position: relative; width: 100%; background: var(--cloud); border: 3px solid var(--ink); padding: 10px;
+  transition: transform 220ms var(--ease-out), outline-color 220ms linear;
+}
+/* Flat long shadow under each frame. The outer span scales, the inner skews. */
+.piece__shadow {
+  position: absolute; z-index: -1; left: 0; right: 0; top: 100%; height: var(--shadow-h, 28px);
+  transform-origin: left top; transition: transform 220ms var(--ease-out);
+}
+.piece__shadow::before {
+  content: ""; position: absolute; inset: 0; background: var(--cast);
+  transform-origin: left top; transform: skewX(var(--skew));
+}
+.piece__plaque {
+  align-self: start; margin: var(--s4) 0 var(--s8);
+  background: var(--cloud); border: 1px solid var(--ink); padding: 16px 20px;
+  display: flex; flex-direction: column;
+}
+.piece__plaque .wrong { order: -1; }
+.wrong { margin: 0 0 4px; font-family: var(--font-wrong); font-style: italic; font-weight: 600; font-size: var(--fs-wrong); line-height: 1.2; }
+.wrong__word { position: relative; text-decoration: none; }
+.wrong__word::after {
+  content: ""; position: absolute; left: -2px; right: -2px; top: 58%; height: 2px; background: var(--ink);
+  transform-origin: left center;
+}
+.piece h3 { margin-bottom: var(--s1); }
+.piece__link { text-decoration: none; display: inline; }
+.piece__link .icon { display: inline-block; width: 24px; height: 24px; vertical-align: -0.1em; margin-left: 0.25em; }
+.piece__link::after { content: ""; position: absolute; inset: 0; z-index: 2; }
+.piece__link:hover { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+@supports selector(:has(*)) { .piece__link:focus-visible { outline: none; box-shadow: none; } }
+.piece:has(.piece__link:focus-visible) .piece__plaque {
+  outline: 3px solid var(--focus); outline-offset: 3px; box-shadow: 0 0 0 6px var(--cloud);
+}
+.piece__meta {
+  margin: 0 0 var(--s1); color: var(--ink-soft);
+  font-size: var(--fs-label); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.piece__desc { margin: 0; font-size: 1rem; }
+
+.piece:hover .piece__frame, .piece:focus-within .piece__frame { transform: translateY(-8px); }
+.piece:hover .piece__shadow, .piece:focus-within .piece__shadow { transform: scaleX(1.12); }
+
+/* P2 floats under a cloud on two threads; its shadow waits on the sand */
+.piece--p2 .piece__frame { width: 78%; margin-bottom: 48px; }
+.piece__cloud { width: 150px; height: auto; aspect-ratio: 228 / 96; position: relative; z-index: 1; }
+.piece__threads {
+  position: relative; display: block; width: 110px; height: 40px; margin-top: -8px;
+  border-left: 1px solid var(--ink); border-right: 1px solid var(--ink);
+}
+.piece__shadow--detached { left: 20%; right: 30%; --shadow-h: 14px; }
+/* P3 stands on a plinth */
+.piece__plinth {
+  display: block; width: 70%; height: 48px; margin-inline: auto;
+  background: var(--tread); border: 2px solid var(--ink);
+}
+.piece--p3 .piece__shadow { --shadow-h: 30px; }
+.piece--p4 .piece__shadow { --shadow-h: 24px; }
+/* P5 sits nearer, below the horizon, with a bigger shadow */
+.piece--p5 .piece__frame { top: 40px; }
+.piece--p5 .piece__shadow { top: calc(100% + 40px); --shadow-h: 44px; }
+.piece--p5 .piece__plaque { margin-top: calc(var(--s4) + 40px + 24px); }
+
+/* Phone: one column, frames step left and right inside the gutter */
+@media (max-width: 599.98px) {
+  .piece:nth-child(odd) .piece__stage { padding-right: var(--s2); }
+  .piece:nth-child(even) .piece__stage { padding-left: var(--s2); }
+  .piece--p1 .piece__shadow, .piece--p3 .piece__shadow, .piece--p5 .piece__shadow { right: var(--s2); }
+  .piece--p4 .piece__shadow { left: var(--s2); }
+}
+@media (min-width: 600px) {
+  .gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .piece--p1 { grid-column: 1 / 7; grid-row: 1 / 3; }
+  .piece--p2 { grid-column: 1 / 4; grid-row: 3 / 5; }
+  .piece--p3 { grid-column: 4 / 7; grid-row: 3 / 5; }
+  .piece--p4 { grid-column: 1 / 4; grid-row: 5 / 7; }
+  .piece--p5 { grid-column: 4 / 7; grid-row: 5 / 7; }
+  .piece--p1 .piece__frame { width: 84%; align-self: flex-start; }
+  .piece--p1 .piece__shadow { right: 16%; }
+}
+@media (min-width: 1024px) {
+  .gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: var(--s12); }
+  .piece--p1 { grid-column: 1 / 9; grid-row: 1 / 3; }
+  .piece--p2 { grid-column: 9 / 13; grid-row: 1 / 3; }
+  .piece--p3 { grid-column: 1 / 5; grid-row: 3 / 5; }
+  .piece--p4 { grid-column: 5 / 8; grid-row: 3 / 5; }
+  .piece--p5 { grid-column: 8 / 13; grid-row: 3 / 5; }
+  .piece--p1 .piece__frame { width: 100%; }
+  .piece--p1 .piece__shadow { right: 0; }
+  .piece--p2 .piece__frame { margin-bottom: 96px; }
+  .piece--p2 .piece__threads { height: 56px; }
+  .piece__shadow--detached { --shadow-h: 18px; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Services: a staircase that ends in cloud                            */
+/* ------------------------------------------------------------------ */
+.services { background: var(--sand-light); padding: var(--s12) var(--pad-x); overflow-x: clip; }
+.services__head { display: grid; gap: var(--s3); margin-bottom: var(--s6); }
+.services__intro { max-width: 40ch; margin: 0; font-size: var(--fs-lead); line-height: 1.5; }
+.stairs-wrap { position: relative; }
+.stairs { counter-reset: none; isolation: isolate; max-width: 640px; }
+.step {
+  position: relative; background: var(--cloud); border: 2px solid var(--ink); border-radius: var(--radius);
+  padding: var(--s3); margin: 0 0 calc(16px + var(--s3)) calc(var(--k, 0) * 16px);
+}
+.step:nth-child(2) { --k: 1; }
+.step:nth-child(3) { --k: 2; }
+.step:nth-child(4) { --k: 3; }
+.step::after { /* the riser face under each tread */
+  content: ""; position: absolute; left: -2px; right: -2px; top: 100%; height: 16px;
+  background: var(--tread); border: 2px solid var(--ink); border-top: 0;
+}
+.step .icon--step { width: 28px; height: 28px; margin-bottom: var(--s2); }
+.step h3 { margin-bottom: var(--s1); }
+.step p { margin: 0; }
+.stairs__cloud {
+  position: relative; width: min(340px, calc(100% - 48px)); aspect-ratio: 228 / 96;
+  margin: var(--s6) 0 0 48px; display: grid; place-items: center;
+}
+.stairs__cloud-shape { position: absolute; inset: 0; width: 100%; height: 100%; }
+.stairs__cloud-text {
+  position: relative; margin: 30px 0 0; padding: 0 4px; font-weight: 700;
+}
+.stairs__cloud-text a { display: inline-flex; align-items: center; min-height: 44px; }
+
+@media (min-width: 960px) {
+  .services__head { grid-template-columns: 5fr 7fr; align-items: end; }
+}
+/* From 1024px: the diagonal climb, bottom left to top right. Each step rises
+   by --climb: 64px up to 1339px, 96px from 1340px. */
+@media (min-width: 1024px) {
+  .stairs-wrap { --climb: 64px; padding-top: 150px; }
+  .stairs {
+    max-width: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start; padding-bottom: 48px;
+  }
+  .step { margin: calc((3 - var(--k, 0)) * var(--climb)) 0 16px 0; min-height: 0; }
+  .step::before { /* the staircase's long shadow on the floor */
+    content: ""; position: absolute; z-index: -1; left: -2px; right: -2px; top: calc(100% + 16px);
+    height: calc(var(--k, 0) * var(--climb) + 48px); background: var(--cast);
+    transform-origin: left top; transform: skewX(var(--skew));
+  }
+  .stairs__cloud { position: absolute; top: 0; right: 0; margin: 0; }
+}
+@media (min-width: 1340px) {
+  .stairs-wrap { --climb: 96px; padding-top: 170px; }
+  .step { min-height: 300px; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Kind words: one eye, three quotes in orbit                          */
+/* ------------------------------------------------------------------ */
+.words { background: var(--sand-light); padding: var(--s12) var(--pad-x) var(--s16); border-top: 1px solid var(--ink); }
+.words h2 { margin-bottom: var(--s6); }
+.words__grid { position: relative; display: grid; gap: var(--s6); }
+.eye { width: 220px; height: auto; overflow: visible; }
+.eye__look { transition: transform 300ms var(--ease-out); }
+.words__sight { display: none; }
+.quote { margin: 0; }
+.quote blockquote { margin: 0 0 var(--s2); }
+.quote blockquote p { margin: 0; }
+.quote--1 blockquote p { font-family: var(--font-display); font-size: var(--fs-quote-lg); line-height: 1.15; max-width: 26ch; }
+.quote--2 blockquote p { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.3; max-width: 30ch; }
+.quote--3 blockquote p { font-weight: 500; font-size: 1.25rem; line-height: 1.5; max-width: 40ch; }
+.quote figcaption { font-size: 1rem; }
+.quote__name { display: block; font-weight: 700; }
+.quote__role { display: block; color: var(--ink-soft); }
+
+@media (min-width: 960px) {
+  .words__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s4); row-gap: var(--s4);
+    grid-template-areas:
+      "q1 q1 q1 q1 q1 q1 q1 .   .   .   .   ."
+      ".  .  .  .  eye eye eye eye q2 q2 q2 q2"
+      ".  .  q3 q3 q3 q3 q3 q3  .  .   .   .";
+    align-items: center;
+  }
+  .quote--1 { grid-area: q1; }
+  .quote--2 { grid-area: q2; }
+  .quote--3 { grid-area: q3; padding-left: var(--s4); }
+  .eye { grid-area: eye; width: 100%; max-width: 360px; justify-self: center; }
+  .words__sight { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Contact: the lit doorway                                            */
+/* ------------------------------------------------------------------ */
+.contact {
+  padding: var(--s12) var(--pad-x) 200px; overflow-x: clip;
+  background: linear-gradient(to bottom,
+    var(--sky) 0 var(--contact-horizon, 35%), var(--ink) var(--contact-horizon, 35%) calc(var(--contact-horizon, 35%) + 1px),
+    var(--sand) calc(var(--contact-horizon, 35%) + 1px) 100%);
+}
+.contact__head { max-width: 720px; margin: 0 auto var(--s6); }
+.contact__head h2 { margin-bottom: var(--s2); }
+.contact__intro { margin: 0; font-size: var(--fs-lead); line-height: 1.5; }
+
+.cdoor { position: relative; isolation: isolate; max-width: 720px; margin: 0 auto; perspective: 1100px; }
+.cdoor__frame {
+  position: relative; background: var(--cloud); border: 3px solid var(--ink); padding: 16px 16px 0;
+}
+.cdoor__frame::before { /* lintel */
+  content: ""; position: absolute; left: -12px; right: -12px; top: -16px; height: 16px;
+  background: var(--cloud); border: 3px solid var(--ink);
+}
+.cdoor__light { border: 2px solid var(--ink); border-bottom: 0; background: var(--cloud); padding: 24px; }
+.cdoor__cast {
+  position: absolute; z-index: -1; inset: 0; background: var(--cast);
+  transform-origin: 0 100%; transform: skewX(var(--skew)) scaleY(-0.12);
+}
+.cdoor__hinge { display: none; }
+.fallen-key, .cdoor__key-shadow { display: none; }
+
+@media (min-width: 600px) { .cdoor__light { padding: 40px; } }
+@media (min-width: 1100px) {
+  .cdoor__hinge { display: block; position: absolute; top: 16px; bottom: 0; left: 16px; width: calc(100% - 32px); pointer-events: none; }
+  .cdoor__leaf {
+    position: absolute; inset: 0; background: var(--cloud); border: 3px solid var(--ink);
+    box-shadow: inset 0 0 0 18px var(--cloud), inset 0 0 0 20px var(--ink);
+    transform-origin: left center; transform: rotateY(-110deg);
+  }
+  .cdoor__hinge::before { /* the open leaf's own flat shadow on the sand */
+    content: ""; position: absolute; z-index: -1; right: 100%; top: 100%; width: 200px; height: 18px;
+    background: var(--cast); transform-origin: right top; transform: skewX(var(--skew));
+  }
+  .cdoor__leaf::after {
+    content: ""; position: absolute; right: 6%; top: 50%; width: 18px; height: 18px; border-radius: 50%; background: var(--ink);
+  }
+  .fallen-key { display: block; position: absolute; z-index: 2; left: -150px; bottom: -64px; width: 64px; height: 24px; }
+  .cdoor__key-shadow {
+    display: block; position: absolute; z-index: 1; left: -146px; bottom: -72px; width: 58px; height: 8px;
+    background: var(--cast); transform-origin: left top; transform: skewX(var(--skew));
+  }
+}
+
+/* Form */
+.brief-form { display: grid; gap: var(--s3); }
+.field { display: grid; gap: var(--s1); margin: 0; }
+.field > label, .choices legend { font-weight: 700; font-size: 1rem; }
+.field input, .field textarea {
+  width: 100%; min-height: 48px; padding: 10px 14px; font-size: 1rem;
+  background: var(--cloud); border: 2px solid var(--ink); border-radius: var(--radius);
+}
+.field textarea { resize: vertical; }
+.field [aria-invalid="true"] { border-width: 3px; }
+.field__hint { margin: 0; color: var(--ink-soft); font-size: 1rem; }
+.field__error { display: flex; align-items: center; gap: var(--s1); margin: 0; font-weight: 500; font-size: 1rem; }
+.field__error[hidden] { display: none; }
+.choices { border: 0; padding: 0; min-width: 0; }
+.choices legend { padding: 0; margin-bottom: var(--s1); }
+.choices__row { position: relative; display: flex; flex-wrap: wrap; gap: var(--s1); }
+.choice__input { position: absolute; left: 0; top: 0; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.choice {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 16px;
+  background: var(--cloud); border: 2px solid var(--ink); border-radius: var(--radius); font-weight: 500;
+}
+.choice__check { display: none; }
+.choice__input:checked + .choice { background: var(--ink); color: var(--cloud); }
+.choice__input:checked + .choice .choice__check { display: block; }
+.choice__input:focus-visible + .choice { outline: 3px solid var(--focus); outline-offset: 3px; box-shadow: 0 0 0 6px var(--cloud); }
+.choice:hover { text-decoration: underline; text-underline-offset: 4px; }
+.btn--submit { width: 100%; }
+@media (min-width: 600px) { .btn--submit { width: auto; justify-self: start; } }
+.form-status { margin: 0; min-height: 1.6em; font-weight: 700; }
+
+/* ------------------------------------------------------------------ */
+/* Footer: the wordmark on the horizon, the moon setting               */
+/* ------------------------------------------------------------------ */
+.footer { background: var(--sand); padding: var(--s12) 0 var(--s6); overflow-x: clip; }
+.footer__stage { position: relative; padding: 0 var(--pad-x); border-bottom: 1px solid var(--ink); }
+.footer__mark, .footer__cast {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); line-height: 0.92;
+  margin: 0 0 calc(-1 * var(--sink)); max-width: none;
+}
+.footer__mark { position: relative; z-index: var(--z-type); }
+.footer__cast {
+  position: absolute; left: var(--pad-x); bottom: 0; color: var(--cast); user-select: none; pointer-events: none;
+  transform-origin: 0 calc(100% - var(--sink)); transform: skewX(var(--skew)) scaleY(-0.4);
+}
+.footer__moon {
+  position: absolute; right: var(--pad-x); bottom: 0; width: 64px; height: 32px;
+  background: var(--moon); border: 2px solid var(--ink); border-bottom: 0; border-radius: 64px 64px 0 0;
+}
+@media (min-width: 600px) { .footer__moon { width: 120px; height: 60px; border-radius: 120px 120px 0 0; } }
+.footer__inner { padding: var(--s8) var(--pad-x) 0; }
+.footer__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s2); }
+.footer__tag { margin: 0; font-weight: 700; }
+.footer__links { display: flex; flex-direction: column; gap: var(--s1); }
+.footer__links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; max-width: 100%; overflow-wrap: anywhere; }
+.footer__note { margin: var(--s4) 0 0; color: var(--ink-soft); font-size: 1rem; }
+@media (min-width: 960px) {
+  .footer__row { grid-template-columns: auto 1fr; align-items: center; }
+  .footer__links { flex-direction: row; flex-wrap: wrap; justify-content: flex-end; column-gap: var(--s3); }
+}
+
+/* ------------------------------------------------------------------ */
+/* Motion. Start states exist only under html.js and only when the     */
+/* reader has not asked for reduced motion. Defaults are final states:  */
+/* door open, shadows at full length, frames and steps in place.        */
+/* ------------------------------------------------------------------ */
+@keyframes cast-fall { from { transform: skewX(var(--skew)) scaleY(-0.05); } }
+@keyframes door-open { from { transform: rotateY(0deg); } }
+@keyframes drift { to { transform: translateX(var(--drift, 20px)); } }
+@keyframes land { from { opacity: 0; transform: translateY(-32px); } to { opacity: 1; transform: none; } }
+@keyframes shadow-grow { from { transform: scaleX(0.2); } to { transform: scaleX(1); } }
+@keyframes strike { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes climb { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes knock { 50% { transform: rotateY(-90deg); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* M1: the sun lowers and the shadows fall */
+  .js .hero__cast { animation: cast-fall 1600ms var(--ease-out) both; }
+  @media (min-width: 600px) {
+    .js .door__cast { animation: cast-fall 1600ms var(--ease-out) both; }
+  }
+  /* M2: the door opens on the night */
+  .js .door__leaf { animation: door-open 1100ms var(--ease-out) 300ms both; }
+
+  /* M3: clouds drift out and back once, then rest. Paused off screen. */
+  .js .cloud--a { --drift: 24px; animation: drift 36s ease-in-out 2 alternate; }
+  .js .cloud-b { --drift: -28px; animation: drift 42s ease-in-out 2 alternate; }
+  .js .cloud--s { --drift: 16px; animation: drift 48s ease-in-out 2 alternate; }
+  .js .hero.is-offscreen .cloud--a,
+  .js .hero.is-offscreen .cloud-b,
+  .js .hero.is-offscreen .cloud--s { animation-play-state: paused; }
+
+  /* M4: work frames land, then the wrong word is struck */
+  .js .piece:not(.is-in) .piece__frame { opacity: 0; }
+  .js .piece:not(.is-in) .piece__shadow { transform: scaleX(0.2); }
+  .js .piece:not(.is-in) .wrong__word::after { transform: scaleX(0); }
+  .js .piece.is-in .piece__frame { animation: land 700ms var(--ease-out) calc(var(--i, 0) * 90ms) backwards; }
+  .js .piece.is-in .piece__shadow { animation: shadow-grow 700ms var(--ease-out) calc(var(--i, 0) * 90ms) backwards; }
+  .js .piece.is-in .wrong__word::after { animation: strike 450ms var(--ease-out) calc(var(--i, 0) * 90ms + 1050ms) backwards; }
+
+  /* M6: the staircase climbs, the cloud comes last */
+  .js .stairs-wrap .reveal:not(.is-in) { opacity: 0; }
+  .js .stairs-wrap .reveal.is-in { animation: climb 500ms var(--ease-out) calc(var(--i, 0) * 120ms) backwards; }
+
+  /* M8: on a valid send, the contact leaf swings toward closed and back */
+  .js .cdoor.is-sent .cdoor__leaf { animation: knock 600ms ease-in-out; }
+}
+
+/* Reduced motion: no movement anywhere, every final state explicit */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
+  .hero__cast { transform: skewX(var(--skew)) scaleY(-0.32); }
+  .door__leaf { transform: rotateY(-118deg); }
+  .piece__frame, .stairs-wrap .reveal { opacity: 1; }
+  .wrong__word::after { transform: scaleX(1); }
+  .piece:hover .piece__frame, .piece:focus-within .piece__frame { transform: none; outline: 3px solid var(--ink); }
+  .piece:hover .piece__shadow, .piece:focus-within .piece__shadow { transform: none; }
+  .btn--cast:hover, .btn:active { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) and (min-width: 600px) {
+  .hero__cast { transform: skewX(var(--skew)) scaleY(-0.5); }
+}
+@media (max-width: 599.98px) {
+  /* On phones the door stands on this cloud, so the cloud holds still */
+  .js .cloud-b { animation: none; }
+}

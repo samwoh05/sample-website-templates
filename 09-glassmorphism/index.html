@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leonor Brito Lund - Colour and light design, Lisbon</title>
+  <meta name="description" content="Independent colour and light designer in Lisbon. Daylight, light scenes and colour for libraries, baths, terminals and wards.">
+  <meta name="theme-color" content="#0E1A2B">
+  <meta property="og:title" content="Leonor Brito Lund - Colour and light design, Lisbon">
+  <meta property="og:description" content="Daylight, light scenes and colour for libraries, baths, terminals and wards.">
+  <!-- Replace with Envato Elements image: Open Graph card, 1200x630 (1.91:1). Uncomment once the file exists. -->
+  <!-- <meta property="og:image" content="og-image.jpg"> -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Fragment+Mono&family=Instrument+Sans:wght@400..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body data-hour="morning">
+
+  <!-- Colour layer: three hours of light, crossfaded by opacity only -->
+  <div class="field" aria-hidden="true">
+    <div class="field__morning"></div>
+    <div class="field__noon"></div>
+    <div class="field__dusk"></div>
+    <div class="field__marks"></div>
+  </div>
+
+  <header class="site-head">
+    <a class="skip" href="#main">Skip to content</a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__mark" href="#top">Leonor Brito Lund</a>
+      <ul class="nav__links" role="list">
+        <li><a class="nav__link" href="#work">Work</a></li>
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#services">Services</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="menu">
+        <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M4 8h16M4 16h16"/></svg>
+        <span>Menu</span>
+      </button>
+    </nav>
+  </header>
+
+  <dialog class="pane pane--clear sheet" id="menu" aria-label="Menu">
+    <div class="sheet__top">
+      <span class="mono">Menu</span>
+      <button class="sheet__close" type="button" data-close>
+        <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        <span>Close</span>
+      </button>
+    </div>
+    <ul class="sheet__links" role="list">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <fieldset class="hour hour--row">
+      <legend class="mono">Light</legend>
+      <div class="hour__opts">
+        <label class="hour__opt"><input class="swatch swatch--follow" type="radio" name="hour-menu" value="follow" checked><span class="mono">Follow scroll</span></label>
+        <label class="hour__opt"><input class="swatch swatch--morning" type="radio" name="hour-menu" value="morning"><span class="mono">7:00</span></label>
+        <label class="hour__opt"><input class="swatch swatch--noon" type="radio" name="hour-menu" value="noon"><span class="mono">12:00</span></label>
+        <label class="hour__opt"><input class="swatch swatch--dusk" type="radio" name="hour-menu" value="dusk"><span class="mono">18:00</span></label>
+      </div>
+    </fieldset>
+  </dialog>
+
+  <main id="main" tabindex="-1">
+
+    <!-- 1 · HERO: field, giant name, ghost sheets, Shard, Slab, Lens -->
+    <header class="hero" id="top" data-hour="morning">
+      <div class="hero__stage">
+        <p class="giant" aria-hidden="true"><span>Brito</span> <span>Lund</span></p>
+
+        <aside class="pane pane--clear shard" aria-label="Light settings">
+          <span class="edge" aria-hidden="true"></span>
+          <fieldset class="hour hour--col">
+            <legend class="mono">Light</legend>
+            <div class="hour__opts">
+              <label class="hour__opt"><input class="swatch swatch--follow" type="radio" name="hour-shard" value="follow" checked><span class="mono">Follow<span class="vh"> scroll</span></span></label>
+              <label class="hour__opt"><input class="swatch swatch--morning" type="radio" name="hour-shard" value="morning"><span class="mono">7:00</span></label>
+              <label class="hour__opt"><input class="swatch swatch--noon" type="radio" name="hour-shard" value="noon"><span class="mono">12:00</span></label>
+              <label class="hour__opt"><input class="swatch swatch--dusk" type="radio" name="hour-shard" value="dusk"><span class="mono">18:00</span></label>
+            </div>
+          </fieldset>
+        </aside>
+
+        <div class="hero__plate">
+          <div class="ghost ghost--1" aria-hidden="true"></div>
+          <div class="ghost ghost--2" aria-hidden="true"></div>
+
+          <section class="pane pane--clear slab" aria-labelledby="h1">
+            <span class="edge" aria-hidden="true"></span>
+            <p class="eyebrow mono">Colour and light design / Lisbon</p>
+            <h1 id="h1">Rooms, tuned to the hour they are used.</h1>
+            <p class="lede">I plan daylight, light scenes and colour for libraries, baths, terminals and wards.</p>
+            <div class="actions">
+              <a class="btn" href="#contact">
+                <span>Start a project</span>
+                <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="tlink" href="#work">See selected work</a>
+            </div>
+          </section>
+
+          <aside class="pane pane--smoke lens" aria-label="Current project">
+            <span class="edge" aria-hidden="true"></span>
+            <div class="lens__body">
+              <p class="mono">Now on site</p>
+              <p class="lens__title"><span class="lens__long">Casa Azulejo Reading Room</span><span class="lens__short">Porto</span></p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2 · ABOUT (morning) -->
+    <section class="section about" id="about" tabindex="-1" data-hour="morning" aria-labelledby="about-h">
+      <div class="wrap grid">
+        <div class="about__lead">
+          <h2 class="statement rv" id="about-h">Six years lighting stages, then libraries.</h2>
+        </div>
+        <div class="pane pane--clear about__pane rv">
+          <figure class="about__fig">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph ph--about" data-placeholder="true" role="img" aria-label="Light study: three overlapping discs of vermilion, saffron and teal light on warm paper">
+              <span class="ph__label mono">Light study, three coloured discs - 800x1000</span>
+            </div>
+          </figure>
+          <p>Stage work taught me to light for how a room feels.</p>
+          <p>I start every project by sitting in the room at the hour people will use it. A library at 5pm on a grey Tuesday is a different building from the drawings.</p>
+          <p>Most of my clients are architects. I join at concept, write the colour and light brief, and stay through commissioning, because a scene only exists once someone has tuned it in the space.</p>
+          <dl class="facts-list">
+            <div><dt class="mono">Based</dt><dd>Lisbon, Portugal</dd></div>
+            <div><dt class="mono">Works in</dt><dd>Portuguese, English, Danish</dd></div>
+            <div><dt class="mono">Works with</dt><dd>Architects and lighting engineers</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · SELECTED WORK (noon) -->
+    <section class="section work" id="work" data-hour="noon" aria-labelledby="work-h" tabindex="-1">
+      <div class="wrap grid">
+        <div class="head head--8">
+          <h2 class="rv" id="work-h">Selected work</h2>
+        </div>
+
+        <div class="bento">
+          <article class="proj proj--1 rv">
+            <figure class="plate">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--p1" data-placeholder="true" role="img" aria-label="Reading room with blue tile walls and a warm pool of lamp light on the desks">
+                <span class="ph__label mono">Reading room, blue tile and lamp light - 1600x1000</span>
+              </div>
+            </figure>
+            <div class="pane pane--clear bar">
+              <h3>Casa Azulejo Reading Room</h3>
+              <p class="bar__meta mono">Porto / 2025 / Colour plan, five light scenes, calibration</p>
+              <p>Blue tile threw cold noon light across the desks, so I warmed the evening scenes and readers now stay past six.</p>
+            </div>
+          </article>
+
+          <article class="proj proj--2 rv">
+            <figure class="plate">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--p2" data-placeholder="true" role="img" aria-label="Pool hall where the water light shifts from coral to teal">
+                <span class="ph__label mono">Pool hall, coral to teal water light - 900x1200</span>
+              </div>
+            </figure>
+            <div class="pane pane--clear bar">
+              <h3>Salinas Public Baths</h3>
+              <p class="bar__meta mono">Setubal / 2024 / Pool hall light, glass and material spec</p>
+              <p>Underwater light moves from dawn coral to night teal over a single session.</p>
+            </div>
+          </article>
+
+          <article class="proj proj--3 rv">
+            <figure class="plate">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--p3" data-placeholder="true" role="img" aria-label="Three piers marked by vermilion, saffron and teal light at night">
+                <span class="ph__label mono">Ferry piers lit in three colours - 1000x1250</span>
+              </div>
+            </figure>
+            <div class="pane pane--clear bar">
+              <h3>Cais 9 Ferry Terminal</h3>
+              <p class="bar__meta mono">Lisbon / 2023 / Wayfinding by colour of light</p>
+              <p>Each pier has a light colour you can see from the river, so nobody reads a sign in the rain.</p>
+            </div>
+          </article>
+
+          <article class="proj proj--4 rv">
+            <figure class="plate">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--p4" data-placeholder="true" role="img" aria-label="Dim maternity room lit by a low amber glow">
+                <span class="ph__label mono">Maternity room in low amber light - 1400x875</span>
+              </div>
+            </figure>
+            <div class="pane pane--clear bar">
+              <h3>Orchard Room, Hospital do Vale</h3>
+              <p class="bar__meta mono">Evora / 2023 / Circadian scenes, finish colours</p>
+              <p>Night feeds happen under 20 lux of amber, so parents and newborns can both get back to sleep.</p>
+            </div>
+          </article>
+
+          <article class="proj proj--5 rv">
+            <figure class="plate">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph ph--p5" data-placeholder="true" role="img" aria-label="Pavilion of diagonal orange glass fins in afternoon light">
+                <span class="ph__label mono">Orange glass fin pavilion - 2100x900</span>
+              </div>
+            </figure>
+            <div class="pane pane--clear bar">
+              <h3>Seven Hours of Orange</h3>
+              <p class="bar__meta mono">Valencia / 2022 / Concept, dichroic glass fins, install</p>
+              <p>A walk-through pavilion of glass fins that showed one afternoon's light in seven minutes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · SERVICES (noon) -->
+    <section class="section services" id="services" tabindex="-1" data-hour="noon" aria-labelledby="services-h">
+      <div class="wrap grid">
+        <div class="head head--7">
+          <h2 class="rv" id="services-h">What I do</h2>
+          <p class="folio folio--wide rv">Four parts of a project. Most clients hire me for two or three.</p>
+        </div>
+        <ul class="fins" role="list">
+          <li class="pane pane--clear fin fin--1 rv" style="--i:0">
+            <p class="mono">01</p>
+            <h3>Colour strategy</h3>
+            <p>A palette written for daylight, not for a screen.</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Colour plan</li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sample boards</li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Finish schedule</li>
+            </ul>
+          </li>
+          <li class="pane pane--clear fin fin--2 rv" style="--i:1">
+            <p class="mono">02</p>
+            <h3>Light scenes</h3>
+            <p>Four to six scenes per room, named for what happens in them.</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Scene matrix</li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fixture brief</li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Control notes</li>
+            </ul>
+          </li>
+          <li class="pane pane--clear fin fin--3 rv" style="--i:2">
+            <p class="mono">03</p>
+            <h3>Glass and material spec</h3>
+            <p>Which surfaces reflect, which absorb, which glow.</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Material samples</li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Reflectance targets</li>
+            </ul>
+          </li>
+          <li class="pane pane--clear fin fin--4 rv" style="--i:3">
+            <p class="mono">04</p>
+            <h3>Site calibration</h3>
+            <p>I stay until the dimmers are right, usually three nights.</p>
+            <ul class="ticks" role="list">
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Aim and focus sessions</li>
+              <li><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Final scene record</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5 · WORDS (dusk) -->
+    <section class="section words" id="words" tabindex="-1" data-hour="dusk" aria-labelledby="words-h">
+      <div class="wrap grid">
+        <div class="head head--7">
+          <h2 class="rv" id="words-h">Said on site</h2>
+        </div>
+        <figure class="pane pane--smoke quote quote--lg rv" style="--i:0">
+          <span class="quote__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote><p>Leonor sat in our reading room for three evenings before she drew a line.</p></blockquote>
+          <figcaption>Rui Albuquerque, Head Librarian, Casa Azulejo</figcaption>
+        </figure>
+        <div class="quotes-sm">
+          <figure class="pane pane--smoke quote quote--sm rv" style="--i:1">
+            <blockquote><p>She named every scene after a moment in a swim. Our lifeguards use the names now.</p></blockquote>
+            <figcaption>Marta Quaresma, Facilities Lead, Salinas Public Baths</figcaption>
+          </figure>
+          <figure class="pane pane--smoke quote quote--sm rv" style="--i:2">
+            <blockquote><p>Night feeds are quieter now. Staff pick the right scene without asking.</p></blockquote>
+            <figcaption>Dr. Helena Vaz, Ward Lead, Hospital do Vale</figcaption>
+          </figure>
+        </div>
+        <p class="folio mono words__note">Clients and quotes are fictional. This is a template.</p>
+      </div>
+    </section>
+
+    <!-- 6 · CONTACT (dusk) -->
+    <section class="section contact" id="contact" tabindex="-1" data-hour="dusk" aria-labelledby="contact-h">
+      <div class="wrap grid">
+        <div class="contact__lead">
+          <h2 class="rv" id="contact-h">Send a floor plan and a 4pm photo.</h2>
+          <div class="pane pane--clear note rv">
+            <p>I reply within three working days. If it is easier, write to me directly.</p>
+            <a class="tlink" href="mailto:studio@leonorbritolund.example">studio@leonorbritolund.example</a>
+          </div>
+        </div>
+
+        <form class="pane pane--clear form rv" action="#contact" method="post" novalidate>
+          <div class="form__grid">
+            <div class="field-row" style="--i:0">
+              <label for="f-name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+              <p class="err" role="alert" id="f-name-error" hidden><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.2v.1"/></svg><span></span></p>
+            </div>
+            <div class="field-row" style="--i:1">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-error">
+              <p class="err" role="alert" id="f-email-error" hidden><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.2v.1"/></svg><span></span></p>
+            </div>
+            <div class="field-row" style="--i:2">
+              <label for="f-type">Project type</label>
+              <select id="f-type" name="type" required aria-describedby="f-type-error">
+                <option value="">Choose one</option>
+                <option>Library or archive</option>
+                <option>Bath or pool</option>
+                <option>Transport</option>
+                <option>Healthcare</option>
+                <option>Something else</option>
+              </select>
+              <p class="err" role="alert" id="f-type-error" hidden><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.2v.1"/></svg><span></span></p>
+            </div>
+            <div class="field-row" style="--i:3">
+              <label for="f-loc">Location <span class="opt">(optional)</span></label>
+              <input id="f-loc" name="location" type="text" autocomplete="address-level2">
+            </div>
+            <div class="field-row field-row--full" style="--i:4">
+              <label for="f-msg">Message</label>
+              <p class="hint" id="f-msg-hint">Room size, opening date, what feels wrong now</p>
+              <textarea id="f-msg" name="message" rows="6" required aria-describedby="f-msg-hint f-msg-error"></textarea>
+              <p class="err" role="alert" id="f-msg-error" hidden><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17.2v.1"/></svg><span></span></p>
+            </div>
+          </div>
+          <div class="form__foot">
+            <button class="btn" type="submit">
+              <span>Start a project</span>
+              <svg class="icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <p class="form__demo">Demo form. Nothing is sent.</p>
+          </div>
+          <p class="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7 · FOOTER (dusk) -->
+  <footer class="foot" data-hour="dusk">
+    <div class="pane pane--clear foot__bar">
+      <div class="foot__row">
+        <p class="foot__id"><a class="nav__mark" href="#top">Leonor Brito Lund</a> <span>Lisbon, PT</span> <a class="tlink" href="mailto:studio@leonorbritolund.example">studio@leonorbritolund.example</a></p>
+        <ul class="foot__links" role="list">
+          <li><a class="tlink" href="#" aria-label="Instagram (placeholder link)">Instagram</a></li>
+          <li><a class="tlink" href="#" aria-label="Are.na (placeholder link)">Are.na</a></li>
+          <li><a class="tlink" href="#" aria-label="LinkedIn (placeholder link)">LinkedIn</a></li>
+          <li><a class="tlink" href="#top">Back to top</a></li>
+        </ul>
+      </div>
+      <div class="foot__row foot__row--2">
+        <fieldset class="hour hour--row">
+          <legend class="mono">Light</legend>
+          <div class="hour__opts">
+            <label class="hour__opt"><input class="swatch swatch--follow" type="radio" name="hour-foot" value="follow" checked><span class="mono">Follow scroll</span></label>
+            <label class="hour__opt"><input class="swatch swatch--morning" type="radio" name="hour-foot" value="morning"><span class="mono">7:00</span></label>
+            <label class="hour__opt"><input class="swatch swatch--noon" type="radio" name="hour-foot" value="noon"><span class="mono">12:00</span></label>
+            <label class="hour__opt"><input class="swatch swatch--dusk" type="radio" name="hour-foot" value="dusk"><span class="mono">18:00</span></label>
+          </div>
+        </fieldset>
+        <p class="mono foot__small">Template 09. All people and projects are fictional.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

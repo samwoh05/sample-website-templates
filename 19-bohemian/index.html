@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Tamsin Oduya, natural dyer and block printer</title>
+<meta name="description" content="Sample portfolio template for a fictional natural dyer and block printer in Lewes. Plant-dyed cloth, kilim borders and a hero cloth you can re-dye.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans+SC:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- Turns on the load motion before first paint. script.js adds .js-ready, which gates the scroll reveals and the pots. -->
+<script>document.documentElement.classList.add('js');</script>
+<script src="script.js" defer></script>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Sprite: every shared pattern and symbol. Hidden by size, not display:none, so pattern fills keep working. -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="boteh-shape" fill-rule="evenodd" d="M14 32C7 32 3 26.5 4 20C5 13 11.5 9.5 16 7C19.5 5 21 3 19 1C25 2 28 6 27.5 11C27 14 24.5 15 23 13.5C22 12.5 23 10.5 24.5 11C26.5 16 27 24 22 28.5C19.5 31 17 32 14 32ZM14 28C9.5 28 8 24 9 20.5C10 17 13.5 14.5 17 13C20 15 22.5 17.5 22.5 21.5C22.5 25 19 28 14 28Z"/>
+    <g id="boteh-mark"><use href="#boteh-shape"/><circle cx="15" cy="21" r="2.5"/><circle cx="3.5" cy="31" r="1"/><circle cx="1.5" cy="24" r="1"/></g>
+
+    <pattern id="kilim" width="32" height="16" patternUnits="userSpaceOnUse">
+      <rect class="f-oat" width="32" height="16"/>
+      <polygon class="f-terracotta" points="16,1 19,4 22,4 22,7 25,8 22,9 22,12 19,12 16,15 13,12 10,12 10,9 7,8 10,7 10,4 13,4"/>
+      <polygon class="f-indigo" points="16,5 19,8 16,11 13,8"/>
+      <polygon class="f-saffron" points="0,5 3,5 3,7 5,7 5,9 3,9 3,11 0,11"/>
+      <polygon class="f-saffron" points="32,5 29,5 29,7 27,7 27,9 29,9 29,11 32,11"/>
+      <rect class="f-indigo" x="0" y="0" width="32" height="1"/>
+      <rect class="f-indigo" x="0" y="15" width="32" height="1"/>
+    </pattern>
+
+    <pattern id="suzani" width="96" height="96" patternUnits="userSpaceOnUse">
+      <g class="f-oat" transform="translate(48 48)">
+        <circle r="7"/>
+        <g><ellipse cx="0" cy="-17" rx="5" ry="9"/><ellipse cx="0" cy="17" rx="5" ry="9"/><ellipse cx="17" cy="0" rx="9" ry="5"/><ellipse cx="-17" cy="0" rx="9" ry="5"/></g>
+        <g transform="rotate(45)"><ellipse cx="0" cy="-17" rx="4" ry="8"/><ellipse cx="0" cy="17" rx="4" ry="8"/><ellipse cx="17" cy="0" rx="8" ry="4"/><ellipse cx="-17" cy="0" rx="8" ry="4"/></g>
+        <circle r="30" fill="none" class="s-oat" stroke-width="1.5" stroke-dasharray="2 5"/>
+      </g>
+      <circle class="f-oat" cx="0" cy="0" r="4"/><circle class="f-oat" cx="96" cy="0" r="4"/><circle class="f-oat" cx="0" cy="96" r="4"/><circle class="f-oat" cx="96" cy="96" r="4"/>
+    </pattern>
+
+
+
+    <pattern id="fringe" width="6" height="40" patternUnits="userSpaceOnUse">
+      <rect class="f-walnut" x="2" y="0" width="2" height="40"/>
+    </pattern>
+    <pattern id="fringe-knots" width="48" height="40" patternUnits="userSpaceOnUse">
+      <g class="f-walnut c-walnut"><rect x="18" y="6" width="12" height="6" rx="3"/><path d="M19 12l-3 10M24 12v10M29 12l3 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></g>
+    </pattern>
+  </defs>
+
+  <symbol id="fern" viewBox="0 0 100 200">
+    <g fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M50 196C52 150 49 90 51 14"/>
+      <path d="M51 170q-14-12.6-28-5.6q14 9.8 28 5.6"/><path d="M51 164q14-12.6 28-5.6q-14 9.8-28 5.6"/>
+      <path d="M51 150q-12.5-11.25-25-5q12.5 8.75 25 5"/><path d="M51 144q12.5-11.25 25-5q-12.5 8.75-25 5"/>
+      <path d="M51 130q-11-9.9-22-4.4q11 7.7 22 4.4"/><path d="M51 124q11-9.9 22-4.4q-11 7.7-22 4.4"/>
+      <path d="M51 110q-9.5-8.5-19-3.8q9.5 6.6 19 3.8"/><path d="M51 104q9.5-8.5 19-3.8q-9.5 6.6-19 3.8"/>
+      <path d="M51 90q-8-7.2-16-3.2q8 5.6 16 3.2"/><path d="M51 84q8-7.2 16-3.2q-8 5.6-16 3.2"/>
+      <path d="M51 70q-6.5-5.8-13-2.6q6.5 4.5 13 2.6"/><path d="M51 64q6.5-5.8 13-2.6q-6.5 4.5-13 2.6"/>
+      <path d="M51 50q-5-4.5-10-2q5 3.5 10 2"/><path d="M51 44q5-4.5 10-2q-5 3.5-10 2"/>
+      <path d="M51 32q-3.5-3.2-7-1.4q3.5 2.5 7 1.4"/><path d="M51 27q3.5-3.2 7-1.4q-3.5 2.5-7 1.4"/>
+    </g>
+  </symbol>
+
+  <symbol id="knot" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round">
+      <path d="M8 0v5M16 0v5"/>
+      <ellipse cx="12" cy="8.5" rx="7" ry="3.75"/>
+      <ellipse cx="12" cy="15.5" rx="7" ry="3.75"/>
+      <path d="M8 19.5v4.5M12 19.5v4.5M16 19.5v4.5"/>
+    </g>
+  </symbol>
+
+  <symbol id="tassel" viewBox="0 0 28 72">
+    <path d="M14 0v8" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <circle class="f-saffron" cx="14" cy="14" r="7"/>
+    <g fill="none" stroke-width="1.5" stroke-linecap="round">
+      <path stroke="currentColor" d="M10 21L4 70M12 21l-2 50M14 21v50M16 21l2 50M18 21l6 49"/>
+      <path class="s-rose" d="M11 21L7 70.5M13 21l-1 50M15 21l1 50M17 21l4 49.5"/>
+    </g>
+    <path class="s-rose" d="M9 25h10M9 28h10" stroke-width="2.5"/>
+  </symbol>
+
+  <symbol id="rosette" viewBox="0 0 72 72">
+    <circle class="f-saffron" cx="36" cy="36" r="34"/>
+    <g class="f-rust">
+      <ellipse cx="36" cy="14" rx="7" ry="12"/><ellipse cx="36" cy="58" rx="7" ry="12"/>
+      <ellipse cx="14" cy="36" rx="12" ry="7"/><ellipse cx="58" cy="36" rx="12" ry="7"/>
+      <g transform="rotate(45 36 36)"><ellipse cx="36" cy="14" rx="6" ry="11"/><ellipse cx="36" cy="58" rx="6" ry="11"/><ellipse cx="14" cy="36" rx="11" ry="6"/><ellipse cx="58" cy="36" rx="11" ry="6"/></g>
+    </g>
+    <circle class="f-rose" cx="36" cy="36" r="13"/>
+    <circle cx="36" cy="36" r="13" fill="none" class="s-oat" stroke-width="1.5" stroke-dasharray="2 3"/>
+    <circle class="f-indigo" cx="36" cy="36" r="5"/>
+  </symbol>
+
+  <symbol id="i-alert" viewBox="0 0 16 16">
+    <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6.25"/><path d="M8 4.75v3.75M8 11h.01"/></g>
+  </symbol>
+</svg>
+
+<div class="weave-band" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container site-header__row">
+    <a class="wordmark" href="#top">Tamsin Oduya</a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a class="nav__cta" href="#contact">Commission<span class="nav__long">&nbsp;a cloth</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section class="hero" data-dye="madder" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__text">
+      <p class="eyebrow">Natural dyer and block printer, Lewes</p>
+      <h1 id="hero-title" class="hero__title"><span class="hl">Colour from the garden,</span><br> <span class="hl">printed by hand.</span></h1>
+      <p class="lead hero__lead">I dye cloth with plants I grow and print it with blocks I carve. Pick a pot and dye this one.</p>
+    </div>
+
+    <div class="hero__cloth" aria-hidden="true">
+      <div class="arch"><svg class="arch__fern"><use href="#fern"/></svg></div>
+      <div class="runner"></div>
+      <div class="hang">
+        <svg class="macrame" viewBox="0 0 400 48" preserveAspectRatio="none"><path d="M200 0L60 48M200 0L340 48M200 0L130 48M200 0L270 48"/></svg>
+        <svg class="macrame__ring" viewBox="0 0 24 28"><circle cx="12" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/><rect x="7" y="13" width="10" height="9" rx="3" fill="currentColor"/><path d="M8 22l-1 6M12 22v6M16 22l1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg class="dowel" viewBox="0 0 540 16" preserveAspectRatio="none">
+          <rect class="f-walnut" x="10" y="4" width="520" height="8" rx="4"/>
+          <path class="f-walnut" d="M0 8a5 6 0 0 1 10-4v8a5 6 0 0 1-10-4zM540 8a5 6 0 0 0-10-4v8a5 6 0 0 0 10-4z"/>
+          <rect class="f-ink" x="6" y="2" width="4" height="12" rx="1.5"/>
+          <rect class="f-ink" x="530" y="2" width="4" height="12" rx="1.5"/>
+          <path d="M20 7h500" class="s-oat" stroke-width="1" opacity=".35"/>
+        </svg>
+        <svg class="knot knot--l"><use href="#knot"/></svg>
+        <svg class="knot knot--r"><use href="#knot"/></svg>
+        <div class="cloth">
+          <div class="cloth__inner">
+            <div class="cloth__base"></div>
+            <svg class="cloth__print">
+              <defs>
+                <pattern id="boteh-base" width="60" height="68" patternUnits="userSpaceOnUse">
+                  <use href="#boteh-mark" x="6" y="0"/><use href="#boteh-mark" transform="translate(60 34) scale(-1 1)"/>
+                </pattern>
+              </defs>
+              <rect class="ghost" width="100%" height="100%" fill="url(#boteh-base)" transform="translate(-2 1)"/>
+              <rect width="100%" height="100%" fill="url(#boteh-base)" transform="translate(1 1)"/>
+            </svg>
+            <div class="cloth__rise">
+              <div class="cloth__rise-inner">
+                <div class="cloth__base"></div>
+                <svg class="cloth__print">
+                  <defs>
+                    <pattern id="boteh-rise" width="60" height="68" patternUnits="userSpaceOnUse">
+                      <use href="#boteh-mark" x="6" y="0"/><use href="#boteh-mark" transform="translate(60 34) scale(-1 1)"/>
+                    </pattern>
+                  </defs>
+                  <rect class="ghost" width="100%" height="100%" fill="url(#boteh-rise)" transform="translate(-2 1)"/>
+                  <rect width="100%" height="100%" fill="url(#boteh-rise)" transform="translate(1 1)"/>
+                </svg>
+              </div>
+            </div>
+            <svg class="cloth__kilim" viewBox="0 0 480 16" preserveAspectRatio="xMinYMid slice"><rect width="480" height="16" fill="url(#kilim)"/></svg>
+            <div class="cloth__wet"></div>
+          </div>
+        </div>
+        <div class="hem">
+          <svg class="fringe sway"><rect width="100%" height="100%" fill="url(#fringe)"/><rect y="0" width="100%" height="100%" fill="url(#fringe-knots)"/></svg>
+          <svg class="tassel tassel--l sway" viewBox="0 0 28 72"><use href="#tassel"/></svg>
+          <svg class="tassel tassel--r sway" viewBox="0 0 28 72"><use href="#tassel"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <fieldset class="pots">
+      <legend class="pots__legend">Dye the cloth</legend>
+      <div class="pots__row">
+        <div class="pot-choice">
+          <input class="sr-only" type="radio" name="dye" id="dye-madder" value="madder" checked>
+          <label for="dye-madder"><span class="pot"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="pot__body" d="M12 26C8 40 14 58 32 58C50 58 56 40 52 26Z"/><ellipse class="pot__liquid" cx="32" cy="26" rx="20" ry="5" style="fill:#A8432A"/><path class="pot__lip" d="M9 22.5h46"/></svg></span><span class="pot__name">Madder</span></label>
+        </div>
+        <div class="pot-choice">
+          <input class="sr-only" type="radio" name="dye" id="dye-weld" value="weld">
+          <label for="dye-weld"><span class="pot"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="pot__body" d="M12 26C8 40 14 58 32 58C50 58 56 40 52 26Z"/><ellipse class="pot__liquid" cx="32" cy="26" rx="20" ry="5" style="fill:#D3A43C"/><path class="pot__lip" d="M9 22.5h46"/></svg></span><span class="pot__name">Weld</span></label>
+        </div>
+        <div class="pot-choice">
+          <input class="sr-only" type="radio" name="dye" id="dye-indigo" value="indigo">
+          <label for="dye-indigo"><span class="pot"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="pot__body" d="M12 26C8 40 14 58 32 58C50 58 56 40 52 26Z"/><ellipse class="pot__liquid" cx="32" cy="26" rx="20" ry="5" style="fill:#2F4373"/><path class="pot__lip" d="M9 22.5h46"/></svg></span><span class="pot__name">Indigo</span></label>
+        </div>
+        <div class="pot-choice">
+          <input class="sr-only" type="radio" name="dye" id="dye-walnut" value="walnut">
+          <label for="dye-walnut"><span class="pot"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="pot__body" d="M12 26C8 40 14 58 32 58C50 58 56 40 52 26Z"/><ellipse class="pot__liquid" cx="32" cy="26" rx="20" ry="5" style="fill:#6A4C35"/><path class="pot__lip" d="M9 22.5h46"/></svg></span><span class="pot__name">Walnut</span></label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="hero__actions">
+      <a class="stitch-link" href="#work">See the work</a>
+      <p class="stamp">Taking spring 2027 commissions</p>
+    </div>
+    <p class="sr-only" role="status" aria-live="polite" id="dye-status"></p>
+  </div>
+</section>
+
+<section class="about section" id="about" aria-labelledby="about-title">
+  <div class="container about__grid">
+    <div class="about__portrait" data-reveal>
+      <div class="kframe">
+        <svg class="kframe__band" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kilim)"/></svg>
+        <div class="kframe__gap">
+          <!-- Replace with Envato Elements image -->
+          <div class="ph weave ph--arch" role="img" aria-label="Tamsin in the dye garden" data-placeholder="true" style="aspect-ratio:4/5">
+            <span class="ph__label">Tamsin in the dye garden - 1200x1500</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <svg class="about__fern" aria-hidden="true"><use href="#fern"/></svg>
+
+    <div class="about__text">
+      <p class="eyebrow" data-reveal>About</p>
+      <h2 id="about-title" data-reveal>I start with the plant</h2>
+      <div class="prose" data-reveal>
+        <p>I trained as a weaver and came to dye by accident, boiling onion skins in a borrowed pan in 2014. The colour held through forty washes. I have not bought a synthetic dye since.</p>
+        <p>The studio is a converted dairy on the edge of Lewes. Madder, weld and woad grow in the yard behind it. Walnut hulls come from a tree two fields over, with the farmer's blessing.</p>
+        <p>Every block is pearwood, carved by hand, and most take two days to cut. I print in small runs, wash each length three times and dry it on the line outside. A cloth from here has a slight wobble in the repeat. That is the hand, and I leave it in.</p>
+      </div>
+      <div class="margin-note" data-reveal>
+        <p>Blocks carved so far: 214. Cloth printed this year: 380 metres.</p>
+      </div>
+    </div>
+
+    <div class="process" data-reveal>
+      <h3>How a cloth gets made</h3>
+      <ol class="process__list">
+        <li><span class="process__num" aria-hidden="true">1</span><span class="process__step">Grow</span></li>
+        <li><span class="process__num" aria-hidden="true">2</span><span class="process__step">Mordant</span></li>
+        <li><span class="process__num" aria-hidden="true">3</span><span class="process__step">Dye</span></li>
+        <li><span class="process__num" aria-hidden="true">4</span><span class="process__step">Carve</span></li>
+        <li><span class="process__num" aria-hidden="true">5</span><span class="process__step">Print</span></li>
+        <li><span class="process__num" aria-hidden="true">6</span><span class="process__step">Wash</span></li>
+      </ol>
+    </div>
+
+    <div class="notebook" data-reveal>
+      <div class="notebook__text">
+        <h3 id="notebook-title">From the dye notebook</h3>
+        <ul class="notebook__list">
+          <li>Madder, dug in October</li>
+          <li>Weld, cut in July</li>
+          <li>Walnut, gathered in September</li>
+        </ul>
+      </div>
+      <!-- Replace with Envato Elements image -->
+      <div class="ph weave ph--block" role="img" aria-label="Carved pearwood block, top view" data-placeholder="true" style="aspect-ratio:1/1">
+        <span class="ph__label">Carved pearwood block, top view - 800x800</span>
+      </div>
+    </div>
+
+    <svg class="tailpiece" viewBox="0 0 30 34" aria-hidden="true"><use href="#boteh-mark"/></svg>
+  </div>
+</section>
+
+<section class="work section" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Selected work</p>
+      <h2 id="work-title">Cloth on the line</h2>
+      <p class="lead">Five pieces from the last four years. Each one names the plant that coloured it.</p>
+    </div>
+
+    <div class="line">
+      <article class="piece piece--1" style="--tilt:-1deg; --dye:#A8432A" data-reveal>
+        <span class="piece__cord" aria-hidden="true"><svg viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 6Q50 18 100 6"/></svg></span>
+        <span class="peg peg--l" aria-hidden="true"></span><span class="peg peg--r" aria-hidden="true"></span>
+        <div class="piece__hang">
+          <div class="piece__cloth">
+            <svg class="piece__tab" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kilim)"/></svg>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph weave ph--pinked" role="img" aria-label="Madder Room curtains" data-placeholder="true" style="aspect-ratio:16/10">
+              <span class="ph__label">Madder Room curtains - 1600x1000</span>
+            </div>
+          </div>
+          <h3>Madder Room</h3>
+          <p class="piece__meta">Halfpenny Barn guesthouse, 2023<br>Madder root. 12 cushions, 6 curtain pairs</p>
+          <p>Curtains and cushions printed with a boteh repeat for a six-room guesthouse.</p>
+          <p class="chip"><span class="chip__dot" style="background:#A8432A" aria-hidden="true"></span>Madder</p>
+        </div>
+      </article>
+
+      <article class="piece piece--2" style="--tilt:0deg; --dye:#2F4373" data-reveal>
+        <span class="piece__cord" aria-hidden="true"><svg viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 6Q50 18 100 6"/></svg></span>
+        <span class="peg peg--l" aria-hidden="true"></span><span class="peg peg--r" aria-hidden="true"></span>
+        <div class="piece__hang">
+          <div class="piece__cloth">
+            <svg class="piece__tab" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kilim)"/></svg>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph weave ph--pinked" role="img" aria-label="Indigo linen drying" data-placeholder="true" style="aspect-ratio:4/5">
+              <span class="ph__label">Indigo linen drying - 1200x1500</span>
+            </div>
+          </div>
+          <h3>Indigo at low tide</h3>
+          <p class="piece__meta">Hearne &amp; Slow, 2024<br>Indigo. 40 metres</p>
+          <p>Shibori-dyed linen for a summer shirt collection, folded and bound by hand.</p>
+          <p class="chip"><span class="chip__dot" style="background:#2F4373" aria-hidden="true"></span>Indigo</p>
+        </div>
+      </article>
+
+      <article class="piece piece--3" style="--tilt:-0.75deg; --dye:#D3A43C" data-reveal>
+        <span class="piece__cord" aria-hidden="true"><svg viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 6Q50 18 100 6"/></svg></span>
+        <span class="peg peg--l" aria-hidden="true"></span><span class="peg peg--r" aria-hidden="true"></span>
+        <div class="piece__hang">
+          <div class="piece__cloth">
+            <svg class="piece__tab" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kilim)"/></svg>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph weave ph--pinked" role="img" aria-label="Weld swatch book spread" data-placeholder="true" style="aspect-ratio:16/10">
+              <span class="ph__label">Weld swatch book spread - 1600x1000</span>
+            </div>
+          </div>
+          <h3>The weld year</h3>
+          <p class="piece__meta">Personal study, 2022 to 2023<br>Weld. 144 samples</p>
+          <p>One plant, twelve monthly dye baths, bound as a swatch book.</p>
+          <p class="chip"><span class="chip__dot" style="background:#D3A43C" aria-hidden="true"></span>Weld</p>
+        </div>
+      </article>
+
+      <article class="piece piece--4" style="--tilt:0deg; --dye:#A8432A" data-reveal>
+        <span class="piece__cord" aria-hidden="true"><svg viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 6Q50 18 100 6"/></svg></span>
+        <span class="peg peg--l" aria-hidden="true"></span><span class="peg peg--r" aria-hidden="true"></span>
+        <div class="piece__hang">
+          <div class="piece__cloth">
+            <svg class="piece__tab" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kilim)"/></svg>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph weave ph--pinked" role="img" aria-label="Orchard Wife costume detail" data-placeholder="true" style="aspect-ratio:1/1">
+              <span class="ph__label">Orchard Wife costume detail - 1200x1200</span>
+            </div>
+          </div>
+          <h3>Costume for The Orchard Wife</h3>
+          <p class="piece__meta">Kestle Touring Company, 2025<br>Madder and walnut. 11 costumes</p>
+          <p>Dyed and printed cloth for a play that toured nineteen village halls.</p>
+          <p class="chip"><span class="chip__dot" style="background:#A8432A" aria-hidden="true"></span><span class="chip__dot" style="background:#6A4C35" aria-hidden="true"></span>Madder and walnut</p>
+        </div>
+      </article>
+
+      <article class="piece piece--5" style="--tilt:1.25deg; --dye:#6A4C35" data-reveal>
+        <span class="piece__cord" aria-hidden="true"><svg viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0 6Q50 18 100 6"/></svg></span>
+        <span class="peg peg--l" aria-hidden="true"></span><span class="peg peg--r" aria-hidden="true"></span>
+        <div class="piece__hang">
+          <div class="piece__cloth">
+            <svg class="piece__tab" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kilim)"/></svg>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph weave ph--pinked" role="img" aria-label="Walnut table linen" data-placeholder="true" style="aspect-ratio:4/5">
+              <span class="ph__label">Walnut table linen - 1200x1500</span>
+            </div>
+          </div>
+          <h3>Walnut and rust</h3>
+          <p class="piece__meta">Quince &amp; Crumb café, 2026<br>Walnut hull with iron. 30 runners, 120 napkins</p>
+          <p>A table linen line with a kilim border printed along each edge.</p>
+          <p class="chip"><span class="chip__dot" style="background:#6A4C35" aria-hidden="true"></span>Walnut</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services section" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Services</p>
+      <h2 id="services-title">What I make, and how long it takes</h2>
+    </div>
+    <div class="ledger">
+      <div class="ledger__band" aria-hidden="true" data-reveal><svg class="ledger__band-v" viewBox="0 0 32 1000" preserveAspectRatio="xMidYMin slice"><rect width="32" height="1000" fill="url(#kilim)"/></svg><svg class="ledger__band-h" viewBox="0 0 2000 16" preserveAspectRatio="xMinYMid slice"><rect width="2000" height="16" fill="url(#kilim)"/></svg></div>
+      <dl class="ledger__list">
+        <div class="ledger__row" data-reveal>
+          <dt><span class="ledger__num" aria-hidden="true">01</span><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="8" cy="11" rx="4" ry="7"/><path d="M8 4h16a4 7 0 0 1 0 14H12"/><path d="M12 18v10h16V18"/></svg><span class="ledger__name">Commissioned yardage</span></dt>
+          <dd>Printed and dyed cloth by the metre, for curtains, upholstery or garments. Runs start at ten metres.</dd>
+          <dd class="ledger__time"><span>Lead time</span> 10 to 14 weeks</dd>
+        </div>
+        <div class="ledger__row" data-reveal>
+          <dt><span class="ledger__num" aria-hidden="true">02</span><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="14" width="22" height="12" rx="1"/><path d="M11 14V8h10v6"/><path d="M8 20l3-2 3 2 3-2 3 2 3-2 3 2"/></svg><span class="ledger__name">Block carving</span></dt>
+          <dd>A pearwood block cut from your drawing or mine. You keep the block when the job is done.</dd>
+          <dd class="ledger__time"><span>Lead time</span> 4 to 6 weeks</dd>
+        </div>
+        <div class="ledger__row" data-reveal>
+          <dt><span class="ledger__num" aria-hidden="true">03</span><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13h22"/><path d="M8 13c-1 8 2 15 8 15s9-7 8-15"/><path d="M12 9c0-2 2-2 2-4M18 9c0-2 2-2 2-4"/></svg><span class="ledger__name">Dye workshops</span></dt>
+          <dd>One-day sessions at the dairy for up to eight people. We dye with whatever is in season.</dd>
+          <dd class="ledger__time"><span>When</span> Monthly, April to October</dd>
+        </div>
+        <div class="ledger__row" data-reveal>
+          <dt><span class="ledger__num" aria-hidden="true">04</span><svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28L6 9l6-3z"/><path d="M16 28L14 5h6z"/><path d="M16 28l4-22 6 4z"/><circle cx="16" cy="26" r="1.5"/></svg><span class="ledger__name">Colour consulting</span></dt>
+          <dd>Plant colours for a product or interior, tested on your cloth, with swatches you can send to a mill.</dd>
+          <dd class="ledger__time"><span>Lead time</span> 2 to 3 weeks</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="deep-cta" data-reveal>
+      <p>Ready to talk about a cloth?</p>
+      <a class="btn" href="#contact">Start a commission</a>
+    </div>
+  </div>
+</section>
+
+<section class="quotes section" aria-labelledby="quotes-title">
+  <div class="ikat ikat--top" aria-hidden="true"></div>
+  <svg class="quotes__field" aria-hidden="true"><rect width="100%" height="100%" fill="url(#suzani)"/></svg>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Kind words</p>
+      <h2 id="quotes-title">Notes from people I have dyed for</h2>
+    </div>
+    <div class="quotes__grid">
+      <figure class="quote quote--1" data-reveal>
+        <svg class="quote__rosette" aria-hidden="true"><use href="#rosette"/></svg>
+        <blockquote><p>The curtains faded a little in the first summer, exactly as Tamsin said they would. They look better for it.</p></blockquote>
+        <figcaption><strong>Martha Quayle</strong>, owner, Halfpenny Barn</figcaption>
+      </figure>
+      <figure class="quote quote--2" data-reveal>
+        <svg class="quote__rosette" aria-hidden="true"><use href="#rosette"/></svg>
+        <blockquote><p>She sent us twelve test swatches before she cut a single block. The final cloth matched the one we chose.</p></blockquote>
+        <figcaption><strong>Ivo Hearne</strong>, founder, Hearne &amp; Slow</figcaption>
+      </figure>
+      <figure class="quote quote--3" data-reveal>
+        <svg class="quote__rosette" aria-hidden="true"><use href="#rosette"/></svg>
+        <blockquote><p>Our costumes went through nineteen halls and two wet tours. The colour did not move.</p></blockquote>
+        <figcaption><strong>Delphine Ashby-Mott</strong>, costume supervisor, Kestle Touring Company</figcaption>
+      </figure>
+    </div>
+    <p class="quotes__note">All clients and quotes on this page are fictional.</p>
+  </div>
+</section>
+
+<section class="contact section" id="contact" aria-labelledby="contact-title">
+  <div class="container contact__grid">
+    <div class="contact__intro" data-reveal>
+      <p class="eyebrow">Contact</p>
+      <h2 id="contact-title">Write to the dairy</h2>
+      <p class="lead">Tell me what the cloth is for, roughly how much you need, and when. I reply to every message within a week.</p>
+      <ul class="contact__details">
+        <li>Email: <a href="mailto:hello@tamsinoduya.example">hello@tamsinoduya.example</a></li>
+        <li>Studio visits by appointment, Tuesday to Thursday.</li>
+        <li>The Old Dairy, Lewes, East Sussex</li>
+      </ul>
+    </div>
+
+    <div class="panel-border" data-reveal>
+      <svg class="panel-border__print" aria-hidden="true"><rect width="100%" height="100%" fill="url(#kilim)"/></svg>
+      <div class="panel">
+        <form class="form" novalidate aria-describedby="form-note">
+          <p class="form__req">Fields marked <span class="req">*</span> are required.</p>
+          <div class="field">
+            <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+            <p id="f-name-error" class="error" hidden><svg aria-hidden="true"><use href="#i-alert"/></svg><span>Please add your name.</span></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-error">
+            <p id="f-email-error" class="error" hidden><svg aria-hidden="true"><use href="#i-alert"/></svg><span>Please add an email address so I can reply.</span></p>
+          </div>
+          <div class="field-pair">
+            <div class="field">
+              <label for="f-type">Project type</label>
+              <select id="f-type" name="type">
+                <option>Commissioned yardage</option>
+                <option>Block-printed homeware</option>
+                <option>Costume and theatre</option>
+                <option>Workshop booking</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-time">Timeline</label>
+              <select id="f-time" name="timeline">
+                <option>Within 3 months</option>
+                <option>3 to 6 months</option>
+                <option>Later in 2027</option>
+                <option>No fixed date</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-msg">Tell me about the cloth <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-msg" name="message" rows="6" required aria-describedby="f-msg-error"></textarea>
+            <p id="f-msg-error" class="error" hidden><svg aria-hidden="true"><use href="#i-alert"/></svg><span>Please tell me a little about the project.</span></p>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form__note" id="form-note">This is a demo form. Nothing is sent.</p>
+          <p class="form__status" role="status" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <svg class="fringe fringe--footer" aria-hidden="true"><rect width="100%" height="100%" fill="url(#fringe)"/><rect width="100%" height="100%" fill="url(#fringe-knots)"/></svg>
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a class="wordmark" href="#top">Tamsin Oduya</a>
+      <p>Natural dye and block print, Lewes, East Sussex.</p>
+    </div>
+    <p class="footer__cta"><a href="mailto:hello@tamsinoduya.example">Commission a cloth: hello@tamsinoduya.example</a></p>
+    <nav class="footer__nav" aria-label="Footer">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="ikat ikat--footer" aria-hidden="true"></div>
+  <div class="container footer__base">
+    <p>Set in Young Serif and Alegreya Sans. Dyed in Lewes.</p>
+    <p>&copy; 2026 Tamsin Oduya. A fictional studio made for a portfolio template.</p>
+  </div>
+</footer>
+</body>
+</html>

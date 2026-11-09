@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marta Kovač, brand and type designer</title>
+  <meta name="description" content="Portfolio template for Marta Kovač, a fictional brand and type designer in Rotterdam. Identities, typefaces, packaging and interfaces.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="container">
+
+    <!-- Top bar: three tiles on the shared grid, not sticky -->
+    <header class="site-header">
+      <nav class="bento nav" aria-label="Primary">
+        <a class="tile tile--ink tile--link nav__mark t-mark" href="#top" aria-label="MK, Marta Kovač, top of page">MK</a>
+        <div class="tile nav__links t-links">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#work">Work</a></li>
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#services">Services</a></li>
+            <li><a class="nav__link" href="#quotes">Quotes</a></li>
+          </ul>
+        </div>
+        <a class="tile tile--ink tile--link nav__cta t-cta" href="#contact">
+          <span>Get in touch</span>
+          <svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M6 14 14 6M7.5 6H14v6.5"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+
+      <!-- 01 Hero: the hero is the grid. Tiles keep their spans in all three layouts. -->
+      <section class="section section--hero" aria-labelledby="hero-title">
+        <div class="bento hero" id="hero-grid" data-layout="a">
+
+          <div class="tile tile--ink tile--wide t-name">
+            <div class="tile__top">
+              <p class="label">01 / 06</p>
+              <p class="label tile__note">Portfolio, 2026</p>
+            </div>
+            <div class="name__foot">
+              <h1 class="display-xl" id="hero-title"><span>Marta</span> <span>Kovač</span></h1>
+              <button class="btn btn--ghost reshuffle" id="reshuffle" type="button" aria-controls="hero-grid">
+                <svg class="icon reshuffle__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 6h2.5c4.5 0 4.5 8 9 8H17M14.5 11.5 17 14l-2.5 2.5M3 14h2.5c1.4 0 2.3-.8 3-1.8M11.5 7.8c.7-1 1.6-1.8 3-1.8H17M14.5 3.5 17 6l-2.5 2.5"/></svg>
+                <span>Reshuffle grid</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="tile tile--half tile--compact t-status">
+            <p class="label status__label"><span class="status__dot" aria-hidden="true"></span>Status</p>
+            <p class="small push">Booking from January 2027</p>
+          </div>
+
+          <div class="tile tile--half tile--compact t-time">
+            <p class="label">Rotterdam</p>
+            <p class="clock push"><span class="clock__value" id="clock">CET</span></p>
+            <p class="label" id="clock-zone">Rotterdam time zone</p>
+          </div>
+
+          <div class="tile tile--accent t-role">
+            <p class="label">Practice</p>
+            <p class="tile-title">Brand and type designer</p>
+            <p class="small push">Identities, typefaces and signage for ferry lines, food brands and architects.</p>
+          </div>
+
+          <div class="tile tile--media t-portrait">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Portrait - 1000x1000" style="--ar: 1/1"><span class="ph__label">Portrait - 1000x1000</span></div>
+          </div>
+
+          <div class="tile tile--stats t-stats">
+            <dl class="stats">
+              <div class="stats__item"><dt class="label">Years independent</dt><dd class="figure">11</dd></div>
+              <div class="stats__item"><dt class="label">Identities</dt><dd class="figure">64</dd></div>
+              <div class="stats__item"><dt class="label">Typefaces</dt><dd class="figure">3</dd></div>
+            </dl>
+          </div>
+
+          <a class="tile tile--media tile--link t-feat" href="#project-halvemaan" aria-label="Featured, Halvemaan Ferries, 2026">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Featured project cover - 1600x800" style="--ar: 2/1"><span class="ph__label">Featured project cover - 1600x800</span></div>
+            <span class="caption">
+              <span class="caption__text">
+                <span class="label">Featured</span>
+                <span class="caption__title">Halvemaan Ferries, 2026</span>
+              </span>
+              <svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M6 14 14 6M7.5 6H14v6.5"/></svg>
+            </span>
+          </a>
+
+        </div>
+        <p class="visually-hidden" id="hero-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <!-- 02 About -->
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="bento about reveal">
+
+          <div class="tile tile--ink t-label">
+            <div class="tile__top">
+              <p class="label">02 / 06</p>
+              <p class="label tile__note">Rotterdam, since 2015</p>
+            </div>
+            <h2 class="h2 push" id="about-title">About</h2>
+          </div>
+
+          <div class="tile tile--wide t-bio">
+            <p class="label">Profile</p>
+            <div class="bio push">
+              <p>I design identities and typefaces for small companies with strong opinions. I work alone, so you talk to the person who draws the letters.</p>
+              <p>Before going independent in 2015, I spent four years at a signage studio. I still check every letter at the distance it will be read from.</p>
+            </div>
+          </div>
+
+          <div class="tile tile--media t-studio">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Studio photo - 1000x1000" style="--ar: 1/1"><span class="ph__label">Studio photo - 1000x1000</span></div>
+          </div>
+
+          <div class="tile tile--accent tile--compact t-now">
+            <p class="label">Now</p>
+            <ul class="list push">
+              <li>Drawing Vos Grotesk Italic.</li>
+              <li>Teaching type one evening a week.</li>
+              <li>Reading about Dutch road signs.</li>
+            </ul>
+          </div>
+
+          <div class="tile tile--half t-tools">
+            <p class="label">Tools</p>
+            <ul class="chips push">
+              <li>Font editing</li>
+              <li>Vector drawing</li>
+              <li>Page layout</li>
+              <li>Prototyping</li>
+              <li>Pencil</li>
+            </ul>
+          </div>
+
+          <div class="tile tile--half t-facts">
+            <p class="label">Facts</p>
+            <ul class="list list--small push">
+              <li>Speaks Dutch, English and Croatian.</li>
+              <li>Works remotely across CET.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 03 Selected work -->
+      <section class="section" id="work" aria-labelledby="work-title">
+        <div class="bento work reveal">
+
+          <div class="tile tile--ink t-label">
+            <div class="tile__top">
+              <p class="label">03 / 06</p>
+              <p class="label tile__note">6 projects, 2022-2026</p>
+            </div>
+            <h2 class="h2 push" id="work-title">Selected work</h2>
+          </div>
+
+          <article class="tile tile--media tile--wide t-p1" id="project-halvemaan" aria-labelledby="p1-title">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Project cover, Halvemaan Ferries - 1600x900" style="--ar: 16/9"><span class="ph__label">Project cover, Halvemaan Ferries - 1600x900</span></div>
+            <div class="strip">
+              <p class="label meta"><span>01</span><span aria-hidden="true">·</span><span>2026</span><span aria-hidden="true">·</span><span>Identity and wayfinding</span></p>
+              <h3 class="h3" id="p1-title">Halvemaan Ferries</h3>
+              <p class="small">Pier numbers you can read from 80 metres out on the water.</p>
+            </div>
+          </article>
+
+          <article class="tile tile--media t-p2" id="project-oortje" aria-labelledby="p2-title">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Project cover, Oortje Hot Sauce - 1000x1200" style="--ar: 5/6"><span class="ph__label">Project cover, Oortje Hot Sauce - 1000x1200</span></div>
+            <div class="strip">
+              <p class="label meta"><span>02</span><span aria-hidden="true">·</span><span>2025</span><span aria-hidden="true">·</span><span>Packaging</span></p>
+              <h3 class="h3" id="p2-title">Oortje Hot Sauce</h3>
+            </div>
+          </article>
+
+          <article class="tile tile--accent t-p3" id="project-vos" aria-labelledby="p3-title">
+            <div class="glyph-wrap" aria-hidden="true"><span class="glyph">Aa</span></div>
+            <div class="strip strip--flush">
+              <p class="label meta"><span>03</span><span aria-hidden="true">·</span><span>2024</span><span aria-hidden="true">·</span><span>Typeface</span></p>
+              <h3 class="h3" id="p3-title">Vos Grotesk</h3>
+              <p class="small">7 weights for Bureau Vos.</p>
+            </div>
+          </article>
+
+          <article class="tile tile--media t-p4" id="project-lantaarn" aria-labelledby="p4-title">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Project cover, Lantaarn Festival - 1600x900" style="--ar: 16/9"><span class="ph__label">Project cover, Lantaarn Festival - 1600x900</span></div>
+            <div class="strip">
+              <p class="label meta"><span>04</span><span aria-hidden="true">·</span><span>2024</span><span aria-hidden="true">·</span><span>Identity and motion</span></p>
+              <h3 class="h3" id="p4-title">Lantaarn Festival</h3>
+            </div>
+          </article>
+
+          <article class="tile tile--media t-p5" id="project-plantkas" aria-labelledby="p5-title">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Project cover, Plantkas - 1600x900" style="--ar: 16/9"><span class="ph__label">Project cover, Plantkas - 1600x900</span></div>
+            <div class="strip">
+              <p class="label meta"><span>05</span><span aria-hidden="true">·</span><span>2023</span><span aria-hidden="true">·</span><span>Interface and icons</span></p>
+              <h3 class="h3" id="p5-title">Plantkas</h3>
+            </div>
+          </article>
+
+          <article class="tile tile--media tile--wide t-p6" id="project-grid-weekly" aria-labelledby="p6-title">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Project cover, Grid Weekly - 2400x900" style="--ar: 8/3"><span class="ph__label">Project cover, Grid Weekly - 2400x900</span></div>
+            <div class="strip">
+              <p class="label meta"><span>06</span><span aria-hidden="true">·</span><span>2022</span><span aria-hidden="true">·</span><span>Editorial</span></p>
+              <h3 class="h3" id="p6-title">Grid Weekly</h3>
+              <p class="small">32 pages on one grid.</p>
+            </div>
+          </article>
+
+          <a class="tile tile--ink tile--link t-more" href="#contact">
+            <svg class="icon more__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M6 14 14 6M7.5 6H14v6.5"/></svg>
+            <span class="small push">The full archive covers 64 identities. Ask for the PDF.</span>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- 04 Services -->
+      <section class="section" id="services" aria-labelledby="services-title">
+        <div class="bento services reveal">
+
+          <div class="tile tile--ink t-label">
+            <div class="tile__top">
+              <p class="label">04 / 06</p>
+              <p class="label tile__note">Lead times include two review rounds</p>
+            </div>
+            <h2 class="h2 push" id="services-title">Services</h2>
+          </div>
+
+          <div class="tile tile--accent tile--wide t-identity">
+            <h3 class="tile-title">Identity</h3>
+            <p class="body-copy">Logo, type, colour and a rule book your team can use without me.</p>
+            <dl class="terms push">
+              <div><dt class="label">Lead time</dt><dd class="figure">8-12 weeks</dd></div>
+              <div><dt class="label">From</dt><dd class="figure">EUR 9,000</dd></div>
+            </dl>
+          </div>
+
+          <div class="tile tile--ink tile--wide t-type">
+            <h3 class="h3">Type design</h3>
+            <p class="small">Custom typefaces and lettering. One weight or a full family.</p>
+            <dl class="terms push">
+              <div><dt class="label">Lead time</dt><dd class="figure figure--s">10-16 weeks</dd></div>
+              <div><dt class="label">From</dt><dd class="figure figure--s">EUR 6,000</dd></div>
+              <div><dt class="label">Last family</dt><dd class="figure figure--s">7 weights</dd></div>
+            </dl>
+          </div>
+
+          <div class="tile t-pack">
+            <h3 class="h3">Packaging</h3>
+            <p class="small">Label systems that scale across flavours and sizes.</p>
+            <dl class="terms push">
+              <div><dt class="label">Lead time</dt><dd class="figure figure--s">6-10 weeks</dd></div>
+              <div><dt class="label">From</dt><dd class="figure figure--s">EUR 5,000</dd></div>
+            </dl>
+          </div>
+
+          <div class="tile t-ui">
+            <h3 class="h3">Interfaces</h3>
+            <p class="small">Icon sets and interface type for apps.</p>
+            <dl class="terms push">
+              <div><dt class="label">Lead time</dt><dd class="figure figure--s">4-8 weeks</dd></div>
+              <div><dt class="label">From</dt><dd class="figure figure--s">EUR 4,000</dd></div>
+            </dl>
+          </div>
+
+          <div class="tile tile--wide t-process">
+            <p class="label">Process</p>
+            <ol class="process">
+              <li><span class="label">01</span><span class="process__step">Brief</span><span class="small">Week 1</span></li>
+              <li><span class="label">02</span><span class="process__step">Sketch</span><span class="small">Weeks 2-3</span></li>
+              <li><span class="label">03</span><span class="process__step">Draw</span><span class="small">Weeks 4-8</span></li>
+              <li><span class="label">04</span><span class="process__step">Hand over</span><span class="small">Weeks 9-10</span></li>
+            </ol>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 05 Sample quotes: clients and names are fictional -->
+      <section class="section" id="quotes" aria-labelledby="quotes-title">
+        <div class="bento quotes reveal">
+
+          <div class="tile tile--ink t-label">
+            <div class="tile__top">
+              <p class="label">05 / 06</p>
+              <p class="label tile__note">Clients and names are fictional</p>
+            </div>
+            <h2 class="h2 push" id="quotes-title">Sample quotes</h2>
+          </div>
+
+          <figure class="tile tile--wide quote t-q1">
+            <span class="sample-chip label">Sample quote</span>
+            <blockquote class="quote-l push">
+              <p>One poster grid covered all 30 venues. Our volunteers set up the whole city in a weekend.</p>
+            </blockquote>
+            <figcaption class="small quote__by">Ilse Dekker, director, Lantaarn Festival (fictional)</figcaption>
+          </figure>
+
+          <figure class="tile quote t-q2">
+            <div class="quote__head">
+              <span class="sample-chip label">Sample quote</span>
+              <span class="label">Packaging, 2025</span>
+            </div>
+            <blockquote class="quote-m push">
+              <p>We sell 14 flavours with one label layout. Restocking a shelf takes ten minutes now.</p>
+            </blockquote>
+            <figcaption class="small quote__by">Femke Oort, founder, Oortje Hot Sauce (fictional)</figcaption>
+          </figure>
+
+          <figure class="tile tile--wide quote t-q3">
+            <span class="sample-chip label">Sample quote</span>
+            <blockquote class="quote-s push">
+              <p>The typeface made our drawings look like they came from one office.</p>
+            </blockquote>
+            <figcaption class="small quote__by">Ruben Vos, partner, Bureau Vos (fictional)</figcaption>
+          </figure>
+
+          <div class="tile tile--accent tile--compact t-qacc">
+            <p class="figure">7/10</p>
+            <p class="label push">Clients who came back for a second project</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 06 Contact: the form sends nothing -->
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="bento contact reveal">
+
+          <div class="tile tile--ink t-label">
+            <div class="tile__top">
+              <p class="label">06 / 06</p>
+              <p class="label tile__note">Form, email or a call</p>
+            </div>
+            <h2 class="h2 push" id="contact-title">Contact</h2>
+          </div>
+
+          <div class="tile t-email">
+            <p class="label">Email</p>
+            <a class="email-link" href="mailto:hello@martakovac.example">hello@martakovac.example</a>
+            <button class="btn btn--ghost copy-btn push" id="copy-email" type="button" data-copy="hello@martakovac.example">
+              <svg class="icon copy-btn__copy" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M13 7V5.5A2.5 2.5 0 0 0 10.5 3h-5A2.5 2.5 0 0 0 3 5.5v5A2.5 2.5 0 0 0 5.5 13H7"/></svg>
+              <svg class="icon copy-btn__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5 8 14.5 16 5.5"/></svg>
+              <span class="copy-btn__text">Copy email</span>
+            </button>
+            <p class="visually-hidden" id="copy-status" role="status" aria-live="polite"></p>
+          </div>
+
+          <div class="tile t-details">
+            <p class="label">Details</p>
+            <dl class="hours push">
+              <div><dt class="label">Replies</dt><dd>Within 2 working days</dd></div>
+              <div><dt class="label">Calls</dt><dd>Mon to Thu, 09:00-17:00 CET</dd></div>
+              <div><dt class="label">Studio</dt><dd>Rotterdam, NL. Visits by appointment.</dd></div>
+              <div><dt class="label">Closed</dt><dd>24 Dec to 2 Jan</dd></div>
+            </dl>
+          </div>
+
+          <div class="tile tile--wide t-form">
+            <form class="form" id="contact-form" action="#" method="post" aria-labelledby="form-title">
+              <h3 class="h3" id="form-title">Tell me about the project</h3>
+
+              <div class="form__grid">
+                <div class="field">
+                  <label class="field__label" for="name">Name <span class="field__tag" aria-hidden="true">Required</span></label>
+                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-help name-error">
+                  <p class="field__help" id="name-help">First name is fine.</p>
+                  <p class="field__error" id="name-error"></p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="email">Email <span class="field__tag" aria-hidden="true">Required</span></label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-help email-error">
+                  <p class="field__help" id="email-help">I reply from hello@martakovac.example.</p>
+                  <p class="field__error" id="email-error"></p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="type">Project type <span class="field__tag" aria-hidden="true">Required</span></label>
+                  <div class="select">
+                    <select class="input" id="type" name="type" required aria-describedby="type-help type-error">
+                      <option value="">Choose one</option>
+                      <option>Identity</option>
+                      <option>Type design</option>
+                      <option>Packaging</option>
+                      <option>Interfaces</option>
+                      <option>Something else</option>
+                    </select>
+                    <svg class="icon select__icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5"/></svg>
+                  </div>
+                  <p class="field__help" id="type-help">Pick the closest match.</p>
+                  <p class="field__error" id="type-error"></p>
+                </div>
+
+                <fieldset class="field field--set" aria-describedby="budget-help">
+                  <legend class="field__label">Budget <span class="field__tag">Optional</span></legend>
+                  <div class="radio-chips">
+                    <label class="radio-chip"><input type="radio" name="budget" value="under-5k"><span><svg class="icon radio-chip__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5 8 14.5 16 5.5"/></svg>Under EUR 5k</span></label>
+                    <label class="radio-chip"><input type="radio" name="budget" value="5-10k"><span><svg class="icon radio-chip__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5 8 14.5 16 5.5"/></svg>EUR 5-10k</span></label>
+                    <label class="radio-chip"><input type="radio" name="budget" value="10-20k"><span><svg class="icon radio-chip__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5 8 14.5 16 5.5"/></svg>EUR 10-20k</span></label>
+                    <label class="radio-chip"><input type="radio" name="budget" value="over-20k"><span><svg class="icon radio-chip__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10.5 8 14.5 16 5.5"/></svg>Over EUR 20k</span></label>
+                  </div>
+                  <p class="field__help" id="budget-help">A rough range helps me plan.</p>
+                </fieldset>
+
+                <div class="field field--full">
+                  <label class="field__label" for="message">Message <span class="field__tag" aria-hidden="true">Required</span></label>
+                  <textarea class="input textarea" id="message" name="message" rows="5" required aria-describedby="message-help message-error"></textarea>
+                  <p class="field__help" id="message-help">Two or three sentences is enough.</p>
+                  <p class="field__error" id="message-error"></p>
+                </div>
+              </div>
+
+              <div class="form__actions">
+                <button class="btn btn--accent" type="submit">Send message</button>
+                <p class="form__status small" id="form-status" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer: same grid, same tiles -->
+    <footer class="bento footer reveal">
+      <div class="tile tile--ink tile--wide t-word">
+        <p class="wordmark" aria-hidden="true">Marta Kovač</p>
+      </div>
+
+      <div class="tile tile--half t-social">
+        <p class="label">Elsewhere</p>
+        <ul class="social push">
+          <li><a class="text-link" href="https://example.com/">Instagram</a></li>
+          <li><a class="text-link" href="https://example.com/">LinkedIn</a></li>
+          <li><a class="text-link" href="https://example.com/">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <a class="tile tile--half tile--link t-top" href="#top">
+        <svg class="icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 16V4M5 9l5-5 5 5"/></svg>
+        <span class="top__text push">Back to top</span>
+      </a>
+
+      <div class="tile t-legal">
+        <p class="small push">© 2026 Marta Kovač. Template content is fictional. Set in Space Grotesk and Archivo.</p>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

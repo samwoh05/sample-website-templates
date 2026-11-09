@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juno Varela | Illustrator in Porto</title>
+<meta name="description" content="Juno Varela draws maps, menus, book covers and live events in Porto. A fictional scrapbook portfolio template.">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F3EAD7">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Courier+Prime:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Icon set: 24x24, stroke 1.75, round caps and joins -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M4 3v6a3 3 0 0 0 3 3v9M7 3v6M10 3v6a3 3 0 0 1-3 3M20 15V3a5 5 0 0 0-4 5v5a2 2 0 0 0 2 2h2zm0 0v6"/></symbol>
+  <symbol id="i-book-open" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2zM22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-pen-nib" viewBox="0 0 24 24"><path d="M15.7 15.7 21 10.4 13.6 3 8.3 8.3 4 10l-2 12 12-2zM2 22l7.6-7.6"/><circle cx="11" cy="13" r="2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0zM12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap header__in">
+    <a class="wordmark tape-bg" href="#top">Juno Varela</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-menu">
+      <svg class="ic ic--20 menu-btn__open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+      <svg class="ic ic--20 menu-btn__close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      <span>Menu</span>
+    </button>
+    <nav id="site-menu" class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+      </ul>
+      <a class="btn btn--primary btn--sm" href="#contact">Write to me <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ========== Hero: the big polaroid ========== -->
+<section id="top" class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero__grid">
+    <div class="cover tilt" style="--r: var(--t-b)">
+      <span class="tape tape--hero cover__tape cover__tape--l" aria-hidden="true"></span>
+      <span class="tape tape--hero cover__tape cover__tape--r" aria-hidden="true"></span>
+      <div class="cover__window">
+        <!-- Replace with Envato Elements image -->
+        <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Hero photo, Juno sketching by the river, 2000x800" style="--ar: 2000/800">
+          <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+          <span class="ph__label">Hero photo, Juno sketching by the river - 2000x800</span>
+        </div>
+        <div class="post" aria-hidden="true">
+          <svg class="postmark" viewBox="0 0 272 112" width="272" height="112" focusable="false">
+            <defs><path id="pm-ring" d="M216 56m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs>
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="216" cy="56" r="52"/>
+              <circle cx="216" cy="56" r="28"/>
+              <path d="M2 30c14-6 26 6 40 0s26-6 40 0 26 6 40 0 20-5 30-2"/>
+              <path d="M2 48c14-6 26 6 40 0s26-6 40 0 26 6 40 0 20-5 30-2"/>
+              <path d="M2 66c14-6 26 6 40 0s26-6 40 0 26 6 40 0 20-5 30-2"/>
+              <path d="M2 84c14-6 26 6 40 0s26-6 40 0 26 6 40 0 20-5 30-2"/>
+            </g>
+            <text font-family="Courier Prime, Courier New, monospace" font-weight="700" font-size="12" letter-spacing="3" fill="currentColor"><textPath href="#pm-ring">BONFIM . PORTO . BONFIM . PORTO .</textPath></text>
+            <text x="216" y="61" text-anchor="middle" font-family="Courier Prime, Courier New, monospace" font-weight="700" font-size="14" fill="currentColor">2026</text>
+          </svg>
+          <div class="stamp-wrap tilt" style="--r: var(--t-f)">
+            <div class="stamp">
+              <svg class="pencil" viewBox="0 0 80 64" width="80" height="64" focusable="false">
+                <circle cx="60" cy="16" r="7"/>
+                <path d="M4 40c6-12 14-18 22-18s14 6 18 18M44 40c4-10 10-14 16-14s12 4 16 14"/>
+                <path d="M2 40h76M2 50c8-3 14 3 22 0s14-3 22 0 14 3 22 0 8-2 10-1M8 58c8-3 14 3 22 0s14-3 22 0 14 3 20 0"/>
+              </svg>
+              <span>PORTO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover__chin">
+        <h1 id="hero-title"><span class="line">Your place,</span> <span class="line">drawn <span class="mark">by hand.<svg class="pencil mark__line" viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M3 8c48-4 120-6 180-5s90 2 114 1M10 14c60-4 140-6 190-5 34 1 62 1 92 0"/></svg></span></span></h1>
+      </div>
+    </div>
+
+    <div class="hero__side">
+      <div class="card tilt" style="--r: var(--t-e)">
+        <p class="card__hello" lang="pt">Olá!</p>
+        <p class="card__sub">I'm Juno Varela, an illustrator in Porto. I draw maps, menus, book covers and live events, mostly on site.</p>
+        <a class="btn btn--primary" href="#work">See the work <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-down"/></svg></a>
+      </div>
+      <div class="ticket-wrap tilt" style="--r: var(--t-a)">
+        <span class="washi ticket__washi" aria-hidden="true"></span>
+        <div class="ticket">
+          <div class="ticket__stub" aria-hidden="true">
+            <svg class="pencil" viewBox="0 0 32 32" width="32" height="32" focusable="false"><path d="M16 3l3.6 8.4 9 .8-6.8 6 2 8.8L16 22.4 8.2 27l2-8.8-6.8-6 9-.8z"/></svg>
+          </div>
+          <div class="ticket__main">
+            <p class="ticket__label">Admit one</p>
+            <p class="status"><span class="status__dot" aria-hidden="true"></span>New projects from March 2027</p>
+          </div>
+        </div>
+        <svg class="clip ticket__clip" viewBox="0 0 28 72" width="28" height="72" aria-hidden="true" focusable="false"><path d="M17 22v32a3.5 3.5 0 0 1-7 0V12a5.5 5.5 0 0 1 11 0v46a7.5 7.5 0 0 1-15 0V20"/></svg>
+      </div>
+      <p class="hero-note" aria-hidden="true">five favourite jobs inside
+        <svg class="pencil hero-note__arrow" viewBox="0 0 96 64" width="96" height="64" focusable="false"><path d="M90 58C84 30 58 12 12 8M12 8l13-7M12 8l11 11"/></svg>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== About: a page torn from her notebook ========== -->
+<section id="about" class="about section" aria-labelledby="about-title">
+  <div class="wrap about__grid">
+    <div class="notebook-wrap tilt" style="--r: var(--t-c)">
+      <div class="notebook">
+        <h2 id="about-title">Who's holding the pen</h2>
+        <p>I grew up above my parents' café in Bonfim, drawing customers on the backs of order slips.</p>
+        <p>I studied illustration in Porto and drew for a newspaper for five years. Now I work for myself, for restaurants, publishers, towns and festivals.</p>
+        <p>I draw <span class="ring">on location<svg class="pencil ring__line" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M150 8C110 0 30 2 10 22s30 34 90 32 96-12 92-30S150 2 120 5"/></svg></span> whenever I can. A map is better when I've walked it. A menu is better when I've eaten from it.</p>
+        <p>I work alone from a shared studio near the river. You talk to me from the first sketch to the final file.</p>
+        <p class="signature tilt" style="--r: var(--t-a)">Juno<svg class="pencil signature__swoosh" viewBox="0 0 160 24" aria-hidden="true" focusable="false"><path d="M4 16c30-10 70-14 100-8s40 6 52-6"/></svg></p>
+      </div>
+    </div>
+    <div class="about__side">
+      <div class="booth tilt" style="--r: var(--t-e)">
+        <span class="tape tape--card booth__tape" aria-hidden="true"></span>
+        <!-- Replace with Envato Elements image -->
+        <div class="ph ph--booth" data-placeholder="true" role="img" aria-label="Placeholder: Photo booth strip, four frames of Juno, 400x1200" style="--ar: 400/1200">
+          <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+          <span class="ph__label">Photo booth strip, four frames of Juno - 400x1200</span>
+        </div>
+      </div>
+      <ul class="facts" aria-label="Quick facts">
+        <li><svg class="pencil tick" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13c3 2 5 5 6 7 3-7 7-12 12-16"/></svg>Based in Bonfim, Porto</li>
+        <li><svg class="pencil tick" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13c3 2 5 5 6 7 3-7 7-12 12-16"/></svg>Drawing since 2012</li>
+        <li><svg class="pencil tick" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13c3 2 5 5 6 7 3-7 7-12 12-16"/></svg>Speaks Portuguese, English and café French</li>
+        <li><svg class="pencil tick" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 13c3 2 5 5 6 7 3-7 7-12 12-16"/></svg>Never without a folding stool</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Selected work: the route sheet ========== -->
+<section id="work" class="work section" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="graph-wrap">
+      <div class="graph">
+        <div class="work__head">
+          <h2 id="work-title">Selected work</h2>
+          <p class="side-note" aria-hidden="true">in the order I'd tell them</p>
+        </div>
+        <div class="route">
+          <div class="connectors" aria-hidden="true">
+            <svg class="connector connector--1" data-after="2" viewBox="0 0 160 120" focusable="false">
+              <defs><mask id="cm1" maskUnits="userSpaceOnUse"><path class="draw" pathLength="1" d="M10 14c50-6 110 20 126 84M122 90l14 12 8-18"/></mask></defs>
+              <g mask="url(#cm1)"><path class="dots" d="M10 14c50-6 110 20 126 84"/><path class="head" d="M122 90l14 12 8-18"/></g>
+            </svg>
+            <svg class="connector connector--2" data-after="3" viewBox="0 0 560 110" focusable="false">
+              <defs><mask id="cm2" maskUnits="userSpaceOnUse"><path class="draw" pathLength="1" d="M540 10C470 70 250 30 90 70 60 78 40 88 26 98M42 86 24 100l22 4"/></mask></defs>
+              <g mask="url(#cm2)"><path class="dots" d="M540 10C470 70 250 30 90 70 60 78 40 88 26 98"/><path class="head" d="M42 86 24 100l22 4"/></g>
+            </svg>
+            <svg class="connector connector--3" data-after="4" viewBox="0 0 140 100" focusable="false">
+              <defs><mask id="cm3" maskUnits="userSpaceOnUse"><path class="draw" pathLength="1" d="M8 20c40-14 90-6 114 60M108 72l14 14 6-20"/></mask></defs>
+              <g mask="url(#cm3)"><path class="dots" d="M8 20c40-14 90-6 114 60"/><path class="head" d="M108 72l14 14 6-20"/></g>
+            </svg>
+            <svg class="connector connector--4" data-after="5" viewBox="0 0 420 100" focusable="false">
+              <defs><mask id="cm4" maskUnits="userSpaceOnUse"><path class="draw" pathLength="1" d="M400 10C330 60 180 40 60 80M78 66 58 82l20 8"/></mask></defs>
+              <g mask="url(#cm4)"><path class="dots" d="M400 10C330 60 180 40 60 80"/><path class="head" d="M78 66 58 82l20 8"/></g>
+            </svg>
+          </div>
+          <ol class="route__list">
+            <li class="stop stop--1 tilt" style="--r: var(--t-b)">
+              <article class="print" aria-labelledby="stop1-title">
+                <div class="mount">
+                  <span class="numeral" aria-hidden="true">1</span>
+                  <span class="corner corner--tl" aria-hidden="true"></span><span class="corner corner--tr" aria-hidden="true"></span><span class="corner corner--bl" aria-hidden="true"></span><span class="corner corner--br" aria-hidden="true"></span>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Market map unfolded on a stall counter, 1600x1100" style="--ar: 1600/1100">
+                    <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+                    <span class="ph__label">Market map unfolded on a stall counter - 1600x1100</span>
+                  </div>
+                </div>
+                <div class="stop__text">
+                  <ul class="tags" aria-label="Tags"><li class="tag">Map</li><li class="tag">2026</li></ul>
+                  <p class="client">Mercado das Marés, Matosinhos</p>
+                  <h3 id="stop1-title">A market map for wet hands</h3>
+                  <p class="stop__copy">A fish market wanted a map visitors could carry between stalls. I drew every stall from the aisle, then fitted the market onto one sheet printed on waterproof stock.</p>
+                  <a class="link" href="#work" data-placeholder-link="true">Read the story<span class="sr-only">: Mercado das Marés</span> <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+                </div>
+              </article>
+            </li>
+            <li class="stop stop--2 tilt" style="--r: var(--t-e)">
+              <article class="print" aria-labelledby="stop2-title">
+                <span class="tape tape--card stop__tape-c" aria-hidden="true"></span>
+                <div class="mount">
+                  <span class="numeral" aria-hidden="true">2</span>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Tasca menu with plate drawings, 1000x1250" style="--ar: 1000/1250">
+                    <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+                    <span class="ph__label">Tasca menu with plate drawings - 1000x1250</span>
+                  </div>
+                </div>
+                <div class="stop__text">
+                  <ul class="tags" aria-label="Tags"><li class="tag">Menu</li><li class="tag">2025</li></ul>
+                  <p class="client">Tasca Pombinha, Porto</p>
+                  <h3 id="stop2-title">A menu drawn at the pass</h3>
+                  <p class="stop__copy">A twelve-table tasca changes its menu every season. I drew each dish during service, so the menu can swap drawings without a redesign.</p>
+                  <a class="link" href="#work" data-placeholder-link="true">Read the story<span class="sr-only">: Tasca Pombinha</span> <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+                </div>
+              </article>
+            </li>
+            <li class="stop stop--3 tilt" style="--r: var(--t-a)">
+              <article class="print print--split" aria-labelledby="stop3-title">
+                <div class="mount mount--print">
+                  <span class="numeral" aria-hidden="true">3</span>
+                  <svg class="clip stop__clip" viewBox="0 0 28 72" width="28" height="72" aria-hidden="true" focusable="false"><path d="M17 22v32a3.5 3.5 0 0 1-7 0V12a5.5 5.5 0 0 1 11 0v46a7.5 7.5 0 0 1-15 0V20"/></svg>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Three book covers fanned on a table, 1200x1500" style="--ar: 1200/1500">
+                    <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+                    <span class="ph__label">Three book covers fanned on a table - 1200x1500</span>
+                  </div>
+                </div>
+                <div class="stop__text stop__text--kraft">
+                  <ul class="tags" aria-label="Tags"><li class="tag">Covers</li><li class="tag">2025</li></ul>
+                  <p class="client">Edições Maré Baixa, Lisbon</p>
+                  <h3 id="stop3-title">Six covers, one coastline</h3>
+                  <p class="stop__copy">A small press reissued six novels set on the Atlantic coast. Each cover shows one stretch of shore, and the spines join into one long drawing.</p>
+                  <a class="link link--ink" href="#work" data-placeholder-link="true">Read the story<span class="sr-only">: Edições Maré Baixa</span> <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+                </div>
+              </article>
+            </li>
+            <li class="stop stop--4 tilt" style="--r: var(--t-d)">
+              <article class="print" aria-labelledby="stop4-title">
+                <span class="tape tape--card stop__tape-l" aria-hidden="true"></span>
+                <span class="tape tape--card stop__tape-r" aria-hidden="true"></span>
+                <div class="mount">
+                  <span class="numeral" aria-hidden="true">4</span>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Live drawings pinned to the factory wall, 1600x1000" style="--ar: 1600/1000">
+                    <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+                    <span class="ph__label">Live drawings pinned to the factory wall - 1600x1000</span>
+                  </div>
+                </div>
+                <div class="stop__text">
+                  <ul class="tags" aria-label="Tags"><li class="tag">Live</li><li class="tag">2024</li></ul>
+                  <p class="client">Corda Jazz Weekend, Porto</p>
+                  <h3 id="stop4-title">Three nights from the front row</h3>
+                  <p class="stop__copy">A jazz weekend in an old rope factory asked me to draw it live. The drawings went up on the wall the same night. One became next year's poster.</p>
+                  <a class="link" href="#work" data-placeholder-link="true">Read the story<span class="sr-only">: Corda Jazz Weekend</span> <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+                </div>
+              </article>
+            </li>
+            <li class="stop stop--5 tilt" style="--r: var(--t-c)">
+              <article class="print print--pano" aria-labelledby="stop5-title">
+                <span class="tape tape--long stop__tape-long" aria-hidden="true"></span>
+                <div class="mount">
+                  <span class="numeral" aria-hidden="true">5</span>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Tram zine, open spread, 2000x900" style="--ar: 2000/900">
+                    <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-image"/></svg>
+                    <span class="ph__label">Tram zine, open spread - 2000x900</span>
+                  </div>
+                </div>
+                <div class="stop__text stop__text--cols">
+                  <div>
+                    <ul class="tags" aria-label="Tags"><li class="tag">Zine</li><li class="tag">2023 to 2024</li></ul>
+                    <p class="client">Self-initiated</p>
+                    <h3 id="stop5-title">One tram line, one stop a week</h3>
+                  </div>
+                  <div>
+                    <p class="stop__copy">Every Sunday for a year I rode the same tram and drew one stop. I printed the zine on a Riso and sold it at fairs in Porto and Lisbon.</p>
+                    <a class="link" href="#work" data-placeholder-link="true">Flip through the zine<span class="sr-only">: self-initiated tram zine</span> <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-up-right"/></svg></a>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Services: the fold-out map ========== -->
+<section id="services" class="services section" aria-labelledby="services-title">
+  <div class="wrap">
+    <h2 id="services-title">What I can draw for you</h2>
+    <div class="map tilt" style="--r: 0.4deg">
+      <span class="tape tape--card map__tape-l" aria-hidden="true"></span>
+      <span class="tape tape--card map__tape-r" aria-hidden="true"></span>
+      <div class="map__grid">
+        <div class="map__cover">
+          <svg class="pencil compass" viewBox="0 0 80 80" width="80" height="80" aria-hidden="true" focusable="false"><circle cx="40" cy="40" r="26"/><path d="M40 6 46 34 40 40 34 34zM40 74l-6-28 6-6 6 6zM6 40l28-6 6 6-6 6zM74 40l-28 6-6-6 6-6z"/><path d="M37 2h6"/></svg>
+          <h3 id="cover-title">How a job runs</h3>
+          <ol class="steps">
+            <li><svg class="ic ic--24" aria-hidden="true" focusable="false"><use href="#i-map-pin"/></svg><p><strong>Walk it.</strong> We meet where the drawing will live.</p></li>
+            <li><svg class="ic ic--24" aria-hidden="true" focusable="false"><use href="#i-pen-nib"/></svg><p><strong>Sketch it.</strong> Pencil roughs and two rounds of changes.</p></li>
+            <li><svg class="ic ic--24" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><p><strong>Ink it.</strong> Final art in ink and watercolour.</p></li>
+            <li><svg class="ic ic--24" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><p><strong>Hand it over.</strong> Print files, web files and the originals if you want them.</p></li>
+          </ol>
+          <svg class="pencil scalebar" viewBox="0 0 200 28" width="200" height="28" aria-hidden="true" focusable="false"><path d="M4 18h192M4 12v12M52 14v8M100 12v12M148 14v8M196 12v12M4 18h48"/><path d="M8 18.5h40" stroke-width="5"/><path d="M100 18.5h48" stroke-width="5"/></svg>
+          <a class="btn btn--primary" href="#contact">Ask about a project <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <article class="panel panel--1" aria-labelledby="svc1-title">
+          <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-map-pin"/></svg>
+          <h3 id="svc1-title">Illustrated maps</h3>
+          <p>Walking maps, festival maps and maps for hotel rooms. I walk every street first, so the drawing matches the ground.</p>
+          <ul class="tags" aria-label="Formats"><li class="tag">Print</li><li class="tag">Wall</li><li class="tag">Web</li></ul>
+        </article>
+        <article class="panel panel--2" aria-labelledby="svc2-title">
+          <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-utensils"/></svg>
+          <h3 id="svc2-title">Menus and labels</h3>
+          <p>Menus, wine labels and shop bags for restaurants and small food makers. Drawings you can swap when the season changes.</p>
+          <ul class="tags" aria-label="Formats"><li class="tag">Menus</li><li class="tag">Labels</li><li class="tag">Bags</li></ul>
+        </article>
+        <article class="panel panel--3" aria-labelledby="svc3-title">
+          <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-book-open"/></svg>
+          <h3 id="svc3-title">Book covers</h3>
+          <p>Covers and chapter openers for novels, travel books and cookbooks. I read the book before I draw a line.</p>
+          <ul class="tags" aria-label="Formats"><li class="tag">Covers</li><li class="tag">Spines</li><li class="tag">Openers</li></ul>
+        </article>
+        <article class="panel panel--4" aria-labelledby="svc4-title">
+          <svg class="ic ic--32" aria-hidden="true" focusable="false"><use href="#i-pen-nib"/></svg>
+          <h3 id="svc4-title">Live drawing</h3>
+          <p>Conferences, weddings, festivals and markets. I draw what happens while it happens, and you keep the drawings.</p>
+          <ul class="tags" aria-label="Formats"><li class="tag">Events</li><li class="tag">Weddings</li><li class="tag">Markets</li></ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quotes, people and businesses are fictional. -->
+<section id="clients" class="quotes section" aria-labelledby="clients-title">
+  <div class="wrap quotes__grid">
+    <h2 id="clients-title" class="quotes__title">What clients wrote back</h2>
+    <figure class="poster tilt" style="--r: var(--t-c)">
+      <span class="tape tape--card poster__tape" aria-hidden="true"></span>
+      <blockquote><p>“She drew our whole menu at the pass, in the middle of service. The cooks <span class="under">never<svg class="pencil under__line" viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M3 7c30-4 70-5 114-2"/></svg></span> noticed.”</p></blockquote>
+      <figcaption><span class="q-name">Rita Pombinha</span><span class="q-role">Owner, Tasca Pombinha, Porto</span></figcaption>
+    </figure>
+    <figure class="postcard tilt" style="--r: var(--t-b)">
+      <span class="tape tape--card postcard__tape" aria-hidden="true"></span>
+      <blockquote class="postcard__msg"><p>“We asked for six covers. Juno sent six covers that join into one coastline along the shelf. Bookshops started stacking them in order.”</p></blockquote>
+      <figcaption class="postcard__addr">
+        <svg class="postcard__stamp" viewBox="0 0 96 64" width="96" height="64" aria-hidden="true" focusable="false"><rect x="52" y="4" width="40" height="50" rx="2" class="ps-paper" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M58 40c4-8 8-12 14-12s10 4 14 12M58 46h28" class="ps-pencil" fill="none" stroke-width="2" stroke-linecap="round"/><circle cx="44" cy="30" r="22" class="ps-ink" fill="none" stroke-opacity=".7" stroke-width="1.5"/><path d="M2 22c8-4 14 4 22 0M2 34c8-4 14 4 22 0" class="ps-ink" fill="none" stroke-opacity=".7" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span class="q-name">Tomás Ilhéu</span>
+        <span class="q-role">Editor, Edições Maré Baixa</span>
+        <span class="q-role">Lisbon</span>
+      </figcaption>
+    </figure>
+    <div class="luggage-wrap tilt" style="--r: var(--t-e)">
+      <svg class="luggage__string pencil" viewBox="0 0 80 60" width="80" height="60" aria-hidden="true" focusable="false"><path d="M78 30C60 20 50 46 34 40S20 8 2 18"/></svg>
+      <figure class="luggage">
+        <span class="luggage__eyelet" aria-hidden="true"></span>
+        <blockquote><p>“She drew for three nights from the front row. By Sunday the wall behind her was full and people queued to see it.”</p></blockquote>
+        <figcaption><span class="q-name">Inês Cordeiro</span><span class="q-role">Festival programmer, Corda Jazz Weekend, Porto</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Contact: letter and envelope ========== -->
+<section id="contact" class="contact section" aria-labelledby="contact-title">
+  <div class="wrap contact__grid">
+    <div class="contact__intro">
+      <h2 id="contact-title">Write to me</h2>
+      <p class="side-note side-note--contact tilt" style="--r: var(--t-b)" aria-hidden="true">I read every one.</p>
+      <p class="prose">Tell me what you need drawn, where it will live and when you need it. I reply within two working days.</p>
+      <ul class="details">
+        <li><svg class="ic ic--24" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><a class="link" href="mailto:hello@junovarela.example">hello@junovarela.example</a></li>
+        <li><svg class="ic ic--24" aria-hidden="true" focusable="false"><use href="#i-map-pin"/></svg><span>Studio in Bonfim, Porto. Visits by appointment.</span></li>
+        <li><span class="washi-label tilt" style="--r: var(--t-c)"><span class="status__dot" aria-hidden="true"></span>Usually booked six weeks ahead</span></li>
+      </ul>
+    </div>
+
+    <div class="envelope-wrap">
+      <div class="envelope" data-envelope>
+        <span class="envelope__back" aria-hidden="true"></span>
+        <span class="envelope__flap" aria-hidden="true"></span>
+        <div class="letter tilt" style="--r: var(--t-c)">
+          <!-- Demo form: it sends nothing. Wire the action to a form service before using it. -->
+          <form class="form" action="#contact" method="post" data-form>
+            <p class="letter__dear">Dear Juno,</p>
+            <div class="form__grid">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+                <p class="field__error" id="f-name-err" hidden><svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                <p class="field__error" id="f-email-err" hidden><svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+              </div>
+              <div class="field">
+                <label for="f-what">What should I draw?</label>
+                <select id="f-what" name="what" required>
+                  <option value="" disabled selected>Pick one</option>
+                  <option>An illustrated map</option>
+                  <option>A menu or labels</option>
+                  <option>A book cover</option>
+                  <option>Live drawing at an event</option>
+                  <option>Something else</option>
+                </select>
+                <p class="field__error" id="f-what-err" hidden><svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-alert"/></svg><span></span></p>
+              </div>
+              <fieldset class="field field--full radios">
+                <legend>When do you need it?</legend>
+                <div class="radios__row">
+                  <label class="radio"><input type="radio" name="when" value="this-month"><span class="radio__dot" aria-hidden="true"></span>This month</label>
+                  <label class="radio"><input type="radio" name="when" value="1-3-months"><span class="radio__dot" aria-hidden="true"></span>In 1 to 3 months</label>
+                  <label class="radio"><input type="radio" name="when" value="later"><span class="radio__dot" aria-hidden="true"></span>Later this year</label>
+                  <label class="radio"><input type="radio" name="when" value="not-sure" checked><span class="radio__dot" aria-hidden="true"></span>Not sure yet</label>
+                </div>
+              </fieldset>
+              <div class="field field--full">
+                <label for="f-msg">Message (optional)</label>
+                <textarea id="f-msg" name="message" rows="5" placeholder="Where will the drawing live? Who will see it?"></textarea>
+              </div>
+            </div>
+            <div class="form__submit">
+              <button class="btn btn--primary btn--send" type="submit">Seal and send <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg></button>
+              <p class="form__status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+        <span class="envelope__pocket" aria-hidden="true"></span>
+        <svg class="envelope__postmark" viewBox="0 0 112 112" width="112" height="112" aria-hidden="true" focusable="false">
+          <defs><path id="pm-ring-2" d="M56 56m-40 0a40 40 0 1 1 80 0a40 40 0 1 1-80 0"/></defs>
+          <g fill="none" stroke="currentColor" stroke-width="2"><circle cx="56" cy="56" r="52"/><circle cx="56" cy="56" r="28"/></g>
+          <text font-family="Courier Prime, Courier New, monospace" font-weight="700" font-size="12" letter-spacing="3" fill="currentColor"><textPath href="#pm-ring-2">BONFIM . PORTO . BONFIM . PORTO .</textPath></text>
+          <text x="56" y="61" text-anchor="middle" font-family="Courier Prime, Courier New, monospace" font-weight="700" font-size="14" fill="currentColor">2026</text>
+        </svg>
+        <div class="slip tilt" style="--r: var(--t-d)" tabindex="-1" hidden data-slip>
+          <h3>Sealed.</h3>
+          <p data-slip-text>Thanks. This form is a demo, so nothing was sent. Email hello@junovarela.example to reach me.</p>
+          <button class="btn btn--secondary" type="button" data-reset>Write another <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== Footer: the back cover ========== -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__thanks">
+      <p class="footer__note">Thanks for looking through the album.</p>
+      <p class="footer__small">Juno Varela. Illustrator in Porto.</p>
+    </div>
+    <div class="footer__links">
+      <h2 class="footer__title">Find me online</h2>
+      <ul class="labels">
+        <li><a class="label-link tilt" style="--r: var(--t-b)" href="#">Instagram</a></li>
+        <li><a class="label-link tilt" style="--r: var(--t-d)" href="#">Behance</a></li>
+        <li><a class="label-link tilt" style="--r: var(--t-c)" href="#">Newsletter</a></li>
+              </ul>
+    </div>
+    <div class="footer__top">
+      <a class="label-link tilt" style="--r: var(--t-b)" href="#top">Back to top <svg class="ic ic--20" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg></a>
+    </div>
+    <p class="footer__small footer__legal">© 2026 Juno Varela. Set in Permanent Marker, Caveat, Newsreader and Courier Prime.</p>
+  </div>
+</footer>
+</body>
+</html>

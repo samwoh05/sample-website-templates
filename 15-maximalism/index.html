@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ottavia Plum · Pattern and Interiors · Casa Plum</title>
+  <meta name="description" content="Fictional portfolio template: Ottavia Plum designs wallpaper, textiles, tableware and whole rooms in Naples.">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#2A0A2E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=DM+Mono:wght@400;500&family=Pinyon+Script&family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the salon</a>
+
+  <!-- Icon and ornament sprite: one ornamental line family, 1.75px stroke, currentColor -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="g-brass" cx="35%" cy="30%" r="80%">
+        <stop offset="0" stop-color="#FFE08A"/>
+        <stop offset=".55" stop-color="#E2B437"/>
+        <stop offset="1" stop-color="#8A6410"/>
+      </radialGradient>
+      <linearGradient id="g-velvet" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#55091D"/>
+        <stop offset=".28" stop-color="#8E1434"/>
+        <stop offset=".5" stop-color="#7A0E2A"/>
+        <stop offset=".74" stop-color="#9A1A3C"/>
+        <stop offset="1" stop-color="#55091D"/>
+      </linearGradient>
+      <pattern id="p-stitch" width="8" height="8" patternUnits="userSpaceOnUse">
+        <path d="M1 1l6 6M7 1l-6 6" stroke="#7A0E2A" stroke-width="1.6"/>
+      </pattern>
+    </defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13.5 6.5 19 12l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5M6.5 10.5 12 5l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9.5l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5.5v13M15 5.5v13" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5l11 6.5-11 6.5z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-warning" viewBox="0 0 24 24"><path d="M12 3.5 21.5 20h-19zM12 10v4.5M12 17.2v.3" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17h12M8 17v-4a4 4 0 0 1 8 0v4M12 9V7M10.5 6.5h3M4 20h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+    <symbol id="i-fleuron" viewBox="0 0 24 24"><path d="M12 3.5c3 3 3.5 7 0 11-3.5-4-3-8 0-11zM12 14.5v5M7 18.5c2-1.5 8-1.5 10 0" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="rosette" viewBox="0 0 24 24"><g fill="url(#g-brass)"><circle cx="12" cy="5" r="3.4"/><circle cx="16.95" cy="7.05" r="3.4"/><circle cx="19" cy="12" r="3.4"/><circle cx="16.95" cy="16.95" r="3.4"/><circle cx="12" cy="19" r="3.4"/><circle cx="7.05" cy="16.95" r="3.4"/><circle cx="5" cy="12" r="3.4"/><circle cx="7.05" cy="7.05" r="3.4"/></g><circle cx="12" cy="12" r="4.2" fill="#8A6410"/><circle cx="12" cy="12" r="2.2" fill="#FFE08A"/></symbol>
+    <symbol id="pomegranate" viewBox="0 0 24 24"><path d="M8.2 7.6 9.4 3.8l2.6 2.4 2.6-2.4 1.2 3.8z" fill="#7A0E2A"/><circle cx="12" cy="14" r="7.6" fill="#7A0E2A"/><circle cx="9.6" cy="12.4" r="1.4" fill="#FFE08A"/><circle cx="13.4" cy="15.8" r="1.4" fill="#FFE08A"/><circle cx="14.4" cy="11.6" r="1" fill="#FFE08A"/></symbol>
+    <symbol id="star8" viewBox="0 0 24 24"><path d="M12 2l1.72 5.84 5.35-2.91-2.91 5.35L22 12l-5.84 1.72 2.91 5.35-5.35-2.91L12 22l-1.72-5.84-5.35 2.91 2.91-5.35L2 12l5.84-1.72-2.91-5.35 5.35 2.91z" fill="#2A0A2E"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z" fill="none" stroke="#7A0E2A" stroke-width="2" stroke-dasharray="2.4 1.6"/></symbol>
+    <symbol id="tassel" viewBox="0 0 40 100"><path d="M20 0v19" stroke="#8A6410" stroke-width="2.4"/><circle cx="20" cy="23" r="6" fill="url(#g-brass)"/><path d="M11 40c0-8 4-11 9-11s9 3 9 11z" fill="url(#g-brass)"/><rect x="8.5" y="39" width="23" height="6" rx="2.5" fill="#8A6410"/><path d="M11 46l-2.5 47M14 46l-1.2 49M17 46l-.4 50M20 46v50M23 46l.4 50M26 46l1.2 49M29 46l2.5 47" stroke="#E2B437" stroke-width="2.4" stroke-linecap="round"/><path d="M12.6 46l-1.8 47M27.4 46l1.8 47" stroke="#8A6410" stroke-width="2" stroke-linecap="round"/><rect x="9" y="60" width="22" height="3.5" rx="1.5" fill="#FFE08A"/></symbol>
+  </svg>
+
+  <!-- No.0 The Vestibule -->
+  <header class="rail" id="rail">
+    <div class="rail__inner">
+      <a class="monogram" href="#salon" aria-label="Casa Plum, back to the salon"><span aria-hidden="true">OP</span></a>
+      <button class="rail__toggle" type="button" aria-expanded="false" aria-controls="rooms-list">
+        <span>Rooms</span>
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg>
+      </button>
+      <nav class="rail__nav" aria-label="Rooms">
+        <ul class="rail__list" id="rooms-list">
+          <li><a href="#salon"><span class="rail__no">No.1</span> Salon</a></li>
+          <li><a href="#library"><span class="rail__no">No.2</span> Library</a></li>
+          <li><a href="#gallery"><span class="rail__no">No.3</span> Gallery</a></li>
+          <li><a href="#haberdashery"><span class="rail__no">No.4</span> Haberdashery</a></li>
+          <li><a href="#powder"><span class="rail__no">No.5</span> Powder Room</a></li>
+          <li><a href="#contact"><span class="rail__no">No.6</span> Writing Desk</a></li>
+          <li class="rail__list-cta"><a class="enamel" href="#contact">Ask for a quote</a></li>
+        </ul>
+      </nav>
+      <a class="enamel rail__cta" href="#contact">Ask for a quote</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <!-- No.1 The Salon (hero) -->
+    <section id="salon" class="room salon" aria-labelledby="salon-title" data-scheme="emerald">
+      <div class="salon__stage">
+        <div class="salon__set" aria-hidden="true">
+          <div class="salon__wall">
+            <div class="paper paper--salon"><i></i><i></i><i></i></div>
+            <div class="drops"></div>
+            <span class="linen"></span>
+            <span class="cornice"></span>
+          </div>
+          <span class="gilt-rail salon__chair"></span>
+          <div class="salon__dado"></div>
+          <div class="salon__floor"><span class="floor"></span></div>
+        </div>
+
+        <div class="valance" aria-hidden="true">
+          <span class="valance__pelmet"></span>
+          <span class="fringe valance__fringe"></span>
+          <svg class="valance__tassel" focusable="false"><use href="#tassel"/></svg>
+        </div>
+
+        <div class="salon__grid shell">
+          <div class="salon__head">
+            <p class="kicker kicker--ink salon__kicker">No.1 THE SALON · CASA PLUM · NAPOLI</p>
+            <h1 id="salon-title" class="hero-name">
+              <span class="ribbon"><span class="ribbon__t">Ottavia</span></span>
+              <span class="cartouche"><span class="cartouche__t">Plum</span></span>
+            </h1>
+            <div class="plaque salon__plaque">
+              <p class="tagline">Pattern, colour and rooms that refuse to whisper.</p>
+              <p>Surface pattern and interiors for hotels, bars, stages and very brave homes.</p>
+            </div>
+            <div class="salon__actions">
+              <a class="enamel enamel--lg" href="#gallery">See the rooms <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+              <a class="price-tag" href="#contact">
+                <svg class="price-tag__cord" viewBox="0 0 40 32" aria-hidden="true" focusable="false"><path d="M20 0c-5 9 5 15 0 32"/></svg>
+                <span class="price-tag__body"><span class="price-tag__hole" aria-hidden="true"></span>Commission a pattern · from €2,400</span>
+              </a>
+            </div>
+            <fieldset class="colourway">
+              <legend>Re-paper the salon</legend>
+              <div class="colourway__opts">
+                <label class="cw" for="cw-emerald">
+                  <input type="radio" name="colourway" id="cw-emerald" value="emerald" checked>
+                  <span class="cw__swatch cw__swatch--emerald" aria-hidden="true"><svg class="cw__badge" focusable="false"><use href="#i-check"/></svg></span>
+                  <span class="cw__name">Emerald Damask</span>
+                </label>
+                <label class="cw" for="cw-cobalt">
+                  <input type="radio" name="colourway" id="cw-cobalt" value="cobalt">
+                  <span class="cw__swatch cw__swatch--cobalt" aria-hidden="true"><svg class="cw__badge" focusable="false"><use href="#i-check"/></svg></span>
+                  <span class="cw__name">Cobalt Chintz</span>
+                </label>
+                <label class="cw" for="cw-pink">
+                  <input type="radio" name="colourway" id="cw-pink" value="pink">
+                  <span class="cw__swatch cw__swatch--pink" aria-hidden="true"><svg class="cw__badge" focusable="false"><use href="#i-check"/></svg></span>
+                  <span class="cw__name">Pink Regency</span>
+                </label>
+              </div>
+            </fieldset>
+            <p class="sr-only" id="cw-status" aria-live="polite"></p>
+          </div>
+
+          <div class="hang" id="hang">
+            <!-- Frame 1: arch portrait -->
+            <div class="hang__item hang__item--1" data-depth=".4">
+              <a class="frame-link" href="#library" aria-label="See Ottavia in the library">
+                <span class="frame-swing" style="--tilt:-1.5deg">
+                  <span class="nail" aria-hidden="true"></span>
+                  <svg class="cord cord--curve" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 18 40M50 2l32 38"/></svg>
+                  <span class="frame frame--arch" style="--mat: var(--pat-gingham); --mat-alt: var(--pat-polka)">
+                    <span class="frame__bead"><span class="frame__mat">
+                      <!-- Replace with Envato Elements image -->
+                      <span class="ph" data-placeholder="true" role="img" aria-label="Portrait of Ottavia in the studio, 1200x1500" style="aspect-ratio: 1200 / 1500"><span class="ph__tag">Portrait of Ottavia in the studio · 1200x1500</span></span>
+                    </span></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <!-- Frame 2: oval -->
+            <div class="hang__item hang__item--2" data-depth=".8">
+              <a class="frame-link" href="#lot-01" aria-label="See Pomegranate Riot in the gallery">
+                <span class="frame-swing" style="--tilt:2deg">
+                  <span class="nail" aria-hidden="true"></span>
+                  <svg class="cord cord--curve" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 20 40M50 2l30 38"/></svg>
+                  <span class="frame frame--oval" style="--mat: var(--pat-polka); --mat-alt: var(--pat-stripe)">
+                    <span class="frame__bead"><span class="frame__mat">
+                      <!-- Replace with Envato Elements image -->
+                      <span class="ph" data-placeholder="true" role="img" aria-label="Pomegranate Riot wallpaper detail, 700x900" style="aspect-ratio: 700 / 900"><span class="ph__tag">Pomegranate Riot wallpaper detail · 700x900</span></span>
+                    </span></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <!-- Frame 3: octagon -->
+            <div class="hang__item hang__item--3 hang__item--oct" data-depth="1">
+              <a class="frame-link" href="#lot-02" aria-label="See Bar Fortunato in the gallery">
+                <span class="frame-swing" style="--tilt:-2.5deg">
+                  <span class="nail" aria-hidden="true"></span>
+                  <svg class="cord" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 30 40M50 2l20 38"/></svg>
+                  <span class="frame frame--oct" style="--mat: var(--pat-fish); --mat-alt: var(--pat-harlequin)">
+                    <span class="frame__bead"><span class="frame__mat">
+                      <!-- Replace with Envato Elements image -->
+                      <span class="ph" data-placeholder="true" role="img" aria-label="Bar Fortunato tile detail, 600x600" style="aspect-ratio: 600 / 600"><span class="ph__tag">Bar Fortunato tile detail · 600x600</span></span>
+                    </span></span>
+                    <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <!-- Frame 4: landscape rect -->
+            <div class="hang__item hang__item--4" data-depth=".6">
+              <a class="frame-link" href="#lot-04" aria-label="See Teatro Minimo in the gallery">
+                <span class="frame-swing" style="--tilt:1deg">
+                  <span class="nail" aria-hidden="true"></span>
+                  <svg class="cord" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 2 40M50 2l48 38"/></svg>
+                  <span class="frame frame--rect" style="--mat: var(--pat-harlequin); --mat-alt: var(--pat-fish)">
+                    <span class="frame__bead"><span class="frame__mat">
+                      <!-- Replace with Envato Elements image -->
+                      <span class="ph" data-placeholder="true" role="img" aria-label="Teatro Minimo opera set, 1000x700" style="aspect-ratio: 1000 / 700"><span class="ph__tag">Teatro Minimo opera set · 1000x700</span></span>
+                    </span></span>
+                    <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <!-- Frame 5: square rect -->
+            <div class="hang__item hang__item--5" data-depth=".9">
+              <a class="frame-link" href="#lot-05" aria-label="See Tutti Frutti in the gallery">
+                <span class="frame-swing" style="--tilt:-3deg">
+                  <span class="nail" aria-hidden="true"></span>
+                  <svg class="cord" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 2 40M50 2l48 38"/></svg>
+                  <span class="frame frame--rect" style="--mat: var(--pat-stripe); --mat-alt: var(--pat-check)">
+                    <span class="frame__bead"><span class="frame__mat">
+                      <!-- Replace with Envato Elements image -->
+                      <span class="ph" data-placeholder="true" role="img" aria-label="Tutti Frutti plate, 800x800" style="aspect-ratio: 800 / 800"><span class="ph__tag">Tutti Frutti plate · 800x800</span></span>
+                    </span></span>
+                    <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+            <!-- Frames 6 and 7: miniature pattern swatches, decorative -->
+            <div class="hang__item hang__item--6" data-depth=".3" aria-hidden="true">
+              <span class="frame-swing" style="--tilt:3deg">
+                <span class="nail"></span>
+                <span class="frame frame--oval frame--mini" style="--mat: var(--pat-polka)"><span class="frame__bead"><span class="frame__mat"></span></span></span>
+              </span>
+            </div>
+            <div class="hang__item hang__item--7" data-depth=".7" aria-hidden="true">
+              <span class="frame-swing" style="--tilt:-2deg">
+                <span class="nail"></span>
+                <span class="frame frame--oval frame--mini" style="--mat: var(--pat-harlequin)"><span class="frame__bead"><span class="frame__mat"></span></span></span>
+              </span>
+            </div>
+          </div>
+
+          <button class="bellpull" type="button" aria-label="Ring for new wallpaper" hidden>
+            <svg class="bellpull__tassel" aria-hidden="true" focusable="false"><use href="#tassel"/></svg>
+            <span class="bellpull__label" aria-hidden="true">Ring for new wallpaper</span>
+          </button>
+
+          <p class="museum-label">NOW DESIGNING: 9 COLOURWAYS FOR A HOTEL IN CAPRI (FICTIONAL)</p>
+        </div>
+      </div>
+
+      <div class="marquee" id="marquee">
+        <ul class="sr-only">
+          <li>Wallpaper</li><li>Textiles</li><li>Interiors</li><li>Set dressing</li><li>Tableware</li><li>Colour</li>
+        </ul>
+        <div class="marquee__viewport" aria-hidden="true">
+          <div class="marquee__track">
+            <span class="marquee__group">
+              <span class="mq mq--display">Wallpaper</span><svg class="mq__sep" focusable="false"><use href="#pomegranate"/></svg>
+              <span class="mq mq--serif">Textiles</span><svg class="mq__sep" focusable="false"><use href="#star8"/></svg>
+              <span class="mq mq--display">Interiors</span><svg class="mq__sep" focusable="false"><use href="#pomegranate"/></svg>
+              <span class="mq mq--serif">Set dressing</span><svg class="mq__sep" focusable="false"><use href="#star8"/></svg>
+              <span class="mq mq--display">Tableware</span><svg class="mq__sep" focusable="false"><use href="#pomegranate"/></svg>
+              <span class="mq mq--serif">Colour</span><svg class="mq__sep" focusable="false"><use href="#star8"/></svg>
+            </span>
+            <span class="marquee__group marquee__group--copy">
+              <span class="mq mq--display">Wallpaper</span><svg class="mq__sep" focusable="false"><use href="#pomegranate"/></svg>
+              <span class="mq mq--serif">Textiles</span><svg class="mq__sep" focusable="false"><use href="#star8"/></svg>
+              <span class="mq mq--display">Interiors</span><svg class="mq__sep" focusable="false"><use href="#pomegranate"/></svg>
+              <span class="mq mq--serif">Set dressing</span><svg class="mq__sep" focusable="false"><use href="#star8"/></svg>
+              <span class="mq mq--display">Tableware</span><svg class="mq__sep" focusable="false"><use href="#pomegranate"/></svg>
+              <span class="mq mq--serif">Colour</span><svg class="mq__sep" focusable="false"><use href="#star8"/></svg>
+            </span>
+          </div>
+        </div>
+        <button class="marquee__toggle" type="button" aria-pressed="false" aria-label="Pause ribbon">
+          <svg class="icon icon--pause" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg>
+          <svg class="icon icon--play" aria-hidden="true" focusable="false"><use href="#i-play"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- No.2 The Library (about) -->
+    <section id="library" class="room library" aria-labelledby="library-title">
+      <div class="room__paper" aria-hidden="true">
+        <div class="paper paper--chintz"><i></i><i></i><i></i></div>
+        <span class="linen"></span>
+      </div>
+      <div class="trim-rope" aria-hidden="true">
+        <svg focusable="false" width="100%" height="18"><g transform="skewX(-38)"><path d="M0 9H5000" stroke="#E2B437" stroke-width="12" stroke-dasharray="7 4"/><path d="M0 9H5000" stroke="#8A6410" stroke-width="12" stroke-dasharray="7 4" stroke-dashoffset="5.5" opacity=".9"/></g></svg>
+      </div>
+      <div class="shell library__grid">
+        <figure class="library__portrait">
+          <div class="frame-swing" style="--tilt:-1deg">
+            <span class="nail" aria-hidden="true"></span>
+            <svg class="cord cord--curve" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 18 40M50 2l32 38"/></svg>
+            <div class="frame frame--arch" style="--mat: var(--pat-stripe); --mat-alt: var(--pat-fish)">
+              <div class="frame__bead"><div class="frame__mat">
+                <!-- Replace with Envato Elements image -->
+                <div class="ph" data-placeholder="true" role="img" aria-label="Ottavia at her pattern table, 1000x1400" style="aspect-ratio: 1000 / 1400"><span class="ph__tag">Ottavia at her pattern table · 1000x1400</span></div>
+              </div></div>
+            </div>
+            <svg class="swag" viewBox="0 0 400 220" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M0 0h204C150 14 96 40 52 84c-14 40-18 90-10 136H0z" fill="url(#g-velvet)"/>
+              <path d="M400 0H196c54 14 108 40 152 84 14 40 18 90 10 136h42z" fill="url(#g-velvet)"/>
+              <path d="M0 0h400v12H0z" fill="#55091D"/>
+              <path d="M20 24c24 20 50 34 84 44M380 24c-24 20-50 34-84 44M14 60c10 40 12 90 8 150M386 60c-10 40-12 90-8 150" fill="none" stroke="#55091D" stroke-width="3" opacity=".55"/>
+            </svg>
+            <svg class="swag__tassel swag__tassel--l" aria-hidden="true" focusable="false"><use href="#tassel"/></svg>
+            <svg class="swag__tassel swag__tassel--r" aria-hidden="true" focusable="false"><use href="#tassel"/></svg>
+          </div>
+        </figure>
+
+        <div class="library__body">
+          <div class="plaque library__plaque">
+            <p class="kicker">No.2 THE LIBRARY</p>
+            <h2 id="library-title" class="h2"><span class="h2__num" aria-hidden="true">2</span><span class="h2__plain">About the woman who owns</span> <em>61 yellows</em></h2>
+            <p class="dropcap">I grew up above my grandmother's haberdashery in Chiaia, where ribbons were sorted by mood and buttons by temperament. I trained in textile design in Como, then spent four years apprenticed to a scenic painter, learning to make a cardboard wall pass for marble from the back row.</p>
+            <p>Casa Plum opened in 2014 with one screen-printing table and a parrot. Today the studio draws wallpaper, weaves textiles, paints plates and dresses whole rooms for hotels, bars, stages and very brave homes.</p>
+            <p>I believe beige is a decision you can undo. Every project starts with too much, gets edited with care, then gets a little more back.</p>
+            <p class="signature" aria-hidden="true">Ottavia</p>
+          </div>
+
+        </div>
+
+        <div class="shelf">
+          <p class="shelf__hint">Scroll the shelf <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></p>
+          <div class="shelf__scroller" role="region" aria-label="Bookshelf of studio facts" tabindex="0">
+            <ul class="shelf__books" role="list">
+              <li class="spine spine--1" tabindex="0" aria-label="12 years"><span class="spine__label"><span class="spine__n">12</span><span class="spine__fact">years</span></span></li>
+              <li class="spine spine--2" tabindex="0" aria-label="340 wallpaper rolls printed"><span class="spine__label"><span class="spine__n">340</span><span class="spine__fact">wallpaper rolls printed</span></span></li>
+              <li class="spine spine--3" tabindex="0" aria-label="61 yellows on the desk"><span class="spine__label"><span class="spine__n">61</span><span class="spine__fact">yellows on the desk</span></span></li>
+              <li class="spine spine--4" tabindex="0" aria-label="9 hotels"><span class="spine__label"><span class="spine__n">9</span><span class="spine__fact">hotels</span></span></li>
+              <li class="spine spine--5" tabindex="0" aria-label="3 operas"><span class="spine__label"><span class="spine__n">3</span><span class="spine__fact">operas</span></span></li>
+              <li class="spine spine--6" tabindex="0" aria-label="1 parrot, Gennaro"><span class="spine__label"><span class="spine__n">1</span><span class="spine__fact">parrot (Gennaro)</span></span></li>
+              <li class="spine spine--7" tabindex="0" aria-label="0 beige rooms"><span class="spine__label"><span class="spine__n">0</span><span class="spine__fact">beige rooms</span></span></li>
+            </ul>
+          </div>
+          <span class="gilt-rail shelf__rail" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="manifesto">
+        <svg class="manifesto__tassel manifesto__tassel--l" aria-hidden="true" focusable="false"><use href="#tassel"/></svg>
+        <p>More. Then edit. Then a little more.</p>
+        <svg class="manifesto__tassel manifesto__tassel--r" aria-hidden="true" focusable="false"><use href="#tassel"/></svg>
+      </div>
+    </section>
+
+    <!-- No.3 The Long Gallery (selected work) -->
+    <section id="gallery" class="room gallery" aria-labelledby="gallery-title">
+      <div class="room__paper" aria-hidden="true">
+        <div class="paper paper--silk"><i></i></div>
+        <span class="linen"></span>
+      </div>
+      <span class="cornice cornice--room" aria-hidden="true"></span>
+      <div class="shell">
+        <div class="gallery__head">
+          <p class="kicker kicker--oxblood">No.3 THE LONG GALLERY</p>
+          <h2 id="gallery-title" class="h2 h2--light"><span class="h2__num h2__num--gold" aria-hidden="true">06</span><span class="h2__plain">Six rooms,</span> <em>hung floor to ceiling</em></h2>
+        </div>
+
+        <div class="filter" role="group" aria-label="Filter the gallery" hidden>
+          <div class="filter__scroller" role="region" aria-label="Gallery filters" tabindex="0">
+            <button type="button" class="pill" aria-pressed="true" data-filter="all"><svg class="icon pill__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>All</button>
+            <button type="button" class="pill" aria-pressed="false" data-filter="wallpaper"><svg class="icon pill__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Wallpaper</button>
+            <button type="button" class="pill" aria-pressed="false" data-filter="interiors"><svg class="icon pill__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Interiors</button>
+            <button type="button" class="pill" aria-pressed="false" data-filter="textiles"><svg class="icon pill__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Textiles</button>
+            <button type="button" class="pill" aria-pressed="false" data-filter="stage"><svg class="icon pill__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Stage</button>
+            <button type="button" class="pill" aria-pressed="false" data-filter="tableware"><svg class="icon pill__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Tableware</button>
+          </div>
+          <p class="filter__hint">Swipe for more filters</p>
+        </div>
+        <p class="sr-only" id="filter-status" aria-live="polite"></p>
+
+        <div class="lots">
+          <article id="lot-01" class="lot lot--01" data-tags="wallpaper">
+            <div class="lot__hit">
+              <div class="frame-swing" style="--tilt:-1.5deg">
+                <span class="nail" aria-hidden="true"></span>
+                <svg class="cord" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 2 40M50 2l48 38"/></svg>
+                <div class="frame frame--rect" style="--mat-alt: var(--pat-stripe)">
+                  <div class="frame__bead"><div class="frame__mat">
+                    <span class="paper paper--chintz paper--mat mat-paper" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Project cover: Pomegranate Riot room set, 1600x1000" style="aspect-ratio: 1600 / 1000"><span class="ph__tag">Project cover: Pomegranate Riot room set · 1600x1000</span></div>
+                  </div></div>
+                  <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+                </div>
+              </div>
+              <div class="plaque lot__label">
+                <span class="lot__chip" aria-hidden="true"><svg class="icon" focusable="false"><use href="#rosette"/></svg><span class="lot__chip-on">IN THIS ROOM</span><span class="lot__chip-off">OTHER ROOM</span></span>
+                <p class="lot__num" aria-hidden="true">01</p>
+                <h3 class="lot__title"><a href="#lot-01" aria-label="Pomegranate Riot, case study (placeholder)">Pomegranate Riot</a></h3>
+                <p class="mono">2025 · <span data-fictional="true">HOTEL VESUVINA (FICTIONAL)</span> · WALLPAPER, 9 COLOURWAYS</p>
+                <p class="lot__desc">Nine colourways of one unruly fruit, now papering 64 rooms and a lift.</p>
+                <p class="mono mono--gold lot__materials">GOUACHE ARTWORK · 8-COLOUR SCREEN PRINT · 53CM REPEAT</p>
+                <details class="report">
+                  <summary>Condition report <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+                  <p>Lift lobby repainted twice to keep up. Guests steal the sample cards from reception. No repairs needed.</p>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article id="lot-02" class="lot lot--02" data-tags="interiors">
+            <div class="lot__hit">
+              <div class="frame-swing frame-swing--oct" style="--tilt:2deg">
+                <span class="nail" aria-hidden="true"></span>
+                <svg class="cord" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 30 40M50 2l20 38"/></svg>
+                <div class="frame frame--oct" style="--mat: var(--pat-fish); --mat-alt: var(--pat-polka)">
+                  <div class="frame__bead"><div class="frame__mat">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Bar Fortunato interior, 1200x1200" style="aspect-ratio: 1200 / 1200"><span class="ph__tag">Bar Fortunato interior · 1200x1200</span></div>
+                  </div></div>
+                  <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+                </div>
+              </div>
+              <div class="plaque lot__label">
+                <span class="lot__chip" aria-hidden="true"><svg class="icon" focusable="false"><use href="#rosette"/></svg><span class="lot__chip-on">IN THIS ROOM</span><span class="lot__chip-off">OTHER ROOM</span></span>
+                <p class="lot__num" aria-hidden="true">02</p>
+                <h3 class="lot__title"><a href="#lot-02" aria-label="Bar Fortunato, case study (placeholder)">Bar Fortunato</a></h3>
+                <p class="mono">2024 · <span data-fictional="true">BAR FORTUNATO (FICTIONAL)</span> · FULL INTERIOR, 40 COVERS</p>
+                <p class="lot__desc">Fish-scale tiles, a striped awning and a ceiling of dancing lemons.</p>
+                <p class="mono mono--gold lot__materials">GLAZED TILE · PAINTED CANVAS CEILING · VELVET BANQUETTES</p>
+                <details class="report">
+                  <summary>Condition report <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+                  <p>Lemon ceiling retouched once after a birthday with confetti cannons. Banquettes holding up beautifully.</p>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article id="lot-03" class="lot lot--03" data-tags="textiles">
+            <div class="lot__hit">
+              <div class="frame-swing" style="--tilt:-2.5deg">
+                <span class="nail" aria-hidden="true"></span>
+                <svg class="cord cord--curve" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 22 40M50 2l28 38"/></svg>
+                <div class="frame frame--oval" style="--mat: var(--pat-polka); --mat-alt: var(--pat-check)">
+                  <div class="frame__bead"><div class="frame__mat">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Sirens of Posillipo textile drape, 900x1200" style="aspect-ratio: 900 / 1200"><span class="ph__tag">Sirens of Posillipo textile drape · 900x1200</span></div>
+                  </div></div>
+                </div>
+              </div>
+              <div class="plaque lot__label">
+                <span class="lot__chip" aria-hidden="true"><svg class="icon" focusable="false"><use href="#rosette"/></svg><span class="lot__chip-on">IN THIS ROOM</span><span class="lot__chip-off">OTHER ROOM</span></span>
+                <p class="lot__num" aria-hidden="true">03</p>
+                <h3 class="lot__title"><a href="#lot-03" aria-label="Sirens of Posillipo, case study (placeholder)">Sirens of Posillipo</a></h3>
+                <p class="mono">2024 · <span data-fictional="true">LANIFICIO LISETTA (FICTIONAL)</span> · JACQUARD AND VELVET</p>
+                <p class="lot__desc">A textile range where mermaids hide in the ferns.</p>
+                <p class="mono mono--gold lot__materials">JACQUARD COTTON · CUT VELVET · 6 COLOURWAYS</p>
+                <details class="report">
+                  <summary>Condition report <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+                  <p>Velvet pile tested to 60,000 rubs. One mermaid redrawn after a client said she looked too smug.</p>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article id="lot-04" class="lot lot--04" data-tags="stage">
+            <div class="lot__hit">
+              <div class="frame-swing" style="--tilt:1deg">
+                <span class="nail" aria-hidden="true"></span>
+                <svg class="cord" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 2 40M50 2l48 38"/></svg>
+                <div class="frame frame--rect" style="--mat: var(--pat-harlequin); --mat-alt: var(--pat-gingham)">
+                  <div class="frame__bead"><div class="frame__mat">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Teatro Minimo stage, wide, 1200x800" style="aspect-ratio: 1200 / 800"><span class="ph__tag">Teatro Minimo stage, wide · 1200x800</span></div>
+                  </div></div>
+                  <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+                </div>
+              </div>
+              <div class="plaque lot__label">
+                <span class="lot__chip" aria-hidden="true"><svg class="icon" focusable="false"><use href="#rosette"/></svg><span class="lot__chip-on">IN THIS ROOM</span><span class="lot__chip-off">OTHER ROOM</span></span>
+                <p class="lot__num" aria-hidden="true">04</p>
+                <h3 class="lot__title"><a href="#lot-04" aria-label="Teatro Minimo, case study (placeholder)">Teatro Minimo</a></h3>
+                <p class="mono">2023 · <span data-fictional="true">COMPAGNIA DELLA LANTERNA (FICTIONAL)</span> · SET DRESSING</p>
+                <p class="lot__desc">A chamber opera set built from 31 patterns and one very large chandelier.</p>
+                <p class="mono mono--gold lot__materials">PAINTED FLATS · FLOCKED DRAPES · FOUND FURNITURE</p>
+                <details class="report">
+                  <summary>Condition report <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+                  <p>Toured to four cities. The chandelier now has its own crate and a name: Carmela.</p>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article id="lot-05" class="lot lot--05" data-tags="tableware">
+            <div class="lot__hit">
+              <div class="frame-swing" style="--tilt:-2deg">
+                <span class="nail" aria-hidden="true"></span>
+                <svg class="cord" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 2 40M50 2l48 38"/></svg>
+                <div class="frame frame--rect" style="--mat: var(--pat-stripe); --mat-alt: var(--pat-harlequin)">
+                  <div class="frame__bead"><div class="frame__mat">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="Tutti Frutti table setting, 1000x1000" style="aspect-ratio: 1000 / 1000"><span class="ph__tag">Tutti Frutti table setting · 1000x1000</span></div>
+                  </div></div>
+                  <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+                </div>
+              </div>
+              <div class="plaque lot__label">
+                <span class="lot__chip" aria-hidden="true"><svg class="icon" focusable="false"><use href="#rosette"/></svg><span class="lot__chip-on">IN THIS ROOM</span><span class="lot__chip-off">OTHER ROOM</span></span>
+                <p class="lot__num" aria-hidden="true">05</p>
+                <h3 class="lot__title"><a href="#lot-05" aria-label="Tutti Frutti, case study (placeholder)">Tutti Frutti</a></h3>
+                <p class="mono">2023 · <span data-fictional="true">CERAMICHE ONDINA (FICTIONAL)</span> · 14 PLATES</p>
+                <p class="lot__desc">Fourteen plates that never match and always agree.</p>
+                <p class="mono mono--gold lot__materials">UNDERGLAZE TRANSFER · PORCELAIN · 14 PATTERNS</p>
+                <details class="report">
+                  <summary>Condition report <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+                  <p>Dishwasher safe on the gentle cycle. Plate nine, the striped fig, sold out twice.</p>
+                </details>
+              </div>
+            </div>
+          </article>
+
+          <article id="lot-06" class="lot lot--06" data-tags="interiors wallpaper">
+            <div class="lot__hit">
+              <div class="frame-swing" style="--tilt:1.5deg">
+                <span class="nail" aria-hidden="true"></span>
+                <svg class="cord cord--curve" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M50 2 18 40M50 2l32 38"/></svg>
+                <div class="frame frame--arch" style="--mat: var(--pat-check); --mat-alt: var(--pat-gingham)">
+                  <div class="frame__bead"><div class="frame__mat">
+                    <!-- Replace with Envato Elements image -->
+                    <div class="ph" data-placeholder="true" role="img" aria-label="The Parrot Suite bedroom, 1000x1300" style="aspect-ratio: 1000 / 1300"><span class="ph__tag">The Parrot Suite bedroom · 1000x1300</span></div>
+                  </div></div>
+                </div>
+              </div>
+              <div class="plaque lot__label">
+                <span class="lot__chip" aria-hidden="true"><svg class="icon" focusable="false"><use href="#rosette"/></svg><span class="lot__chip-on">IN THIS ROOM</span><span class="lot__chip-off">OTHER ROOM</span></span>
+                <p class="lot__num" aria-hidden="true">06</p>
+                <h3 class="lot__title"><a href="#lot-06" aria-label="The Parrot Suite, case study (placeholder)">The Parrot Suite</a></h3>
+                <p class="mono">2022 · <span data-fictional="true">PENSIONE AZZURRA (FICTIONAL)</span> · 3 ROOMS, 11 PATTERNS</p>
+                <p class="lot__desc">Three rooms, eleven patterns and a parrot on every pillow.</p>
+                <p class="mono mono--gold lot__materials">WALLPAPER · UPHOLSTERY · HAND-PAINTED HEADBOARDS</p>
+                <details class="report">
+                  <summary>Condition report <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+                  <p>Headboards touched up each spring. Guests ask to book the same room, by parrot name.</p>
+                </details>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="hanging-list plaque">
+          <h3 class="hanging-list__title">The hanging list</h3>
+          <table class="hl-table">
+            <thead>
+              <tr><th scope="col">No.</th><th scope="col">Work</th><th scope="col">Client (fictional)</th><th scope="col">Year</th><th scope="col">Medium</th></tr>
+            </thead>
+            <tbody>
+              <tr data-lot="01"><td class="num">01</td><td><a href="#lot-01">Pomegranate Riot</a></td><td data-fictional="true">Hotel Vesuvina</td><td class="num">2025</td><td>Wallpaper</td></tr>
+              <tr data-lot="02"><td class="num">02</td><td><a href="#lot-02">Bar Fortunato</a></td><td data-fictional="true">Bar Fortunato</td><td class="num">2024</td><td>Interior</td></tr>
+              <tr data-lot="03"><td class="num">03</td><td><a href="#lot-03">Sirens of Posillipo</a></td><td data-fictional="true">Lanificio Lisetta</td><td class="num">2024</td><td>Textiles</td></tr>
+              <tr data-lot="04"><td class="num">04</td><td><a href="#lot-04">Teatro Minimo</a></td><td data-fictional="true">Compagnia della Lanterna</td><td class="num">2023</td><td>Stage</td></tr>
+              <tr data-lot="05"><td class="num">05</td><td><a href="#lot-05">Tutti Frutti</a></td><td data-fictional="true">Ceramiche Ondina</td><td class="num">2023</td><td>Tableware</td></tr>
+              <tr data-lot="06"><td class="num">06</td><td><a href="#lot-06">The Parrot Suite</a></td><td data-fictional="true">Pensione Azzurra</td><td class="num">2022</td><td>Interior and wallpaper</td></tr>
+            </tbody>
+          </table>
+          <div class="hl-stack">
+            <dl data-lot="01"><dt>No.</dt><dd class="num">01</dd><dt>Work</dt><dd><a href="#lot-01">Pomegranate Riot</a></dd><dt>Client (fictional)</dt><dd data-fictional="true">Hotel Vesuvina</dd><dt>Year</dt><dd class="num">2025</dd><dt>Medium</dt><dd>Wallpaper</dd></dl>
+            <dl data-lot="02"><dt>No.</dt><dd class="num">02</dd><dt>Work</dt><dd><a href="#lot-02">Bar Fortunato</a></dd><dt>Client (fictional)</dt><dd data-fictional="true">Bar Fortunato</dd><dt>Year</dt><dd class="num">2024</dd><dt>Medium</dt><dd>Interior</dd></dl>
+            <dl data-lot="03"><dt>No.</dt><dd class="num">03</dd><dt>Work</dt><dd><a href="#lot-03">Sirens of Posillipo</a></dd><dt>Client (fictional)</dt><dd data-fictional="true">Lanificio Lisetta</dd><dt>Year</dt><dd class="num">2024</dd><dt>Medium</dt><dd>Textiles</dd></dl>
+            <dl data-lot="04"><dt>No.</dt><dd class="num">04</dd><dt>Work</dt><dd><a href="#lot-04">Teatro Minimo</a></dd><dt>Client (fictional)</dt><dd data-fictional="true">Compagnia della Lanterna</dd><dt>Year</dt><dd class="num">2023</dd><dt>Medium</dt><dd>Stage</dd></dl>
+            <dl data-lot="05"><dt>No.</dt><dd class="num">05</dd><dt>Work</dt><dd><a href="#lot-05">Tutti Frutti</a></dd><dt>Client (fictional)</dt><dd data-fictional="true">Ceramiche Ondina</dd><dt>Year</dt><dd class="num">2023</dd><dt>Medium</dt><dd>Tableware</dd></dl>
+            <dl data-lot="06"><dt>No.</dt><dd class="num">06</dd><dt>Work</dt><dd><a href="#lot-06">The Parrot Suite</a></dd><dt>Client (fictional)</dt><dd data-fictional="true">Pensione Azzurra</dd><dt>Year</dt><dd class="num">2022</dd><dt>Medium</dt><dd>Interior and wallpaper</dd></dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- No.4 The Haberdashery (services and skills) -->
+    <section id="haberdashery" class="room haber" aria-labelledby="haber-title">
+      <div class="room__paper room__paper--polka" aria-hidden="true"><span class="linen"></span></div>
+      <span class="pelmet" aria-hidden="true"></span>
+      <div class="shell haber__grid">
+        <div class="haber__head">
+          <p class="kicker kicker--ink">No.4 THE HABERDASHERY</p>
+          <h2 id="haber-title" class="h2 h2--band"><span class="h2__num h2__num--gold" aria-hidden="true">4</span><span class="h2__plain">Open a drawer,</span> <em>find a service</em></h2>
+        </div>
+
+        <div class="haber__side">
+          <svg class="scissors" viewBox="0 0 120 220" aria-hidden="true" focusable="false">
+            <path d="M60 0v70" stroke="#FF3D8B" stroke-width="6"/>
+            <path d="M60 64c-30 4-44 20-34 34 8 10 24 0 34-14 10 14 26 24 34 14 10-14-4-30-34-34z" fill="#FF3D8B"/>
+            <g fill="none" stroke="url(#g-brass)" stroke-width="7">
+              <circle cx="40" cy="120" r="16"/>
+              <circle cx="80" cy="120" r="16"/>
+            </g>
+            <path d="M48 134 64 214l4-2-10-78zM72 134l-16 80-4-2 10-78z" fill="#E2B437" stroke="#8A6410" stroke-width="1.5"/>
+            <circle cx="60" cy="150" r="4" fill="#8A6410"/>
+          </svg>
+          <p class="plaque haber__note">Every job starts with a 90-minute colour consult in the studio.</p>
+          <div class="tariff">
+            <h3 class="tariff__title">Tariff</h3>
+            <dl class="tariff__rows">
+              <div><dt>Wallpaper</dt><dd>from €2,400</dd></div>
+              <div><dt>Interiors</dt><dd>from €6,000</dd></div>
+              <div><dt>Textiles</dt><dd>from €3,200</dd></div>
+              <div><dt>Set dressing</dt><dd>€850/day</dd></div>
+              <div><dt>Colour consult</dt><dd>€180</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="cabinet">
+          <details class="drawer drawer--stripe">
+            <summary>
+              <span class="drawer__holder"><span class="drawer__card"><h3 class="drawer__name">Wallpaper and surface pattern</h3><span class="drawer__price">FROM €2,400</span></span></span>
+              <span class="drawer__pull" aria-hidden="true"><svg focusable="false"><use href="#tassel"/></svg></span>
+              <svg class="icon drawer__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg>
+            </summary>
+            <div class="drawer__body">
+              <p>Original repeats drawn by hand, colourways tested on real walls.</p>
+              <ul class="fleurons">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Artwork in 3 colourways</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Repeat files ready for print</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Strike-off review</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Room mock-ups</li>
+              </ul>
+              <p class="mono">TIMELINE: 4 TO 8 WEEKS</p>
+            </div>
+          </details>
+          <details class="drawer drawer--fish">
+            <summary>
+              <span class="drawer__holder"><span class="drawer__card"><h3 class="drawer__name">Interior schemes</h3><span class="drawer__price">FROM €6,000</span></span></span>
+              <span class="drawer__pull" aria-hidden="true"><svg focusable="false"><use href="#tassel"/></svg></span>
+              <svg class="icon drawer__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg>
+            </summary>
+            <div class="drawer__body">
+              <p>Whole rooms planned pattern by pattern, from ceiling to skirting.</p>
+              <ul class="fleurons">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Scheme boards</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Sample box</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Joinery and paint schedule</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Sourcing list</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Site visits</li>
+              </ul>
+              <p class="mono">TIMELINE: 8 TO 16 WEEKS</p>
+            </div>
+          </details>
+          <details class="drawer drawer--harlequin">
+            <summary>
+              <span class="drawer__holder"><span class="drawer__card"><h3 class="drawer__name">Textiles and upholstery</h3><span class="drawer__price">FROM €3,200</span></span></span>
+              <span class="drawer__pull" aria-hidden="true"><svg focusable="false"><use href="#tassel"/></svg></span>
+              <svg class="icon drawer__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg>
+            </summary>
+            <div class="drawer__body">
+              <p>Jacquards, velvets and prints developed with the mill.</p>
+              <ul class="fleurons">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Designs</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Weave or print specs</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Mill liaison</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Trims selection</li>
+              </ul>
+              <p class="mono">TIMELINE: 6 TO 12 WEEKS</p>
+            </div>
+          </details>
+          <details class="drawer drawer--chintz">
+            <summary>
+              <span class="paper paper--chintz paper--drawer" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="drawer__holder"><span class="drawer__card"><h3 class="drawer__name">Set dressing for stage and shoots</h3><span class="drawer__price">DAY RATE €850</span></span></span>
+              <span class="drawer__pull" aria-hidden="true"><svg focusable="false"><use href="#tassel"/></svg></span>
+              <svg class="icon drawer__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg>
+            </summary>
+            <div class="drawer__body">
+              <p>Rooms that look lived in by someone far more interesting.</p>
+              <ul class="fleurons">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Concept sketches</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Prop and fabric sourcing</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>On-set dressing</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Strike</li>
+              </ul>
+              <p class="mono">TIMELINE: FROM 3 DAYS</p>
+            </div>
+          </details>
+          <details class="drawer drawer--check">
+            <summary>
+              <span class="drawer__holder"><span class="drawer__card"><h3 class="drawer__name">Colour consults</h3><span class="drawer__price">€180</span></span></span>
+              <span class="drawer__pull" aria-hidden="true"><svg focusable="false"><use href="#tassel"/></svg></span>
+              <svg class="icon drawer__chev" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg>
+            </summary>
+            <div class="drawer__body">
+              <p>Ninety minutes, sixty-one yellows and a plan you can paint this weekend.</p>
+              <ul class="fleurons">
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>Consult</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>A hand-painted swatch card</li>
+                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-fleuron"/></svg>A written colour list</li>
+              </ul>
+              <p class="mono">TIMELINE: BOOK 2 WEEKS AHEAD</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="rack">
+          <h3 class="rack__title">On the thread rack</h3>
+          <ul class="rack__spools">
+            <li class="spool" style="--thread: var(--pink)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Repeat construction</span></li>
+            <li class="spool" style="--thread: var(--emerald)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Colourways</span></li>
+            <li class="spool" style="--thread: var(--tangerine)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Gouache</span></li>
+            <li class="spool" style="--thread: var(--oxblood)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Screen print</span></li>
+            <li class="spool" style="--thread: var(--turquoise)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Jacquard specs</span></li>
+            <li class="spool" style="--thread: var(--lilac)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Glaze testing</span></li>
+            <li class="spool" style="--thread: var(--chartreuse)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Mural painting</span></li>
+            <li class="spool" style="--thread: var(--cobalt)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Set dressing</span></li>
+            <li class="spool" style="--thread: var(--gold)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Antique sourcing</span></li>
+            <li class="spool" style="--thread: var(--ink)"><span class="spool__reel" aria-hidden="true"></span><span class="spool__tag">Colour workshops</span></li>
+          </ul>
+          <span class="gilt-rail rack__rail" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- No.5 The Powder Room (fictional client quotes) -->
+    <section id="powder" class="room powder" aria-labelledby="powder-title">
+      <div class="room__paper room__paper--stripe" aria-hidden="true"><span class="linen"></span></div>
+      <div class="powder__dado" aria-hidden="true"></div>
+      <span class="fringe fringe--room" aria-hidden="true"></span>
+      <div class="shell">
+        <div class="powder__head">
+          <p class="kicker kicker--ink">No.5 THE POWDER ROOM</p>
+          <h2 id="powder-title" class="h2 h2--ink"><span class="h2__num h2__num--gold" aria-hidden="true">5</span><span class="h2__plain">Kind words from</span> <em>fictional clients</em></h2>
+          <p class="powder__note">ALL CLIENTS AND QUOTES ARE FICTIONAL</p>
+        </div>
+        <h3 class="sr-only">Three framed testimonials</h3>
+        <div class="quotes">
+          <figure class="quote quote--mirror" data-depth=".3" data-fictional="true">
+            <div class="quote__face">
+              <span class="quote__mark" aria-hidden="true">“</span>
+              <blockquote><p>She talked us out of grey in eleven minutes. Our bookings went up and so did the noise.</p></blockquote>
+              <figcaption>
+                <!-- Replace with Envato Elements image -->
+                <span class="ph ph--avatar" data-placeholder="true" role="img" aria-label="Client portrait: Livia Sorrentino, 400x400" style="aspect-ratio: 400 / 400"><span class="ph__tag">Portrait · 400x400</span></span>
+                <span class="quote__who"><span class="quote__name">Livia Sorrentino</span><span class="quote__role">OWNER, HOTEL VESUVINA (FICTIONAL)</span></span>
+              </figcaption>
+            </div>
+            <span class="quote__sheen" aria-hidden="true"></span>
+          </figure>
+          <figure class="quote quote--sampler" data-depth=".6" data-fictional="true">
+            <div class="quote__face">
+              <svg class="sampler__heart sampler__heart--tl" aria-hidden="true" focusable="false"><use href="#heart"/></svg>
+              <svg class="sampler__heart sampler__heart--tr" aria-hidden="true" focusable="false"><use href="#heart"/></svg>
+              <svg class="sampler__heart sampler__heart--bl" aria-hidden="true" focusable="false"><use href="#heart"/></svg>
+              <svg class="sampler__heart sampler__heart--br" aria-hidden="true" focusable="false"><use href="#heart"/></svg>
+              <span class="quote__mark" aria-hidden="true">“</span>
+              <blockquote><p>The bar looks like a party even when it is closed on Mondays.</p></blockquote>
+              <figcaption>
+                <!-- Replace with Envato Elements image -->
+                <span class="ph ph--avatar" data-placeholder="true" role="img" aria-label="Client portrait: Teo Marangoni, 400x400" style="aspect-ratio: 400 / 400"><span class="ph__tag">Portrait · 400x400</span></span>
+                <span class="quote__who"><span class="quote__name">Teo Marangoni</span><span class="quote__role">OWNER, BAR FORTUNATO (FICTIONAL)</span></span>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="quote quote--cameo" data-depth=".9" data-fictional="true">
+            <div class="quote__face">
+              <span class="quote__mark" aria-hidden="true">“</span>
+              <blockquote><p>We asked for a hint of colour. We got all of it, and the critics loved it.</p></blockquote>
+              <figcaption>
+                <!-- Replace with Envato Elements image -->
+                <span class="ph ph--avatar" data-placeholder="true" role="img" aria-label="Client portrait: Ada Ferri, 400x400" style="aspect-ratio: 400 / 400"><span class="ph__tag">Portrait · 400x400</span></span>
+                <span class="quote__who"><span class="quote__name">Ada Ferri</span><span class="quote__role">DIRECTOR, COMPAGNIA DELLA LANTERNA (FICTIONAL)</span></span>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- No.6 The Writing Desk (contact, non-functional) -->
+    <section id="contact" class="room desk" aria-labelledby="contact-title">
+      <div class="room__paper" aria-hidden="true">
+        <div class="paper paper--chintz paper--cobalt"><i></i><i></i><i></i></div>
+        <span class="linen"></span>
+      </div>
+      <span class="gilt-rail desk__rail" aria-hidden="true"></span>
+      <div class="desk__top" aria-hidden="true"></div>
+      <div class="shell desk__grid">
+        <p class="kicker kicker--ink desk__kicker">No.6 THE WRITING DESK</p>
+        <form class="sheet" id="sheet" action="#" novalidate>
+          <span class="rosettes" aria-hidden="true"><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg><svg focusable="false"><use href="#rosette"/></svg></span>
+          <div class="sheet__letterhead">
+            <span class="sheet__mono" aria-hidden="true">OP</span>
+            <span class="sheet__stamp">SHEET No. 015</span>
+          </div>
+          <p class="sheet__compliments" aria-hidden="true">with compliments</p>
+          <h2 id="contact-title" class="h2 h2--sheet"><span class="h2__num" aria-hidden="true">6</span><span class="h2__plain">Write to</span> <em>Ottavia</em></h2>
+          <p class="sheet__intro">Tell me about the room. Big or small, loud is welcome.</p>
+          <p class="sheet__req mono">FIELDS MARKED <span class="req-mark">REQUIRED</span> MUST BE FILLED IN</p>
+
+          <div class="err-summary" id="err-summary" tabindex="-1" hidden>
+            <h3 id="err-summary-title">2 things need a look before the bell rings</h3>
+            <ul></ul>
+          </div>
+
+          <div class="field" data-field="name">
+            <label for="f-name">Name <span class="req-mark" aria-hidden="true">Required</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-hint f-name-err">
+            <p class="hint" id="f-name-hint">First name is fine.</p>
+            <p class="error" id="f-name-err" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><span>Please tell me your name.</span></p>
+          </div>
+          <div class="field" data-field="email">
+            <label for="f-email">Email <span class="req-mark" aria-hidden="true">Required</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-hint f-email-err">
+            <p class="hint" id="f-email-hint">I reply from studio@casaplum.example.</p>
+            <p class="error" id="f-email-err" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><span>Please enter an email like name@example.com.</span></p>
+          </div>
+          <div class="field" data-field="type">
+            <label for="f-type">Project type</label>
+            <span class="select"><select id="f-type" name="type" aria-describedby="f-type-hint">
+              <option>Wallpaper</option>
+              <option>Interior</option>
+              <option>Textiles</option>
+              <option>Stage or shoot</option>
+              <option>Colour consult</option>
+              <option>Something stranger</option>
+            </select><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></span>
+            <p class="hint" id="f-type-hint">Pick the closest.</p>
+          </div>
+          <fieldset class="field budget">
+            <legend>Budget</legend>
+            <div class="budget__chips">
+              <label class="chip"><input type="radio" name="budget" value="under-3k"><span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Under €3k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="3k-10k"><span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>€3k to €10k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="10k-30k"><span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>€10k to €30k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="30k-up"><span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>€30k and up</span></label>
+            </div>
+          </fieldset>
+          <div class="field" data-field="message">
+            <label for="f-message">Message <span class="req-mark" aria-hidden="true">Required</span></label>
+            <textarea id="f-message" name="message" rows="6" minlength="20" required aria-describedby="f-message-hint f-message-err"></textarea>
+            <p class="hint" id="f-message-hint">A few lines is plenty: the room, the mood, the deadline.</p>
+            <p class="error" id="f-message-err" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-warning"/></svg><span>A few more words please: at least 20 characters.</span></p>
+          </div>
+
+          <div class="sheet__submit">
+            <button class="ring" type="submit"><svg class="icon ring__bell" aria-hidden="true" focusable="false"><use href="#i-bell"/></svg>Ring the bell</button>
+          </div>
+          <p class="sheet__nojs mono">Demo form: nothing is sent.</p>
+          <p class="sheet__status" id="sheet-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside class="desk__aside" aria-label="Studio details">
+          <svg class="deskbell" viewBox="0 0 160 120" aria-hidden="true" focusable="false">
+            <ellipse cx="80" cy="108" rx="70" ry="9" fill="#4A2A18" opacity=".55"/>
+            <rect x="12" y="92" width="136" height="14" rx="5" fill="#8A6410"/>
+            <rect x="16" y="90" width="128" height="6" rx="3" fill="#FFE08A"/>
+            <path d="M24 90c0-38 25-60 56-60s56 22 56 60z" fill="url(#g-brass)"/>
+            <path d="M46 52c8-10 20-16 34-16" fill="none" stroke="#FFF3C2" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+            <rect x="74" y="16" width="12" height="16" rx="3" fill="#8A6410"/>
+            <ellipse cx="80" cy="14" rx="16" ry="6" fill="url(#g-brass)"/>
+          </svg>
+          <div class="plaque-ink desk__plaque">
+            <p><a href="mailto:studio@casaplum.example"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>studio@casaplum.example</a></p>
+            <p>Replies within 3 working days</p>
+            <p>Studio visits Tue to Thu, by appointment</p>
+            <p>Via dei Gigli 12, Napoli (fictional)</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- No.7 The Floor (footer) -->
+  <div class="floorband" aria-hidden="true"><span class="floor"></span></div>
+  <footer class="footer">
+    <span class="gilt-rail footer__rail" aria-hidden="true"></span>
+    <div class="shell footer__grid">
+      <div class="doorplate">
+        <p class="doorplate__name">CASA PLUM</p>
+        <p class="doorplate__sub">Ottavia Plum, pattern and interiors</p>
+        <p class="doorplate__est">EST. 2014 · NAPOLI</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div>
+          <h2 class="footer__h">Rooms</h2>
+          <ul>
+            <li><a href="#salon">No.1 Salon</a></li>
+            <li><a href="#library">No.2 Library</a></li>
+            <li><a href="#gallery">No.3 Gallery</a></li>
+            <li><a href="#haberdashery">No.4 Haberdashery</a></li>
+            <li><a href="#powder">No.5 Powder Room</a></li>
+            <li><a href="#contact">No.6 Writing Desk</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__h">Elsewhere</h2>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Are.na</a></li>
+            <li><a href="#">Newsletter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__h">Visit</h2>
+          <address>
+            <p>Via dei Gigli 12, 80121 Napoli</p>
+            <p><a href="mailto:studio@casaplum.example">studio@casaplum.example</a></p>
+          </address>
+        </div>
+      </nav>
+      <div class="colophon">
+        <ul class="colophon__swatches" aria-label="Palette">
+          <li style="--c:#2A0A2E"><span>#2A0A2E</span></li>
+          <li style="--c:#FFF4DE"><span>#FFF4DE</span></li>
+          <li style="--c:#F7E6C4"><span>#F7E6C4</span></li>
+          <li style="--c:#0B6E4F"><span>#0B6E4F</span></li>
+          <li style="--c:#7A0E2A"><span>#7A0E2A</span></li>
+          <li style="--c:#6A0B24"><span>#6A0B24</span></li>
+          <li style="--c:#1F3BFF"><span>#1F3BFF</span></li>
+          <li style="--c:#FF3D8B"><span>#FF3D8B</span></li>
+          <li style="--c:#FF7A1A"><span>#FF7A1A</span></li>
+          <li style="--c:#C8F031"><span>#C8F031</span></li>
+          <li style="--c:#2EC4B6"><span>#2EC4B6</span></li>
+          <li style="--c:#C9A7FF"><span>#C9A7FF</span></li>
+          <li style="--c:#E2B437"><span>#E2B437</span></li>
+        </ul>
+        <p class="colophon__fonts">Set in Shrikhand, Bodoni Moda, Bricolage Grotesque, DM Mono and Pinyon Script.</p>
+        <p class="footer__flourish" aria-hidden="true">Ottavia</p>
+      </div>
+      <div class="footer__base">
+        <a class="back-up" href="#salon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-up"/></svg>Back to the salon</a>
+        <p class="footer__small">© 2026 Casa Plum. A fictional studio: all names, clients and quotes are invented.</p>
+      </div>
+    </div>
+    <p class="footer__strip">Wallpaper · Textiles · Interiors · Set dressing · Tableware</p>
+  </footer>
+</body>
+</html>

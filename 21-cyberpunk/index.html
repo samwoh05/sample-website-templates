@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rika Vantrel | Motion and Signage Designer | Hakuro Bay</title>
+<meta name="description" content="Fictional portfolio template: Rika Vantrel designs holographic ads, transit wayfinding and title sequences.">
+<meta name="theme-color" content="#07080F">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Chakra+Petch:wght@400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap&text=%E5%A4%9C%E5%B8%82%E9%9B%BB%E8%84%B3%E4%BF%AE%E7%90%86%E5%96%B6%E6%A5%AD%E4%B8%AD%E5%8F%97%E4%BB%98%E5%87%BA%E5%8F%A3" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- Icon sprite and the static ripple filter used by the hero reflection -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="ripple">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.18" numOctaves="2" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="10"/>
+    </filter>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.5h.01"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13"/><path d="M3.5 7l8.5 6.5L20.5 7"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5l3 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+    <symbol id="i-corner" viewBox="0 0 12 12"><path d="M1 11V1h10"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="site-header__bar container">
+    <a class="brand" href="#top">VANTREL/SIGNWORKS</a>
+    <nav class="primary-nav" aria-label="Primary">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-list">
+        <svg class="icon icon--menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+        <span class="menu-btn__label">Menu</span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ HERO: the sign canyon ============ -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__rain" aria-hidden="true"></div>
+
+  <div class="hero__stage hero__text container">
+
+    <!-- Vertical sign tower (decorative) -->
+    <div class="tower" aria-hidden="true">
+      <span class="tower__cable"></span>
+      <span class="tower__bracket"></span>
+      <span class="tower__box tower__box--mag"><span>夜市</span></span>
+      <span class="tower__box tower__box--cyan"><span>電脳</span></span>
+      <span class="tower__box tower__box--amber"><span>修理</span></span>
+      <span class="tower__plate">LIC 0419-SV</span>
+    </div>
+
+    <!-- Holographic ad strip (decorative) -->
+    <div class="holo" aria-hidden="true">
+      <span class="holo__text">営業中 / OPEN ALL CYCLE / 24H</span>
+    </div>
+
+    <!-- HUD readout (decorative flavour text) -->
+    <div class="hud" aria-hidden="true">
+      <span class="corners"><svg class="corner corner--tl"><use href="#i-corner"/></svg><svg class="corner corner--tr"><use href="#i-corner"/></svg><svg class="corner corner--bl"><use href="#i-corner"/></svg><svg class="corner corner--br"><use href="#i-corner"/></svg></span>
+      <div class="hud__in">
+        <p class="hud__row hud__row--unit"><span class="k">UNIT</span> <span class="v">0419</span> <span class="k">/ SECTOR</span> <span class="v">VELL</span></p>
+        <p class="hud__row"><span class="k">SIGNAL</span> <span class="v">98.2%</span><span class="hud__sep"> <span class="k">/</span> </span></p>
+        <p class="hud__row"><span class="k">RAIN</span> <span class="v">14MM/H</span><span class="hud__sep"> <span class="k">/</span> </span></p>
+        <p class="hud__row"><span class="k hud__local">LOCAL</span> <span class="v">23:47</span></p>
+      </div>
+    </div>
+
+    <p class="eyebrow">HAKURO BAY / SECTOR VELL / NIGHT CYCLE 2027</p>
+
+    <h1 id="hero-title" class="sign">
+      <span class="sign__line sign__line--rika">RIKA<span class="sign__ghost sign__ghost--c" aria-hidden="true">RIKA</span><span class="sign__ghost sign__ghost--m" aria-hidden="true">RIKA</span></span>
+      <span class="sign__line sign__line--vantrel">VANTREL<span class="sign__ghost sign__ghost--c" aria-hidden="true">VANTREL</span><span class="sign__ghost sign__ghost--m" aria-hidden="true">VANTREL</span></span>
+    </h1>
+
+    <!-- AR callout tags: real links into the page -->
+    <nav class="tags" aria-label="Street tags">
+      <a class="tag tag--work" href="#work"><span class="tag__leader" aria-hidden="true"></span><span class="tag__pin" aria-hidden="true"></span><span class="tag__text">WORK / 05 FILES</span></a>
+      <a class="tag tag--about" href="#about"><span class="tag__leader" aria-hidden="true"></span><span class="tag__pin" aria-hidden="true"></span><span class="tag__text">TENANCY / UNIT 0419</span></a>
+      <a class="tag tag--contact" href="#contact"><span class="tag__leader" aria-hidden="true"></span><span class="tag__pin" aria-hidden="true"></span><span class="tag__text">OPEN CHANNEL</span></a>
+    </nav>
+
+    <div class="hero__copy">
+      <p class="lede">I design the light on the street: holographic ads, transit wayfinding and title sequences for night markets, labs and late-running venues.</p>
+      <p class="status"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>Taking commissions for night cycle 2027.</span></p>
+      <div class="actions">
+        <a class="btn btn--primary" href="#contact"><span class="btn__label">Book a commission</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--ghost" href="#work"><span class="btn__label">See the work</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wet asphalt band with the mirrored sign (decorative) -->
+  <div class="hero__asphalt" aria-hidden="true">
+    <div class="hero__reflection-wrap container">
+      <div class="hero__reflection sign">
+        <span class="sign__line sign__line--rika">RIKA</span>
+        <span class="sign__line sign__line--vantrel">VANTREL</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate notice ticker over hazard tape -->
+  <div class="ticker">
+    <div class="ticker__hazard" aria-hidden="true"></div>
+    <div class="ticker__band">
+      <div class="ticker__window">
+        <div class="ticker__track">
+          <p class="ticker__copy">NOTICE: HELIX-ORO PROPERTY. SIGNAGE LEASE 0419 ACTIVE. / RESIDENTS: DO NOT OBSTRUCT CABLE RUNS. / VELL METRO LINE 4 RUNNING ALL CYCLE. / LOITERING UNDER SIGN 0419 IS LOGGED.</p>
+          <p class="ticker__copy ticker__copy--dup" aria-hidden="true">NOTICE: HELIX-ORO PROPERTY. SIGNAGE LEASE 0419 ACTIVE. / RESIDENTS: DO NOT OBSTRUCT CABLE RUNS. / VELL METRO LINE 4 RUNNING ALL CYCLE. / LOITERING UNDER SIGN 0419 IS LOGGED.</p>
+        </div>
+      </div>
+      <button class="pause-btn" type="button">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg>
+        <span class="pause-btn__label">Pause street</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT: tenancy notice ============ -->
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__portrait reveal">
+        <span class="about__cable" aria-hidden="true"></span>
+        <div class="frame frame--edge">
+          <div class="frame__in">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Portrait, Rika at the workbench - 1200x1500" style="aspect-ratio: 1200 / 1500"><span>Portrait, Rika at the workbench - 1200x1500</span></div>
+          </div>
+        </div>
+        <span class="resident-tag">RESIDENT</span>
+      </div>
+
+      <div class="about__notice">
+        <div class="frame frame--edge reveal">
+          <div class="frame__in notice">
+            <p class="notice__bar"><span>HELIX-ORO BUILDING CODE 7.3 / RESIDENT PROFILE</span><span class="notice__hazard" aria-hidden="true"></span></p>
+            <div class="notice__body">
+              <p class="code-label"><span class="code-label__bar" aria-hidden="true"></span>02 // TENANCY NOTICE</p>
+              <div class="h2-wrap">
+                <h2 id="about-title">The light on your block</h2>
+                <span class="h2-glyph" aria-hidden="true">営業</span>
+              </div>
+              <div class="prose">
+                <p>I have lit Sector Vell for eleven years. I started bending real neon for noodle bars on Sunken Row, and I now build signage systems that run on LED, projection and holographic film. Most of my work goes up after dark and has to be readable through rain, steam and traffic.</p>
+                <p>I work with the people who use the street, not only the people who pay for it. Before I draw anything I stand on the corner at 02:00 and watch where people look. Then I design signs in up to four scripts that work at walking pace and at tram speed.</p>
+              </div>
+              <dl class="facts">
+                <div class="facts__item"><dt>Based in</dt><dd>Hakuro Bay</dd></div>
+                <div class="facts__item"><dt>Years lit</dt><dd>11</dd></div>
+                <div class="facts__item"><dt>Signs installed</dt><dd>340</dd></div>
+                <div class="facts__item"><dt>Scripts on the street</dt><dd>4</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="ticket reveal">
+          <p class="ticket__label">LOST AND FOUND / TOOLS CARRIED</p>
+          <ul class="ticket__list">
+            <li>After Effects and Cinema 4D</li>
+            <li>TouchDesigner</li>
+            <li>LED pixel controllers</li>
+            <li>Laser cutter and bending jig</li>
+            <li>A very good umbrella</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK: sign tower ============ -->
+<section class="section work" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="code-label"><span class="code-label__bar" aria-hidden="true"></span>03 // SIGN TOWER</p>
+      <div class="h2-wrap">
+        <h2 id="work-title">Signs bolted to the block</h2>
+        <span class="h2-glyph" aria-hidden="true">電脳</span>
+      </div>
+      <p class="intro">Five commissions from the last three years. Each one had to survive weather, glare and people who are in a hurry.</p>
+    </header>
+
+    <div class="work-grid">
+      <article class="work-card work-card--1 reveal" id="work-01">
+        <span class="work-card__num" aria-hidden="true">01<span class="num-ghost num-ghost--c">01</span><span class="num-ghost num-ghost--m">01</span></span>
+        <div class="work-card__frame">
+          <div class="work-card__in">
+            <div class="work-card__cover">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Project cover, Night Market 9 Wayfinding - 1600x1000" style="aspect-ratio: 1600 / 1000"><span>Project cover, Night Market 9 Wayfinding - 1600x1000</span></div>
+            </div>
+            <div class="work-card__body">
+              <h3><a class="work-card__link" href="#work-01">Night Market 9 Wayfinding</a></h3>
+              <p class="work-card__meta">SUNKEN ROW TRADERS GUILD / 2026</p>
+              <p class="work-card__desc">Sixty overhead signs in three scripts for a market that runs in a flooded underpass, readable from a moving boat.</p>
+              <ul class="chips"><li>Wayfinding</li><li>LED</li><li>Trilingual</li></ul>
+              <span class="work-card__view" aria-hidden="true">View file <svg class="icon" focusable="false"><use href="#i-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card work-card--2 reveal" id="work-02">
+        <span class="work-card__num" aria-hidden="true">02<span class="num-ghost num-ghost--c">02</span><span class="num-ghost num-ghost--m">02</span></span>
+        <div class="work-card__frame">
+          <div class="work-card__in">
+            <div class="work-card__cover">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Project cover, Kessa Labs Lobby Hologram - 1600x1000" style="aspect-ratio: 1600 / 1000"><span>Project cover, Kessa Labs Lobby Hologram - 1600x1000</span></div>
+            </div>
+            <div class="work-card__body">
+              <h3><a class="work-card__link" href="#work-02">Kessa Labs Lobby Hologram</a></h3>
+              <p class="work-card__meta">KESSA BIOLAB / 2025</p>
+              <p class="work-card__desc">A six-metre looping hologram in the lobby that shows clinic wait times and air quality, updated every minute.</p>
+              <ul class="chips"><li>Holographic film</li><li>Data display</li><li>Motion</li></ul>
+              <span class="work-card__view" aria-hidden="true">View file <svg class="icon" focusable="false"><use href="#i-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card work-card--3 reveal" id="work-03">
+        <span class="work-card__num" aria-hidden="true">03<span class="num-ghost num-ghost--c">03</span><span class="num-ghost num-ghost--m">03</span></span>
+        <div class="work-card__frame">
+          <div class="work-card__in">
+            <div class="work-card__cover">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Project cover, Line 4 Transit Ident - 1200x1200" style="aspect-ratio: 1 / 1"><span>Project cover, Line 4 Transit Ident - 1200x1200</span></div>
+            </div>
+            <div class="work-card__body">
+              <h3><a class="work-card__link" href="#work-03">Line 4 Transit Ident</a></h3>
+              <p class="work-card__meta">VELL METRO AUTHORITY / 2025</p>
+              <p class="work-card__desc">Platform screens and a nine-second station ident that plays as each train arrives, built to be read at a glance.</p>
+              <ul class="chips"><li>Ident</li><li>Transit</li><li>Screens</li></ul>
+              <span class="work-card__view" aria-hidden="true">View file <svg class="icon" focusable="false"><use href="#i-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card work-card--4 reveal" id="work-04">
+        <span class="work-card__num" aria-hidden="true">04<span class="num-ghost num-ghost--c">04</span><span class="num-ghost num-ghost--m">04</span></span>
+        <div class="work-card__frame">
+          <div class="work-card__in">
+            <div class="work-card__cover">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Project cover, Ramen Saito-Kubo Street Sign - 1200x1500" style="aspect-ratio: 1200 / 1500"><span>Project cover, Ramen Saito-Kubo Street Sign - 1200x1500</span></div>
+            </div>
+            <div class="work-card__body">
+              <h3><a class="work-card__link" href="#work-04">Ramen Saito-Kubo Street Sign</a></h3>
+              <p class="work-card__meta">SAITO-KUBO NOODLE BAR / 2024</p>
+              <p class="work-card__desc">A hand-bent neon look rebuilt in LED strip so the owner can repair it himself, plus three matching menu boards.</p>
+              <ul class="chips"><li>Street sign</li><li>LED strip</li><li>Menus</li></ul>
+              <span class="work-card__view" aria-hidden="true">View file <svg class="icon" focusable="false"><use href="#i-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-card work-card--5 reveal" id="work-05">
+        <span class="work-card__num" aria-hidden="true">05<span class="num-ghost num-ghost--c">05</span><span class="num-ghost num-ghost--m">05</span></span>
+        <div class="work-card__frame">
+          <div class="work-card__in">
+            <div class="work-card__cover">
+              <!-- Replace with Envato Elements image -->
+              <div class="ph" data-placeholder="true" role="img" aria-label="Placeholder: Project cover, OFFLINE/ON Title Sequence - 2400x1000" style="aspect-ratio: 2400 / 1000"><span>Project cover, OFFLINE/ON Title Sequence - 2400x1000</span></div>
+            </div>
+            <div class="work-card__body">
+              <h3><a class="work-card__link" href="#work-05">OFFLINE/ON Title Sequence</a></h3>
+              <p class="work-card__meta">RAINGLASS PICTURES / 2024</p>
+              <p class="work-card__desc">A ninety-second opening sequence shot through rain on glass, with every title set as a street sign in the film's city.</p>
+              <ul class="chips"><li>Title sequence</li><li>Film</li><li>Typography</li></ul>
+              <span class="work-card__view" aria-hidden="true">View file <svg class="icon" focusable="false"><use href="#i-arrow-right"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="work__more"><a class="text-link" href="#contact">Ask for the full case files <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ SERVICES: kiosk menu board ============ -->
+<section class="section services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="code-label"><span class="code-label__bar" aria-hidden="true"></span>04 // KIOSK MENU</p>
+      <div class="h2-wrap">
+        <h2 id="services-title">What the kiosk serves</h2>
+        <span class="h2-glyph" aria-hidden="true">修理</span>
+      </div>
+    </header>
+
+    <div class="services__grid">
+      <div class="kiosk-sign reveal">
+        <div class="kiosk-sign__in">
+          <span class="kiosk-sign__glyph" aria-hidden="true">受付</span>
+          <p class="kiosk-sign__line">LEAD TIME / 3-6 WEEKS</p>
+          <p class="kiosk-sign__line">SITE VISITS / AFTER 18:00</p>
+        </div>
+      </div>
+
+      <div class="frame frame--edge board reveal">
+        <div class="frame__in">
+          <div class="board__hazard" aria-hidden="true"></div>
+          <p class="board__head">SELECT A CODE / PRICES IN CREDITS, EXCL. INSTALL</p>
+          <ol class="menu">
+            <li class="menu__row">
+              <span class="menu__code"><span>A1</span></span>
+              <div class="menu__main"><h3>Holographic ad systems</h3><p>Looping holo and LED ads with a content schedule your staff can update.</p></div>
+              <p class="menu__price"><span class="from">from</span> 4,800 cr</p>
+            </li>
+            <li class="menu__row">
+              <span class="menu__code"><span>A2</span></span>
+              <div class="menu__main"><h3>Wayfinding and street signage</h3><p>Sign families for markets, stations and buildings, in up to four scripts.</p></div>
+              <p class="menu__price"><span class="from">from</span> 6,500 cr</p>
+            </li>
+            <li class="menu__row">
+              <span class="menu__code"><span>B1</span></span>
+              <div class="menu__main"><h3>Title sequences</h3><p>Opening and closing titles for film, series and live events.</p></div>
+              <p class="menu__price"><span class="from">from</span> 3,200 cr</p>
+            </li>
+            <li class="menu__row">
+              <span class="menu__code"><span>B2</span></span>
+              <div class="menu__main"><h3>Motion identity kits</h3><p>Logo motion, idents and screen templates for venues that open at night.</p></div>
+              <p class="menu__price"><span class="from">from</span> 2,600 cr</p>
+            </li>
+            <li class="menu__row">
+              <span class="menu__code"><span>C1</span></span>
+              <div class="menu__main"><h3>Projection mapping for venues</h3><p>Mapped light for facades, stairwells and stages, tested in the rain.</p></div>
+              <p class="menu__price"><span class="from">from</span> 5,400 cr</p>
+            </li>
+            <li class="menu__row">
+              <span class="menu__code"><span>C2</span></span>
+              <div class="menu__main"><h3>Signage audits</h3><p>A night walk of your site with a written report on what people miss.</p></div>
+              <p class="menu__price"><span class="from">from</span> 900 cr</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTS: paste-up posters ============ -->
+<section class="section clients" id="clients" aria-labelledby="clients-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="code-label"><span class="code-label__bar" aria-hidden="true"></span>05 // OVERHEARD</p>
+      <div class="h2-wrap">
+        <h2 id="clients-title">Notes left on the wall</h2>
+        <span class="h2-glyph" aria-hidden="true">夜市</span>
+      </div>
+      <p class="intro">Quotes from past clients. All names and organisations here are fictional.</p>
+    </header>
+
+    <div class="wall">
+      <span class="wall__brick" aria-hidden="true"></span>
+      <figure class="poster poster--1 reveal">
+        <span class="poster__tape" aria-hidden="true"></span>
+        <div class="poster__paper">
+          <span class="poster__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote><p>Wrong-turn complaints in the market dropped by half in the first month. Stallholders stopped drawing their own arrows on the walls.</p></blockquote>
+          <figcaption><span class="poster__name">Ines Marrow</span><span class="poster__meta">OPERATIONS LEAD, SUNKEN ROW TRADERS GUILD (FICTIONAL CLIENT)</span></figcaption>
+        </div>
+      </figure>
+      <figure class="poster poster--2 reveal">
+        <span class="poster__tape" aria-hidden="true"></span>
+        <div class="poster__paper">
+          <span class="poster__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote><p>She asked who cleans the lobby at night before she asked about colours. The hologram has not needed a service call since it went up.</p></blockquote>
+          <figcaption><span class="poster__name">Dov Achterberg</span><span class="poster__meta">FACILITIES, KESSA BIOLAB (FICTIONAL CLIENT)</span></figcaption>
+        </div>
+      </figure>
+      <figure class="poster poster--3 reveal">
+        <span class="poster__tape" aria-hidden="true"></span>
+        <div class="poster__paper">
+          <span class="poster__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote><p>Every title in our opening is a sign you could walk past. People still send us photos of the rain shots.</p></blockquote>
+          <figcaption><span class="poster__name">Pell Narayan-Osei</span><span class="poster__meta">PRODUCER, RAINGLASS PICTURES (FICTIONAL CLIENT)</span></figcaption>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT: payphone terminal ============ -->
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="code-label"><span class="code-label__bar" aria-hidden="true"></span>06 // PAYPHONE TERMINAL</p>
+      <div class="h2-wrap">
+        <h2 id="contact-title">Put your sign on my street.</h2>
+        <span class="h2-glyph" aria-hidden="true">出口</span>
+      </div>
+      <p class="intro intro--narrow">Tell me where it goes and when it needs to be lit. I reply within two working nights.</p>
+    </header>
+
+    <div class="contact__grid">
+      <div class="terminal reveal">
+        <span class="corners" aria-hidden="true"><svg class="corner corner--tl"><use href="#i-corner"/></svg><svg class="corner corner--tr"><use href="#i-corner"/></svg><svg class="corner corner--bl"><use href="#i-corner"/></svg><svg class="corner corner--br"><use href="#i-corner"/></svg></span>
+        <div class="terminal__frame">
+          <div class="terminal__in">
+            <p class="terminal__display">TERMINAL 0419 / <span>DEMO FORM: NOT CONNECTED</span></p>
+            <form class="form" id="contact-form" action="#" novalidate>
+              <div class="form__row">
+                <div class="field">
+                  <label for="name">Name <span class="req">(required)</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-hint">
+                  <p class="hint" id="name-hint">What should I call you?</p>
+                  <p class="error" id="name-error" data-msg="Enter your name." hidden></p>
+                </div>
+                <div class="field">
+                  <label for="email">Email <span class="req">(required)</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
+                  <p class="hint" id="email-hint">I reply from a studio address.</p>
+                  <p class="error" id="email-error" data-msg="Enter an email address like name@example.com." hidden></p>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="field">
+                  <label for="type">Project type</label>
+                  <select id="type" name="type" aria-describedby="type-hint">
+                    <option value="">Choose one</option>
+                    <option>Holographic ad system</option>
+                    <option>Wayfinding or street signage</option>
+                    <option>Title sequence</option>
+                    <option>Motion identity kit</option>
+                    <option>Projection mapping</option>
+                    <option>Signage audit</option>
+                    <option>Something else</option>
+                  </select>
+                  <p class="hint" id="type-hint">Pick the closest match.</p>
+                </div>
+                <div class="field">
+                  <label for="budget">Budget range</label>
+                  <select id="budget" name="budget" aria-describedby="budget-hint">
+                    <option value="">Choose one</option>
+                    <option>Under 2,000 cr</option>
+                    <option>2,000-5,000 cr</option>
+                    <option>5,000-10,000 cr</option>
+                    <option>Over 10,000 cr</option>
+                    <option>Not sure yet</option>
+                  </select>
+                  <p class="hint" id="budget-hint">A rough range is fine.</p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="message">Message <span class="req">(required)</span></label>
+                <textarea id="message" name="message" rows="6" required minlength="20" aria-describedby="message-hint"></textarea>
+                <p class="hint" id="message-hint">Where is the site, and when does it open? 20 characters minimum.</p>
+                <p class="error" id="message-error" data-msg="Add a few more details (at least 20 characters)." hidden></p>
+              </div>
+              <div class="field field--check">
+                <label class="check" for="site"><input id="site" name="site" type="checkbox" aria-describedby="site-hint"><span>I have a site address</span></label>
+                <p class="hint" id="site-hint">Tick this if the building or street already exists.</p>
+              </div>
+              <div class="form__submit">
+                <button type="submit" class="btn btn--primary"><span class="btn__label">Send transmission</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg></button>
+                <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="direct reveal">
+        <div class="direct__plaque">
+          <h3>Direct lines</h3>
+          <ul class="direct__list">
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><a href="mailto:rika@vantrel-signworks.example">rika@vantrel-signworks.example</a></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg><span>Studio hours 18:00-04:00 local</span></li>
+            <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Unit 0419, Helix-Oro Block, Sector Vell, Hakuro Bay</span></li>
+          </ul>
+        </div>
+        <div class="exit-sign" aria-hidden="true">
+          <span class="exit-sign__glyph">出口</span>
+          <span class="exit-sign__line">EXIT VIA CABLE STAIR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER: loading bay ============ -->
+<footer class="site-footer">
+  <div class="site-footer__hazard" aria-hidden="true"></div>
+  <div class="site-footer__band">
+    <span class="site-footer__word" aria-hidden="true">VANTREL</span>
+    <div class="container site-footer__inner">
+      <div class="site-footer__row">
+        <a class="brand" href="#top">VANTREL/SIGNWORKS</a>
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#clients">Clients</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="back-top" href="#top"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg><span>Back to top</span></a>
+      </div>
+      <div class="site-footer__legal">
+        <p>&copy; 2026 Rika Vantrel. Fictional portfolio template.</p>
+        <p>Template 21 Cyberpunk. All names, places and companies are invented.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

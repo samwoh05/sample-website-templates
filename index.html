@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample website templates</title>
+<style>
+  :root { --bg: #FBF7F1; --ink: #231C17; --muted: #5A4F47; --line: #E3D9CC; --accent: #9A3412; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 56px 16px 80px; }
+  h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.15; margin: 0 0 8px; }
+  p.lead { color: var(--muted); margin: 0 0 32px; }
+  ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  a.card { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; padding: 16px 20px; border: 2px solid var(--line); border-radius: 14px; background: #FFFDFA; color: var(--ink); text-decoration: none; transition: border-color .2s, transform .2s; }
+  a.card:hover { border-color: var(--accent); transform: translateY(-1px); }
+  a.card:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .name { font-weight: 700; }
+  .folder { color: var(--muted); font-size: 14px; font-family: ui-monospace, Menlo, monospace; }
+  @media (prefers-reduced-motion: reduce) { a.card { transition: none; } a.card:hover { transform: none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Sample website templates</h1>
+  <p class="lead">Portfolio templates, one design style each. Open a card to view the template.</p>
+  <ol id="templates">
+    <!-- TEMPLATE LIST START -->
+    <li><a class="card" href="01-claymorphism/index.html"><span class="name">Claymorphism</span><span class="folder">01-claymorphism</span></a></li>
+    <li><a class="card" href="02-cybercore/index.html"><span class="name">Cybercore</span><span class="folder">02-cybercore</span></a></li>
+    <li><a class="card" href="03-neo-brutalism/index.html"><span class="name">Neo-brutalism</span><span class="folder">03-neo-brutalism</span></a></li>
+    <li><a class="card" href="04-scrapbook/index.html"><span class="name">Scrapbook</span><span class="folder">04-scrapbook</span></a></li>
+    <li><a class="card" href="05-surrealism/index.html"><span class="name">Surrealism</span><span class="folder">05-surrealism</span></a></li>
+    <li><a class="card" href="06-y2k-aesthetic/index.html"><span class="name">Y2K aesthetic</span><span class="folder">06-y2k-aesthetic</span></a></li>
+    <li><a class="card" href="07-pixel-art/index.html"><span class="name">Pixel art</span><span class="folder">07-pixel-art</span></a></li>
+    <li><a class="card" href="08-synthwave/index.html"><span class="name">Synthwave</span><span class="folder">08-synthwave</span></a></li>
+    <li><a class="card" href="09-glassmorphism/index.html"><span class="name">Glassmorphism</span><span class="folder">09-glassmorphism</span></a></li>
+    <li><a class="card" href="10-neumorphism/index.html"><span class="name">Neumorphism</span><span class="folder">10-neumorphism</span></a></li>
+    <li><a class="card" href="11-editorial-design/index.html"><span class="name">Editorial design</span><span class="folder">11-editorial-design</span></a></li>
+    <li><a class="card" href="12-bento-box/index.html"><span class="name">Bento box</span><span class="folder">12-bento-box</span></a></li>
+    <li><a class="card" href="13-swiss-design/index.html"><span class="name">Swiss design</span><span class="folder">13-swiss-design</span></a></li>
+    <li><a class="card" href="14-minimalism/index.html"><span class="name">Minimalism</span><span class="folder">14-minimalism</span></a></li>
+    <li><a class="card" href="15-maximalism/index.html"><span class="name">Maximalism</span><span class="folder">15-maximalism</span></a></li>
+    <li><a class="card" href="16-luxury-typography/index.html"><span class="name">Luxury typography</span><span class="folder">16-luxury-typography</span></a></li>
+    <li><a class="card" href="17-conceptual-sketch/index.html"><span class="name">Conceptual sketch</span><span class="folder">17-conceptual-sketch</span></a></li>
+    <li><a class="card" href="18-ethereal/index.html"><span class="name">Ethereal</span><span class="folder">18-ethereal</span></a></li>
+    <li><a class="card" href="19-bohemian/index.html"><span class="name">Bohemian</span><span class="folder">19-bohemian</span></a></li>
+    <li><a class="card" href="20-victorian/index.html"><span class="name">Victorian</span><span class="folder">20-victorian</span></a></li>
+    <li><a class="card" href="21-cyberpunk/index.html"><span class="name">Cyberpunk</span><span class="folder">21-cyberpunk</span></a></li>
+    <li><a class="card" href="22-wabi-sabi/index.html"><span class="name">Wabi-sabi</span><span class="folder">22-wabi-sabi</span></a></li>
+    <!-- TEMPLATE LIST END -->
+  </ol>
+</main>
+</body>
+</html>

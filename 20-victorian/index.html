@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Ada Wrenfield, letterer and wood-type printer</title>
+  <meta name="description" content="Ada Wrenfield letters and prints show bills, labels and shop fascias by hand at the Calder Works in Scarrow Bridge. A Victorian show bill portfolio template.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Holtwood+One+SC&family=Rye&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the programme</a>
+
+  <!-- Ornament sprite. All symbols are drawn on a 24 box with currentColor; stroke width comes from the using svg (1.5). -->
+  <svg class="sprite" hidden xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-manicule" viewBox="0 0 24 24">
+      <path d="M1.5 8.5h4v8h-4zM5.5 9.5c1.5-1.5 3-2 5-2h10a1.5 1.5 0 0 1 0 3h-7M13 10.5c1.2 0 2 .7 2 1.6s-.8 1.6-2 1.6M12.6 13.7c1.1 0 1.7.6 1.7 1.4s-.6 1.4-1.7 1.4H10c-1.8 0-3.2-.4-4.5-1.2M8.5 9.8c1.4.5 2.4 1.3 3 2.5"/>
+    </symbol>
+    <symbol id="i-fleuron" viewBox="0 0 24 24">
+      <path d="M12 20c0-3.5-6.5-5.5-6.5-10.5C5.5 6.4 8.4 4 12 7c3.6-3 6.5-.6 6.5 2.5 0 5-6.5 7-6.5 10.5zM12 7v6.5M9 10.5c1.5.4 2.5 1.4 3 3M15 10.5c-1.5.4-2.5 1.4-3 3M12 20v2.5M9.5 22.5h5"/>
+    </symbol>
+    <symbol id="i-corner" viewBox="0 0 24 24">
+      <path d="M2.5 22V10.5C2.5 6 6 2.5 10.5 2.5H22M2.5 15.5c2.8 0 4.5-1.7 4.5-4.5S8.7 6.5 11.5 6.5M15.5 2.5c0 2.8-1.7 4.5-4.5 4.5M7 11c1.6 0 2.5.9 2.5 2.4M11 7c0 1.6.9 2.5 2.4 2.5"/>
+      <circle cx="11.5" cy="11.5" r="1.6"/>
+    </symbol>
+    <symbol id="i-asterism" viewBox="0 0 24 24">
+      <path d="M12 2.5v7M9 4.25l6 3.5M9 7.75l6-3.5M6 13.5v7M3 15.25l6 3.5M3 18.75l6-3.5M18 13.5v7M15 15.25l6 3.5M15 18.75l6-3.5"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"/>
+    </symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24">
+      <path d="M12 3.5v17M6 14.5l6 6 6-6"/>
+    </symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24">
+      <path d="M3.5 12h17M14.5 6l6 6-6 6"/>
+    </symbol>
+    <symbol id="i-press" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10.25"/>
+      <path d="M6.5 17.5h11M8 17.5V8.5M16 17.5V8.5M7.25 8.5h9.5M9.75 8.5c0-2.6 4.5-2.6 4.5 0M12 8.5v3.5M9.5 12h5v2h-5zM16 11h3.25"/>
+    </symbol>
+  </svg>
+
+  <header class="hero" id="top">
+    <div class="sheet">
+      <svg class="corner corner--tl ico" aria-hidden="true" focusable="false"><use class="corner__out" href="#i-corner"/><use class="corner__in" href="#i-corner"/></svg>
+      <svg class="corner corner--tr ico" aria-hidden="true" focusable="false"><use class="corner__out" href="#i-corner"/><use class="corner__in" href="#i-corner"/></svg>
+      <svg class="corner corner--bl ico" aria-hidden="true" focusable="false"><use class="corner__out" href="#i-corner"/><use class="corner__in" href="#i-corner"/></svg>
+      <svg class="corner corner--br ico" aria-hidden="true" focusable="false"><use class="corner__out" href="#i-corner"/><use class="corner__in" href="#i-corner"/></svg>
+
+      <div class="strip">
+        <span class="strip__no">
+          <svg class="strip__oval" viewBox="0 0 64 40" aria-hidden="true" focusable="false"><ellipse cx="32" cy="20" rx="31" ry="19"/></svg>
+          <span class="strip__no-text">No. 20</span>
+        </span>
+        <p class="strip__centre">Wrenfield &amp; Daughter · jobbing printers · Scarrow Bridge</p>
+        <nav class="strip__nav" aria-label="Programme">
+          <ul>
+            <li><a class="link" href="#about">About</a></li>
+            <li><a class="link" href="#work">Work</a></li>
+            <li><a class="link" href="#services">Services</a></li>
+            <li><a class="link" href="#notices">Notices</a></li>
+            <li><a class="link" href="#order">Order</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="arc" aria-hidden="true">
+        <svg class="arc__svg" viewBox="0 0 520 80" focusable="false">
+          <path id="arc-path" d="M20 72 Q260 36 500 72" fill="none"/>
+          <text class="arc__text"><textPath href="#arc-path" startOffset="50%" text-anchor="middle">The celebrated</textPath></text>
+        </svg>
+        <span class="arc__flat">The celebrated</span>
+      </div>
+
+      <h1 class="bill-name">
+        <span class="ada land" style="--i:0"><span class="w-ink" aria-hidden="true">Ada</span><span class="w-red">Ada</span></span>
+        <span class="wren land" style="--i:1">Wrenfield</span>
+        <span class="sr-only">, letterer and wood-type printer</span>
+      </h1>
+
+      <div class="hand-rule" aria-hidden="true">
+        <span class="rule"></span>
+        <svg class="ico hand-rule__icon"><use href="#i-manicule"/></svg>
+      </div>
+
+      <p class="role land" style="--i:2"><span class="role__lead">Letterer</span><span class="role__rest">poster artist · <span class="nowrap">wood-type</span> printer</span></p>
+
+      <p class="lede land" style="--i:3">Show bills, labels, shop fascias and type specimens, set by hand from 41 cases of wood letter and printed on an 1890s Albion press in Scarrow Bridge.</p>
+
+      <div class="actions land" style="--i:4">
+        <a class="btn btn-primary" href="#order"><span class="btn__ticket" aria-hidden="true">Admit one</span><span class="btn__label">Book a commission</span></a>
+        <a class="btn btn-secondary" href="#work"><span class="btn__label">See the six bills</span><svg class="ico btn__icon" aria-hidden="true" focusable="false"><use href="#i-manicule"/></svg></a>
+      </div>
+
+      <div class="aside">
+        <div class="portrait">
+          <!-- Replace with Envato Elements image -->
+          <div class="ph ph--oval" data-placeholder="true" role="img" aria-label="Portrait of Ada at the press - 800x1000"><span class="ph__label">Portrait of Ada at the press - 800x1000</span></div>
+          <div class="snipe" aria-hidden="true"><span>Now booking for 2027</span></div>
+        </div>
+
+        <dl class="particulars land" style="--i:5">
+          <div><dt>Show bills</dt><dd>26</dd></div>
+          <div><dt>Playbills</dt><dd>9</dd></div>
+          <div><dt>Labels</dt><dd>22</dd></div>
+          <div><dt>Fascias</dt><dd>9</dd></div>
+          <div><dt>Wood typefaces</dt><dd>41</dd></div>
+          <div><dt>Booking for the 2027 season</dt><dd>Open</dd></div>
+        </dl>
+
+        <button type="button" class="proof-btn" hidden><span class="proof-btn__text">Pull another proof</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button>
+      </div>
+
+      <div class="imprint-foot">
+        <p>Printed at the Calder Works, Scarrow Bridge</p>
+        <a class="link" href="#about">Turn over for the work<svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow-down"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="section section--paper" id="about" aria-labelledby="about-title">
+      <div class="wrap grid">
+        <div class="about__text">
+          <p class="kicker">Part the first</p>
+          <h2 id="about-title" class="reveal">About the printer</h2>
+          <div class="rule" aria-hidden="true"></div>
+          <p class="dropcap">When the old Calder Works print shop closed in 2014, its type went to auction. I bought 41 cases of wood letter, a composing frame and an Albion hand press, and moved them into a stone shed by the canal. The sign over the door still reads Wrenfield &amp; Daughter, which was my grandfather's joke and is now mine.</p>
+          <p>I letter, set and print show bills, playbills, labels and shop fascias for fairs, music halls, bands and small makers. Every job is set by hand and proofed on the press before a full run, so you see the real ink on the real paper before you agree to it.</p>
+          <p>Most commissions take three to six weeks. I take on around twenty a year.</p>
+        </div>
+        <div class="about__side">
+          <!-- Replace with Envato Elements image -->
+          <div class="ph r-4x3" data-placeholder="true" role="img" aria-label="Workshop with type cases - 1200x900"><span class="ph__label">Workshop with type cases - 1200x900</span></div>
+          <h3 class="specimen__title">Type in the case</h3>
+          <ul class="specimen">
+            <li><span class="specimen__word f-fat">Scarrow</span><span class="specimen__name">Fat face</span></li>
+            <li><span class="specimen__word f-slab">Scarrow</span><span class="specimen__name">Extended slab</span></li>
+            <li><span class="specimen__word f-tuscan">Scarrow</span><span class="specimen__name">Tuscan</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--hoarding" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <p class="kicker">Part the second</p>
+        <h2 id="work-title" class="reveal">Selected work in six bills</h2>
+        <div class="rule" aria-hidden="true"></div>
+
+        <div class="grid work-head">
+          <p class="intro">Six recent jobs from the Calder Works, each printed by hand from wood and metal type.</p>
+          <nav class="index" aria-labelledby="index-title">
+            <h3 id="index-title">Programme of bills</h3>
+            <ol>
+              <li><a href="#bill-1"><span class="index__no">Bill No. 1</span><span class="index__title">Moorend Agricultural Show</span><span class="leader" aria-hidden="true"></span><span class="index__year">2026</span></a></li>
+              <li><a href="#bill-2"><span class="index__no">Bill No. 2</span><span class="index__title">The Lantern Hall season</span><span class="leader" aria-hidden="true"></span><span class="index__year">2025</span></a></li>
+              <li><a href="#bill-3"><span class="index__no">Bill No. 3</span><span class="index__title">Grimshaw's Tonic Waters</span><span class="leader" aria-hidden="true"></span><span class="index__year">2025</span></a></li>
+              <li><a href="#bill-4"><span class="index__no">Bill No. 4</span><span class="index__title">Oddfellows Row fascias</span><span class="leader" aria-hidden="true"></span><span class="index__year">2024</span></a></li>
+              <li><a href="#bill-5"><span class="index__no">Bill No. 5</span><span class="index__title">A specimen of wood letter</span><span class="leader" aria-hidden="true"></span><span class="index__year">2024</span></a></li>
+              <li><a href="#bill-6"><span class="index__no">Bill No. 6</span><span class="index__title">Whitecroft Brass Band</span><span class="leader" aria-hidden="true"></span><span class="index__year">2023</span></a></li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="bills grid">
+          <article class="card bill bill--1" id="bill-1" aria-labelledby="bill-1-title">
+            <p class="card__label">Bill No. 1</p>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph r-16x10" data-placeholder="true" role="img" aria-label="Moorend Show bill on a market wall - 1600x1000"><span class="ph__label">Moorend Show bill on a market wall - 1600x1000</span></div>
+            <h3 id="bill-1-title">Moorend Agricultural Show</h3>
+            <p>Fourteen show bills, ring signs and rosette cards for a two-day county show, with the cattle classes set in letters four inches high.</p>
+            <p class="card__meta">Wood type, two colours, 14 sheets</p>
+          </article>
+
+          <article class="card bill bill--2" id="bill-2" aria-labelledby="bill-2-title">
+            <p class="card__label">Bill No. 2</p>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph r-4x5" data-placeholder="true" role="img" aria-label="Lantern Hall playbill series - 1200x1500"><span class="ph__label">Lantern Hall playbill series - 1200x1500</span></div>
+            <h3 id="bill-2-title">The Lantern Hall season</h3>
+            <p>A season of nine playbills for a restored music hall, one for each production, printed on the same cream stock so they read as a set.</p>
+            <p class="card__meta">Wood and metal type, two colours, 9 bills</p>
+          </article>
+
+          <article class="card bill bill--3" id="bill-3" aria-labelledby="bill-3-title">
+            <p class="card__label">Bill No. 3</p>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph r-4x3" data-placeholder="true" role="img" aria-label="Grimshaw's Tonic label sheet - 1200x900"><span class="ph__label">Grimshaw's Tonic label sheet - 1200x900</span></div>
+            <h3 id="bill-3-title">Grimshaw's Tonic Waters</h3>
+            <p>Bottle labels, crate stencils and the lettering on a delivery cart for a small mineral water works.</p>
+            <p class="card__meta">Letterpress labels, one colour, 22 designs</p>
+          </article>
+
+          <article class="card bill bill--4" id="bill-4" aria-labelledby="bill-4-title">
+            <p class="card__label">Bill No. 4</p>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph r-4x3" data-placeholder="true" role="img" aria-label="Oddfellows Row gilt fascia - 1200x900"><span class="ph__label">Oddfellows Row gilt fascia - 1200x900</span></div>
+            <h3 id="bill-4-title">Oddfellows Row fascias</h3>
+            <p>Hand-lettered gilt fascias for nine shops on one terrace, drawn full size and painted on site.</p>
+            <p class="card__meta">Sign writing, gold leaf, 9 fascias</p>
+          </article>
+
+          <article class="card bill bill--5" id="bill-5" aria-labelledby="bill-5-title">
+            <p class="card__label">Bill No. 5</p>
+            <!-- Replace with Envato Elements image -->
+            <div class="ph r-4x3" data-placeholder="true" role="img" aria-label="Specimen book spread - 1200x900"><span class="ph__label">Specimen book spread - 1200x900</span></div>
+            <h3 id="bill-5-title" class="title-rye">A specimen of wood letter</h3>
+            <p>A 64-page specimen book of the 41 wood typefaces in my cases, each shown in a full alphabet and a set line.</p>
+            <p class="card__meta">Letterpress, sewn binding, edition of 120</p>
+          </article>
+
+          <article class="card bill bill--6" id="bill-6" aria-labelledby="bill-6-title">
+            <div class="bill--6__media">
+              <p class="card__label">Bill No. 6</p>
+              <!-- Replace with Envato Elements image -->
+              <div class="ph r-16x9" data-placeholder="true" role="img" aria-label="Whitecroft Band concert bill - 1600x900"><span class="ph__label">Whitecroft Band concert bill - 1600x900</span></div>
+            </div>
+            <div class="bill--6__text">
+              <h3 id="bill-6-title">Whitecroft Brass Band</h3>
+              <p>Twelve concert bills and a folded programme for a band's winter season of village hall concerts.</p>
+              <p class="card__meta">Wood type, two colours, 12 bills and a programme</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="kicker">Part the third</p>
+        <h2 id="services-title" class="reveal">Services and the type case</h2>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="grid services">
+          <div class="tariff">
+            <h3>Tariff of work</h3>
+            <table class="tariff__table">
+              <caption class="sr-only">Tariff of work, starting prices</caption>
+              <tbody>
+                <tr><th scope="row"><span class="tl">Show bill, two colours</span></th><td>from £180</td></tr>
+                <tr><th scope="row"><span class="tl">Playbill series, per bill</span></th><td>from £140</td></tr>
+                <tr><th scope="row"><span class="tl">Labels and packaging</span></th><td>from £220</td></tr>
+                <tr><th scope="row"><span class="tl">Shop fascia lettering</span></th><td>from £400</td></tr>
+                <tr><th scope="row"><span class="tl">Type specimen or ephemera</span></th><td>by quotation</td></tr>
+                <tr><th scope="row"><span class="tl">Workshop day for two</span></th><td>£160</td></tr>
+              </tbody>
+            </table>
+            <p class="tariff__note">Prices are a guide. Every job is quoted from a proof.</p>
+          </div>
+          <div class="case-wrap">
+            <h3>Skills in the case</h3>
+            <ul class="case">
+              <li><span class="case__letter" aria-hidden="true">H</span><span class="case__label">Hand lettering</span></li>
+              <li><span class="case__letter" aria-hidden="true">W</span><span class="case__label">Wood-type setting</span></li>
+              <li><span class="case__letter" aria-hidden="true">L</span><span class="case__label">Letterpress printing</span></li>
+              <li><span class="case__letter" aria-hidden="true">S</span><span class="case__label">Sign writing in gold leaf</span></li>
+              <li><span class="case__letter" aria-hidden="true">L</span><span class="case__label">Label design</span></li>
+              <li><span class="case__letter" aria-hidden="true">P</span><span class="case__label">Proofing and colour matching</span></li>
+              <li><span class="case__letter" aria-hidden="true">P</span><span class="case__label">Paper sourcing</span></li>
+              <li><span class="case__letter" aria-hidden="true">B</span><span class="case__label">Small-run binding</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--notices" id="notices" aria-labelledby="notices-title">
+      <div class="wrap">
+        <p class="kicker">Part the fourth</p>
+        <h2 id="notices-title" class="reveal">Notices from clients</h2>
+        <div class="rule" aria-hidden="true"></div>
+        <div class="grid notices">
+          <figure class="notice">
+            <h3 class="notice__head">From the show secretary</h3>
+            <span class="notice__mark" aria-hidden="true">“</span>
+            <blockquote><p>We asked for bills people could read from the far side of the market square. Ada sent a proof with the cattle classes in letters four inches high, and every one went up on the first morning.</p></blockquote>
+            <figcaption><span class="notice__name">Edwin Pollard</span>, show secretary, Moorend Agricultural Show <span class="notice__fic">(fictional client)</span></figcaption>
+          </figure>
+          <figure class="notice">
+            <h3 class="notice__head">From the music hall</h3>
+            <span class="notice__mark" aria-hidden="true">“</span>
+            <blockquote><p>Nine playbills in one season and not a single wrong date. She sets the type, prints it and brings the bundle round on a Tuesday.</p></blockquote>
+            <figcaption><span class="notice__name">Marguerite Oyelaran</span>, manager, The Lantern Hall <span class="notice__fic">(fictional client)</span></figcaption>
+          </figure>
+          <figure class="notice">
+            <h3 class="notice__head">From the mineral water works</h3>
+            <span class="notice__mark" aria-hidden="true">“</span>
+            <blockquote><p>Our old labels looked like everyone else's. The new ones look like ours, and the cart gets waved at on the high road.</p></blockquote>
+            <figcaption><span class="notice__name">Tobias Grimshaw</span>, Grimshaw's Tonic Waters <span class="notice__fic">(fictional client)</span></figcaption>
+          </figure>
+        </div>
+        <svg class="ico notices__asterism" aria-hidden="true" focusable="false"><use href="#i-asterism"/></svg>
+      </div>
+    </section>
+
+    <section class="section section--deep" id="order" aria-labelledby="order-title">
+      <div class="wrap grid">
+        <div class="order__intro">
+          <p class="kicker">Part the fifth</p>
+          <h2 id="order-title" class="reveal">Order a bill</h2>
+          <div class="rule" aria-hidden="true"></div>
+          <p>Tell me what the bill is for, roughly how many copies you need and the date it has to be on the wall. I will reply with a sketch, a price and a proofing date.</p>
+          <p><a class="link link--body" href="mailto:ada@wrenfield.example">ada@wrenfield.example</a></p>
+          <p class="order__reply">Replies within a week, by post or by email.</p>
+        </div>
+
+        <div class="docket">
+          <p class="docket__head">Order docket No. <span aria-hidden="true">____</span></p>
+          <div class="rule" aria-hidden="true"></div>
+          <form class="form" novalidate aria-labelledby="order-title" aria-describedby="demo-note">
+            <div class="form__pair">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+                <p class="field__error" id="f-name-error" hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-asterism"/></svg>Required: please give your name.</p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-hint f-email-error">
+                <p class="field__hint" id="f-email-hint">So I can send you a proof.</p>
+                <p class="field__error" id="f-email-error" hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-asterism"/></svg>Required: please give an email address with an @.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-kind">Kind of work</label>
+              <select id="f-kind" name="kind" required aria-describedby="f-kind-error">
+                <option value="">Choose one</option>
+                <option>Show bill</option>
+                <option>Playbill</option>
+                <option>Label</option>
+                <option>Fascia</option>
+                <option>Specimen</option>
+                <option>Something else</option>
+              </select>
+              <p class="field__error" id="f-kind-error" hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-asterism"/></svg>Required: please choose a kind of work.</p>
+            </div>
+            <div class="field">
+              <label for="f-copies">Number of copies</label>
+              <input id="f-copies" name="copies" type="text" inputmode="numeric" aria-describedby="f-copies-hint">
+              <p class="field__hint" id="f-copies-hint">An estimate is fine. Optional.</p>
+            </div>
+            <div class="field">
+              <label for="f-particulars">Particulars</label>
+              <textarea id="f-particulars" name="particulars" rows="6" required aria-describedby="f-particulars-hint f-particulars-error"></textarea>
+              <p class="field__hint" id="f-particulars-hint">What it is for, the date it must be up, and any words that must appear.</p>
+              <p class="field__error" id="f-particulars-error" hidden><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-asterism"/></svg>Required: please write a few lines about the job.</p>
+            </div>
+            <p class="demo-note" id="demo-note"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-manicule"/></svg>This form is a demonstration. It sends nothing.</p>
+            <div class="form__actions">
+              <button class="btn btn-primary" type="submit"><span class="btn__label">Send the order</span></button>
+            </div>
+            <div class="form__status" role="status" aria-live="polite" tabindex="-1"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="rule rule--gold" aria-hidden="true"><svg class="ico rule__fleuron"><use href="#i-fleuron"/></svg></div>
+      <svg class="ico footer__device" aria-hidden="true" focusable="false"><use href="#i-press"/></svg>
+      <p class="footer__bill">Wrenfield &amp; Daughter</p>
+      <p>Printed at the Calder Works, Scarrow Bridge. Set by hand, 2026.</p>
+      <ul class="footer__links">
+        <li><a class="link" href="mailto:ada@wrenfield.example">ada@wrenfield.example</a></li>
+        <li><a class="link" href="#top">Back to the bill</a></li>
+      </ul>
+      <p>Set in Abril Fatface, Holtwood One SC, Rye, Libre Caslon Text and Old Standard TT.</p>
+      <p>Ada Wrenfield, her shop and her clients are fictional. A template by Samuel.</p>
+      <p class="footer__finis">Finis</p>
+    </div>
+  </footer>
+</body>
+</html>

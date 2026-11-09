@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Maren Østby, lighting designer</title>
+<meta name="description" content="Sample portfolio template for a fictional lighting designer in Bergen. Soft light, mist and a house-light fader.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,200..400,0..100,0..1&family=Figtree:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav__mark" href="#top">Maren Østby</a>
+  <nav class="nav__links" aria-label="Main">
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#practice">Practice</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn--nav" href="#contact">Book a lighting call</a>
+</header>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-pause" viewBox="0 0 16 16"><path d="M5.5 3.5v9M10.5 3.5v9" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M5 3.5l7 4.5-7 4.5z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.75"/><path d="M8 4.75v3.75M8 11h.01" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></symbol>
+</svg>
+
+<main id="main" tabindex="-1">
+
+<section class="hero" id="top">
+  <div class="atmos" aria-hidden="true">
+    <div class="atmos__dusk"></div>
+    <div class="atmos__warm"></div>
+    <div class="halo halo--lilac"></div>
+    <div class="halo halo--sky"></div>
+    <div class="light-rise">
+      <div class="light">
+        <div class="light-core"></div>
+      </div>
+    </div>
+    <div class="veil-part veil-part--1"><div class="veil veil--1"></div></div>
+    <div class="veil-part veil-part--2"><div class="veil veil--2"></div></div>
+    <div class="veil-part veil-part--3"><div class="veil veil--3"></div></div>
+    <div class="atmos__sheen"></div>
+  </div>
+
+  <div class="hero__body grid">
+    <h1 class="hero__title">Maren Østby <br>designs light.</h1>
+    <p class="lead hero__lead">Lighting designer for stages, galleries and foggy harbours.</p>
+    <div class="hero__actions">
+      <a class="btn btn--hero" href="#contact">Book a lighting call</a>
+      <div class="fader" hidden>
+        <div class="fader__row">
+          <label for="lift">Raise the light</label>
+          <output for="lift" id="lift-out" aria-hidden="true">60%</output>
+        </div>
+        <input type="range" id="lift" min="0" max="100" step="1" value="60" aria-describedby="lift-hint">
+        <div class="fader__foot">
+          <p id="lift-hint">Drag, or use the arrow keys, to raise the house light.</p>
+          <button type="button" class="pause" aria-pressed="false"><svg class="pause__icon" aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-pause"></use></svg><span class="pause__text">Pause motion</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about section" id="about" aria-labelledby="about-h">
+  <div class="grid">
+    <div class="about__pic" data-reveal style="--i:2">
+      <!-- Replace with Envato Elements image -->
+      <div class="frame frame--4x5" data-placeholder="true" role="img" aria-label="Placeholder: Portrait of Maren in haze - 1200x1500"><span class="frame__bloom" aria-hidden="true"></span><span class="frame__label">Portrait of Maren in haze - 1200x1500</span></div>
+    </div>
+    <div class="about__text">
+      <h2 id="about-h" data-reveal style="--i:0">Light you feel before you see</h2>
+      <p class="about__body" data-reveal style="--i:1">I trained as a theatre electrician in Bergen and spent eleven years hanging lamps for other people. Now I design the whole arc: the first preset, the cue that makes a room go quiet, the last fade. I work with directors, curators and architects who want light to carry mood, not decoration. Most of my rigs use fewer lamps than you would expect, softened through gauze, haze and bounce.</p>
+      <p class="about__facts" data-reveal style="--i:1">Twelve years designing, after eleven as an electrician. Thirty-eight productions. Three permanent rooms.</p>
+      <p class="small about__close" data-reveal style="--i:1">Based in Bergen. Working across Scandinavia, and further by invitation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="work section" id="work" aria-labelledby="work-h">
+  <div class="grid work__intro">
+    <h2 id="work-h" data-reveal style="--i:0">Five places, five kinds of light</h2>
+    <p class="work__lede" data-reveal style="--i:1">Recent pieces. Each one began with a site visit at the hour the room is used.</p>
+  </div>
+  <ol class="projects">
+    <li class="project project--lead grid">
+      <div class="project__pic" data-reveal style="--i:2">
+        <!-- Replace with Envato Elements image -->
+        <div class="frame frame--16x10" data-placeholder="true" role="img" aria-label="Placeholder: Vesper Rooms stage through gauze - 2400x1500"><span class="frame__bloom" aria-hidden="true"></span><span class="frame__label">Vesper Rooms stage through gauze - 2400x1500</span></div>
+      </div>
+      <div class="project__head" data-reveal style="--i:0">
+        <h3>Vesper Rooms</h3>
+        <p class="small project__year">2026</p>
+      </div>
+      <div class="project__text" data-reveal style="--i:1">
+        <p>A chamber opera lit only through hanging gauze. Each act sits one colour temperature warmer than the last.</p>
+        <p class="small project__fact">4 acts, 11 gauze panels, from 4,000K down to 2,700K.</p>
+      </div>
+    </li>
+    <li class="project project--a grid">
+      <div class="project__pic" data-reveal style="--i:2">
+        <!-- Replace with Envato Elements image -->
+        <div class="frame frame--16x10" data-placeholder="true" role="img" aria-label="Placeholder: Salt Hours harbour fog line at dusk - 1600x1000"><span class="frame__bloom" aria-hidden="true"></span><span class="frame__label">Salt Hours harbour fog line at dusk - 1600x1000</span></div>
+      </div>
+      <div class="project__info">
+        <div class="project__head" data-reveal style="--i:0">
+          <h3>Salt Hours</h3>
+          <p class="small project__year">2025</p>
+        </div>
+        <div class="project__text" data-reveal style="--i:1">
+          <p>A harbour installation where fog machines and six low lamps trace the tide every evening for a month.</p>
+          <p class="small project__fact">31 nights, 6 lamps, 1 fog line.</p>
+        </div>
+      </div>
+    </li>
+    <li class="project project--b grid">
+      <div class="project__pic" data-reveal style="--i:2">
+        <!-- Replace with Envato Elements image -->
+        <div class="frame frame--16x10" data-placeholder="true" role="img" aria-label="Placeholder: Nine Mornings dancer in low dawn light - 1600x1000"><span class="frame__bloom" aria-hidden="true"></span><span class="frame__label">Nine Mornings dancer in low dawn light - 1600x1000</span></div>
+      </div>
+      <div class="project__info">
+        <div class="project__head" data-reveal style="--i:0">
+          <h3>Nine Mornings</h3>
+          <p class="small project__year">2025</p>
+        </div>
+        <div class="project__text" data-reveal style="--i:1">
+          <p>A dance piece with nine slow dawns, each ending at a different hour.</p>
+          <p class="small project__fact">9 dawns in 62 minutes, with no blackouts.</p>
+        </div>
+      </div>
+    </li>
+    <li class="project project--a grid">
+      <div class="project__pic" data-reveal style="--i:2">
+        <!-- Replace with Envato Elements image -->
+        <div class="frame frame--16x10" data-placeholder="true" role="img" aria-label="Placeholder: The Glass Archive gallery vitrine - 1600x1000"><span class="frame__bloom" aria-hidden="true"></span><span class="frame__label">The Glass Archive gallery vitrine - 1600x1000</span></div>
+      </div>
+      <div class="project__info">
+        <div class="project__head" data-reveal style="--i:0">
+          <h3>The Glass Archive</h3>
+          <p class="small project__year">2024</p>
+        </div>
+        <div class="project__text" data-reveal style="--i:1">
+          <p>Gallery lighting for a museum of blown glass. The light is diffused so the objects seem to hold their own glow.</p>
+          <p class="small project__fact">Under 120 lux, with no visible fitting in any vitrine.</p>
+        </div>
+      </div>
+    </li>
+    <li class="project project--b grid">
+      <div class="project__pic" data-reveal style="--i:2">
+        <!-- Replace with Envato Elements image -->
+        <div class="frame frame--16x10" data-placeholder="true" role="img" aria-label="Placeholder: Lantern Ward chapel interior - 1600x1000"><span class="frame__bloom" aria-hidden="true"></span><span class="frame__label">Lantern Ward chapel interior - 1600x1000</span></div>
+      </div>
+      <div class="project__info">
+        <div class="project__head" data-reveal style="--i:0">
+          <h3>Lantern Ward</h3>
+          <p class="small project__year">2023</p>
+        </div>
+        <div class="project__text" data-reveal style="--i:1">
+          <p>Daylight-matched lighting for a hospital chapel that has no windows.</p>
+          <p class="small project__fact">A 24-hour daylight curve, retuned each season.</p>
+        </div>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<section class="practice" id="practice" aria-labelledby="practice-h">
+  <div class="grid">
+    <h2 id="practice-h" class="practice__h" data-reveal style="--i:0">How a project runs</h2>
+    <ol class="stages">
+      <li class="stage" data-reveal style="--i:1">
+        <h3>Listening</h3>
+        <p>I visit the room at the hour it will be used, and again at the hour it is hardest to light. I note where daylight falls, where people sit and what you want them to feel. You get a short written plot within a week.</p>
+        <p class="small stage__time">One to two days on site.</p>
+      </li>
+      <li class="stage" data-reveal style="--i:1">
+        <h3>Sketching</h3>
+        <p>I build the key moments in a 1:25 scale model with small lamps, gauze and haze, and film them so the team can react before any rig is hired. Changes here cost almost nothing.</p>
+        <p class="small stage__time">Two to four weeks.</p>
+      </li>
+      <li class="stage" data-reveal style="--i:1">
+        <h3>Focusing</h3>
+        <p>On site I rig, focus and write cues with your crew through technical rehearsals and previews. Most rooms end up with fewer lamps than the venue expected.</p>
+        <p class="small stage__time">One to three weeks on site.</p>
+      </li>
+      <li class="stage" data-reveal style="--i:1">
+        <h3>Handing over</h3>
+        <p>You get a cue book, focus photos and a training session, so the venue can run and restore the show without me. Permanent rooms get a seasonal check for the first year.</p>
+        <p class="small stage__time">Included in every project.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="quotes section" id="quotes" aria-labelledby="quotes-h">
+  <div class="quotes__halo" aria-hidden="true"></div>
+  <div class="grid quotes__inner">
+    <div class="quotes__head">
+      <h2 id="quotes-h" data-reveal style="--i:0">What collaborators say</h2>
+      <p class="small quotes__note" data-reveal style="--i:1">Sample testimonials. The people and companies below are fictional.</p>
+    </div>
+    <figure class="quote quote--large" data-reveal style="--i:1">
+      <blockquote><p>She cut our rig in half and the stage looked twice as large.</p></blockquote>
+      <figcaption class="small">Ada Lund, director, Fjordlys Theatre. Sample testimonial.</figcaption>
+    </figure>
+    <div class="quotes__pair">
+      <figure class="quote" data-reveal style="--i:2">
+        <blockquote><p>Visitors whisper in the glass gallery now. That was the brief.</p></blockquote>
+        <figcaption class="small">Tomas Hagen, curator, Hardanger Glass Museum. Sample testimonial.</figcaption>
+      </figure>
+      <figure class="quote" data-reveal style="--i:2">
+        <blockquote><p>The chapel finally feels like morning, even at midnight.</p></blockquote>
+        <figcaption class="small">Ingrid Sæther, hospital chaplain. Sample testimonial.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="contact section" id="contact" aria-labelledby="contact-h">
+  <div class="contact__bloom" aria-hidden="true"></div>
+  <div class="grid">
+    <div class="contact__text">
+      <h2 id="contact-h" data-reveal style="--i:0">Tell me about your room</h2>
+      <p class="contact__body" data-reveal style="--i:1">Share the space, the date and the feeling you want people to leave with. I reply within three working days.</p>
+      <div class="contact__details" data-reveal style="--i:1">
+        <p><a href="mailto:hello@example.com">hello@example.com</a></p>
+        <p>Studio in Bergen, Norway.</p>
+      </div>
+    </div>
+    <form class="form" action="#" method="post" novalidate data-reveal style="--i:2">
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+        <p class="field__error small" id="f-name-err" hidden><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-alert"></use></svg><span>Please add your name.</span></p>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err">
+        <p class="field__error small" id="f-email-err" hidden><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-alert"></use></svg><span>Please enter an email address like name@example.com.</span></p>
+      </div>
+      <div class="field">
+        <label for="f-venue">Venue or project (optional)</label>
+        <input id="f-venue" name="venue" type="text">
+      </div>
+      <div class="field">
+        <label for="f-feel">What should the room feel like?</label>
+        <textarea id="f-feel" name="feel" rows="6" required aria-describedby="f-feel-err"></textarea>
+        <p class="field__error small" id="f-feel-err" hidden><svg aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-alert"></use></svg><span>Please tell me a little about the room.</span></p>
+      </div>
+      <div class="form__foot">
+        <button class="btn" type="submit">Send enquiry</button>
+        <p class="small form__note">This form is part of a template. It sends nothing.</p>
+        <p class="form__status" role="status"></p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__bloom" aria-hidden="true"></div>
+  <div class="footer__inner">
+    <div class="footer__namebox">
+      <p class="footer__name">Maren Østby</p>
+      <div class="footer__veil" aria-hidden="true"></div>
+    </div>
+    <ul class="footer__row small">
+      <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+      <li>Bergen, Norway</li>
+      <li>Lighting designed slowly, since 2014.</li>
+      <li class="footer__pause" hidden><button type="button" class="pause" aria-pressed="false"><svg class="pause__icon" aria-hidden="true" focusable="false" width="16" height="16"><use href="#i-pause"></use></svg><span class="pause__text">Pause motion</span></button></li>
+      <li><a href="#top">Back to the top</a></li>
+    </ul>
+    <p class="small footer__legal">© 2026 Maren Østby. Sample portfolio template. All people and projects are fictional.</p>
+  </div>
+</footer>
+</body>
+</html>

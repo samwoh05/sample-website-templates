@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noa Castellanos, interface and motion designer</title>
+  <meta name="description" content="Interface and motion design for music, play and everyday gadgets by Noa Castellanos, a designer in Rotterdam.">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Unbounded:wght@700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Icon sprite: 24 viewBox, stroke 1.75, round caps and joins -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g-sparkle" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FFFFFF"/>
+        <stop offset=".45" stop-color="#CBD5E1"/>
+        <stop offset=".6" stop-color="#94A3B8"/>
+        <stop offset="1" stop-color="#FFFFFF"/>
+      </linearGradient>
+      <symbol id="sparkle" viewBox="0 0 24 24">
+        <path d="M12 0C12.9 7.6 16.4 11.1 24 12C16.4 12.9 12.9 16.4 12 24C11.1 16.4 7.6 12.9 0 12C7.6 11.1 11.1 7.6 12 0Z" fill="url(#g-sparkle)" stroke="#94A3B8" stroke-width=".6"/>
+        <circle cx="12" cy="12" r="1.8" fill="#D97706"/>
+      </symbol>
+      <symbol id="i-arrow-down-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 8v9H8"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+      <symbol id="i-chevron-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5.5v13l10.5-6.5z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-alert-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.75"/><path d="M21 15.5l-5-5L6 19.5"/></symbol>
+      <symbol id="i-screen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="2.5"/><path d="M8.5 20h7M12 16.5V20"/></symbol>
+      <symbol id="i-squish-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2-4.5 4-4.5 6 0s4 4.5 6 0 4-4.5 6 0"/><path d="M6 19h12"/></symbol>
+      <symbol id="i-code-brackets" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7L4 12l4.5 5M15.5 7l4.5 5-4.5 5M13.5 5l-3 14"/></symbol>
+      <symbol id="i-star-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l1.4 2.9 3.1.4-2.3 2.2.6 3.1-2.8-1.5-2.8 1.5.6-3.1-2.3-2.2 3.1-.4z"/></symbol>
+      <symbol id="i-sticker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h6l7-7z"/><path d="M13 20v-4a3 3 0 0 1 3-3h4"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7v.01"/></symbol>
+      <symbol id="i-vimeo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5c1.8-1.4 3-2 3.8-1.3.9.8 1.4 8.3 3 8.8 1.5.5 4.3-3.6 6.3-7.6 1.4-2.8 1.3-5-.6-5.2-1.4-.1-2.7 1-3.4 2.5"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link jelly" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="wordmark" href="#top" aria-label="noa.c, back to top"><span class="chrome-type">noa.c</span><svg class="wordmark__spark" aria-hidden="true" focusable="false"><use href="#sparkle"/></svg></a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#kind-words">Kind words</a></li>
+        </ul>
+        <a class="jelly btn btn--nav" href="#contact">Contact</a>
+        <details class="menu">
+          <summary class="jelly jelly--silver menu__toggle"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg><span>Menu</span></summary>
+          <ul class="menu__list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#kind-words">Kind words</a></li>
+          </ul>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="chip chip--status"><span class="status-dot" aria-hidden="true"></span>Booking projects from February 2027</p>
+          <h1 id="hero-title" class="chrome-type hero__title">Shiny things<br class="br-wide"> that work.</h1>
+          <p class="lead hero__sub">I design interfaces and motion for music, play and everyday gadgets. Glossy on the outside, easy to use inside.</p>
+          <div class="hero__actions">
+            <a class="jelly btn" href="#work">See the work<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-down-right"/></svg></a>
+            <a class="text-link" href="#contact">Say hello</a>
+          </div>
+          <p class="hint">Press a flavour to change the track.</p>
+        </div>
+
+        <div class="player" data-flavour="blue" aria-labelledby="player-title">
+          <h2 id="player-title" class="visually-hidden">Pick a flavour</h2>
+          <div class="device-wrap">
+            <div class="hero-deco" aria-hidden="true">
+              <div class="irid-disc"></div>
+              <svg class="blob" viewBox="0 0 720 560" focusable="false"><path d="M372 22C498 18 650 78 694 196C738 318 664 452 548 512C430 574 262 552 150 488C40 424 -6 312 24 208C56 98 190 28 372 22Z" fill="#CFFAFE"/></svg>
+            </div>
+            <svg class="orbit orbit--back" viewBox="0 0 500 200" aria-hidden="true" focusable="false">
+              <defs><linearGradient id="g-orbit-b" x1="0" x2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset=".5" stop-color="#94A3B8"/><stop offset="1" stop-color="#F8FAFC"/></linearGradient></defs>
+              <ellipse cx="250" cy="100" rx="244" ry="58" transform="rotate(-12 250 100)" fill="none" stroke="url(#g-orbit-b)" stroke-width="2"/>
+            </svg>
+
+            <div class="device">
+              <div class="shell__tint shell__tint--blue" aria-hidden="true"></div>
+              <div class="shell__tint shell__tint--lime" aria-hidden="true"></div>
+              <div class="shell__tint shell__tint--tang" aria-hidden="true"></div>
+              <div class="shell__tint shell__tint--gum" aria-hidden="true"></div>
+              <div class="disc" aria-hidden="true"><span class="disc__hub"></span></div>
+              <span class="battery battery--l" aria-hidden="true"></span>
+              <span class="battery battery--r" aria-hidden="true"></span>
+
+              <div class="lcd">
+                <div class="lcd__track lcd__track--1">
+                  <p class="lcd__row"><span>Track 01 / 04</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-play"/></svg></p>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--lcd" data-placeholder="true" role="img" aria-label="Tidepool app screen - 800x500"><span class="ph__pill"><span class="ph__text">Tidepool app screen - 800x500</span></span></div>
+                  <p class="lcd__title">Tidepool</p>
+                  <p class="lcd__meta">Kelp and Co. 2025</p>
+                  <span class="lcd__bar" aria-hidden="true"><span></span></span>
+                </div>
+                <div class="lcd__track lcd__track--2">
+                  <p class="lcd__row"><span>Track 02 / 04</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-play"/></svg></p>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--lcd" data-placeholder="true" role="img" aria-label="Radio Kweek player screen - 800x500"><span class="ph__pill"><span class="ph__text">Radio Kweek player screen - 800x500</span></span></div>
+                  <p class="lcd__title">Radio Kweek</p>
+                  <p class="lcd__meta">Community radio. 2024</p>
+                  <span class="lcd__bar" aria-hidden="true"><span></span></span>
+                </div>
+                <div class="lcd__track lcd__track--3">
+                  <p class="lcd__row"><span>Track 03 / 04</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-play"/></svg></p>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--lcd" data-placeholder="true" role="img" aria-label="Orbit Launderette kiosk screen - 800x500"><span class="ph__pill"><span class="ph__text">Orbit Launderette kiosk screen - 800x500</span></span></div>
+                  <p class="lcd__title">Orbit Launderette</p>
+                  <p class="lcd__meta">Laundrette chain. 2024</p>
+                  <span class="lcd__bar" aria-hidden="true"><span></span></span>
+                </div>
+                <div class="lcd__track lcd__track--4">
+                  <p class="lcd__row"><span>Track 04 / 04</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-play"/></svg></p>
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--lcd" data-placeholder="true" role="img" aria-label="Pop Quiz Late scoreboard frame - 800x500"><span class="ph__pill"><span class="ph__text">Pop Quiz Late scoreboard frame - 800x500</span></span></div>
+                  <p class="lcd__title">Pop Quiz Late</p>
+                  <p class="lcd__meta">Late-night TV. 2023</p>
+                  <span class="lcd__bar" aria-hidden="true"><span></span></span>
+                </div>
+              </div>
+
+              <div class="shell__gloss" aria-hidden="true"></div>
+              <div class="specular" aria-hidden="true"></div>
+              <svg class="lanyard" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <defs><linearGradient id="g-lanyard" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#94A3B8"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient></defs>
+                <circle cx="24" cy="24" r="16" fill="none" stroke="#475569" stroke-width="7"/>
+                <circle cx="24" cy="24" r="16" fill="none" stroke="url(#g-lanyard)" stroke-width="5"/>
+              </svg>
+
+              <div class="controls">
+                <button class="jelly jelly--silver skip skip--prev" type="button" aria-label="Previous track" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-left"/></svg></button>
+                <div class="open-ring">
+                  <a class="open open--1 jelly" href="#track-1" aria-label="Open Tidepool in the tracklist"><span class="open__pill">Open</span></a>
+                  <a class="open open--2 jelly" href="#track-2" aria-label="Open Radio Kweek in the tracklist"><span class="open__pill">Open</span></a>
+                  <a class="open open--3 jelly" href="#track-3" aria-label="Open Orbit Launderette in the tracklist"><span class="open__pill">Open</span></a>
+                  <a class="open open--4 jelly" href="#track-4" aria-label="Open Pop Quiz Late in the tracklist"><span class="open__pill">Open</span></a>
+                </div>
+                <button class="jelly jelly--silver skip skip--next" type="button" aria-label="Next track" hidden><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></button>
+              </div>
+            </div>
+
+            <div class="orbit orbit--front" aria-hidden="true">
+              <svg viewBox="0 0 500 200" focusable="false">
+                <defs>
+                  <linearGradient id="g-orbit-f" x1="0" x2="1"><stop offset="0" stop-color="#F8FAFC"/><stop offset=".5" stop-color="#94A3B8"/><stop offset="1" stop-color="#F8FAFC"/></linearGradient>
+                  <clipPath id="clip-front"><rect x="0" y="100" width="500" height="100"/></clipPath>
+                </defs>
+                <g transform="rotate(-12 250 100)"><ellipse cx="250" cy="100" rx="244" ry="58" fill="none" stroke="url(#g-orbit-f)" stroke-width="2" clip-path="url(#clip-front)"/></g>
+              </svg>
+              <div class="orbit__plane"><div class="orbit__spin"><span class="bead"></span></div></div>
+            </div>
+
+            <svg class="star star--a" aria-hidden="true" focusable="false"><use href="#sparkle"/></svg>
+            <svg class="star star--b" aria-hidden="true" focusable="false"><use href="#sparkle"/></svg>
+            <svg class="star star--c" aria-hidden="true" focusable="false"><use href="#sparkle"/></svg>
+            <span class="flare" aria-hidden="true"></span>
+          </div>
+
+          <fieldset class="flavours">
+            <legend class="visually-hidden">Flavour</legend>
+            <input class="flavour__input" type="radio" name="flavour" id="f-blue" value="blue" checked>
+            <label class="flavour" for="f-blue"><span class="drop drop--blue jelly"><svg class="icon drop__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><span class="flavour__name">Blueberry</span><span class="visually-hidden">, Tidepool</span></label>
+            <input class="flavour__input" type="radio" name="flavour" id="f-lime" value="lime">
+            <label class="flavour" for="f-lime"><span class="drop drop--lime jelly"><svg class="icon drop__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><span class="flavour__name">Lime</span><span class="visually-hidden">, Radio Kweek</span></label>
+            <input class="flavour__input" type="radio" name="flavour" id="f-tang" value="tang">
+            <label class="flavour" for="f-tang"><span class="drop drop--tang jelly"><svg class="icon drop__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><span class="flavour__name">Tangerine</span><span class="visually-hidden">, Orbit Launderette</span></label>
+            <input class="flavour__input" type="radio" name="flavour" id="f-gum" value="gum">
+            <label class="flavour" for="f-gum"><span class="drop drop--gum jelly"><svg class="icon drop__check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><span class="flavour__name">Bubblegum</span><span class="visually-hidden">, Pop Quiz Late</span></label>
+          </fieldset>
+          <p id="now-playing" class="visually-hidden" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__portrait reveal">
+          <div class="portrait-frame">
+            <!-- Replace with Envato Elements image -->
+            <div class="ph ph--portrait" data-placeholder="true" role="img" aria-label="Portrait of Noa at the studio desk - 1000x1250"><span class="ph__pill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><span class="ph__text"><span>Portrait of Noa at the studio desk</span><span>1000x1250</span></span></span></div>
+          </div>
+          <svg class="portrait-orbit" viewBox="0 0 400 120" aria-hidden="true" focusable="false"><ellipse cx="200" cy="60" rx="194" ry="34" transform="rotate(-8 200 60)" fill="none" stroke="#94A3B8" stroke-width="2"/></svg>
+          <svg class="star portrait-star" aria-hidden="true" focusable="false"><use href="#sparkle"/></svg>
+        </div>
+        <div class="about__text reveal">
+          <p class="eyebrow">Hello</p>
+          <h2 id="about-title" class="chrome-type">Raised on screensavers and see-through plastic</h2>
+          <p>I grew up taking apart a see-through phone to see how it lit up. I still design that way. Make the inside clear, then make the outside fun.</p>
+          <p>I work with small teams on apps, kiosks, players and broadcast graphics. I design the screens, animate them and build the prototype in code so we can test the real thing.</p>
+          <dl class="spec">
+            <div class="spec__row"><dt>Based in</dt><dd>Rotterdam, works remotely</dd></div>
+            <div class="spec__row"><dt>Works with</dt><dd>Product teams, labels, studios, broadcasters</dd></div>
+            <div class="spec__row"><dt>Tools</dt><dd>Figma, After Effects, Rive, HTML and CSS</dd></div>
+            <div class="spec__row"><dt>Off hours</dt><dd>Fixing old portable CD players</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Tracklist</p>
+          <h2 id="work-title" class="chrome-type">Selected work</h2>
+          <p class="section-intro">Five projects from the last three years. The hero plays the first four.</p>
+        </div>
+        <div class="tracklist reveal">
+          <div class="strip" aria-hidden="true"><span>noa.c / tracklist</span><span class="strip__dots"><i class="dot dot--blue"></i><i class="dot dot--lime"></i><i class="dot dot--tang"></i></span></div>
+          <ol class="tracks">
+            <li>
+              <article class="track" id="track-1" aria-labelledby="t1-title">
+                <p class="track__num"><span>01</span><i class="dot dot--blue" aria-hidden="true"></i></p>
+                <div class="track__cover">
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--cover" data-placeholder="true" role="img" aria-label="Tidepool project cover - 1600x1000"><span class="ph__pill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><span class="ph__text"><span>Tidepool project cover</span><span>1600x1000</span></span></span></div>
+                </div>
+                <div class="track__body">
+                  <h3 id="t1-title">Tidepool</h3>
+                  <p>A tide app you can read with wet hands. Big numbers, one swipe per beach.</p>
+                </div>
+                <ul class="track__meta" aria-label="Project details">
+                  <li class="chip">Kelp and Co.</li>
+                  <li class="chip">2025</li>
+                  <li class="chip">App UI, motion</li>
+                </ul>
+                <a class="track__link" href="#work" aria-label="View project: Tidepool"><span>View project</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></a>
+              </article>
+            </li>
+            <li>
+              <article class="track" id="track-2" aria-labelledby="t2-title">
+                <p class="track__num"><span>02</span><i class="dot dot--lime" aria-hidden="true"></i></p>
+                <div class="track__cover">
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--cover" data-placeholder="true" role="img" aria-label="Radio Kweek project cover - 1600x1000"><span class="ph__pill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><span class="ph__text"><span>Radio Kweek project cover</span><span>1600x1000</span></span></span></div>
+                </div>
+                <div class="track__body">
+                  <h3 id="t2-title">Radio Kweek</h3>
+                  <p>A live player that keeps playing while you browse the schedule.</p>
+                </div>
+                <ul class="track__meta" aria-label="Project details">
+                  <li class="chip">Radio Kweek</li>
+                  <li class="chip">2024</li>
+                  <li class="chip">Web, interaction</li>
+                </ul>
+                <a class="track__link" href="#work" aria-label="View project: Radio Kweek"><span>View project</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></a>
+              </article>
+            </li>
+            <li>
+              <article class="track" id="track-3" aria-labelledby="t3-title">
+                <p class="track__num"><span>03</span><i class="dot dot--tang" aria-hidden="true"></i></p>
+                <div class="track__cover">
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--cover" data-placeholder="true" role="img" aria-label="Orbit Launderette project cover - 1600x1000"><span class="ph__pill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><span class="ph__text"><span>Orbit Launderette project cover</span><span>1600x1000</span></span></span></div>
+                </div>
+                <div class="track__body">
+                  <h3 id="t3-title">Orbit Launderette</h3>
+                  <p>Pick a drum, pay, get a text when it is done. Three taps.</p>
+                </div>
+                <ul class="track__meta" aria-label="Project details">
+                  <li class="chip">Orbit Launderette</li>
+                  <li class="chip">2024</li>
+                  <li class="chip">Kiosk UI, wayfinding</li>
+                </ul>
+                <a class="track__link" href="#work" aria-label="View project: Orbit Launderette"><span>View project</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></a>
+              </article>
+            </li>
+            <li>
+              <article class="track" id="track-4" aria-labelledby="t4-title">
+                <p class="track__num"><span>04</span><i class="dot dot--gum" aria-hidden="true"></i></p>
+                <div class="track__cover">
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--cover" data-placeholder="true" role="img" aria-label="Pop Quiz Late project cover - 1600x1000"><span class="ph__pill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><span class="ph__text"><span>Pop Quiz Late project cover</span><span>1600x1000</span></span></span></div>
+                </div>
+                <div class="track__body">
+                  <h3 id="t4-title">Pop Quiz Late</h3>
+                  <p>Scoreboards, buzzers and a countdown that makes the studio shout.</p>
+                </div>
+                <ul class="track__meta" aria-label="Project details">
+                  <li class="chip">Pop Quiz Late</li>
+                  <li class="chip">2023</li>
+                  <li class="chip">Broadcast motion</li>
+                </ul>
+                <a class="track__link" href="#work" aria-label="View project: Pop Quiz Late"><span>View project</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></a>
+              </article>
+            </li>
+            <li>
+              <article class="track track--hidden" id="track-5" aria-labelledby="t5-title">
+                <p class="track__num"><span>05</span><i class="dot dot--chrome" aria-hidden="true"></i></p>
+                <div class="track__cover">
+                  <!-- Replace with Envato Elements image -->
+                  <div class="ph ph--cover" data-placeholder="true" role="img" aria-label="Silverscreen sticker set cover - 1600x1000"><span class="ph__pill"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-image"/></svg><span class="ph__text"><span>Silverscreen sticker set cover</span><span>1600x1000</span></span></span></div>
+                </div>
+                <div class="track__body">
+                  <h3 id="t5-title">Silverscreen</h3>
+                  <p>Chrome stickers I made on train rides. Free to use.</p>
+                </div>
+                <ul class="track__meta" aria-label="Project details">
+                  <li class="chip chip--hidden"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-star-badge"/></svg>Hidden track</li>
+                  <li class="chip">2026</li>
+                  <li class="chip">Personal, motion</li>
+                </ul>
+                <a class="track__link" href="#work" aria-label="View project: Silverscreen"><span>View project</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-right"/></svg></a>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <h2 id="services-title" class="chrome-type">What I make</h2>
+          <p class="section-intro">Four kinds of work. Most projects mix two.</p>
+        </div>
+        <div class="orbit-stage">
+          <svg class="orbit-stage__ring" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true" focusable="false"><ellipse cx="500" cy="250" rx="496" ry="246" pathLength="1" fill="none" stroke="#94A3B8" stroke-width="1.5" vector-effect="non-scaling-stroke"/></svg>
+          <div class="sphere" aria-hidden="true">
+            <svg viewBox="0 0 200 220" focusable="false">
+              <defs>
+                <radialGradient id="g-sphere" cx=".38" cy=".32" r=".75">
+                  <stop offset="0" stop-color="#FFFFFF"/>
+                  <stop offset=".28" stop-color="#E2E8F0"/>
+                  <stop offset=".62" stop-color="#94A3B8"/>
+                  <stop offset=".86" stop-color="#475569"/>
+                  <stop offset="1" stop-color="#CBD5E1"/>
+                </radialGradient>
+                <radialGradient id="g-floor" cx=".5" cy=".5" r=".5">
+                  <stop offset="0" stop-color="#F472B6" stop-opacity=".45"/>
+                  <stop offset="1" stop-color="#F472B6" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="g-band" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"/>
+                  <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="100" cy="204" rx="80" ry="14" fill="url(#g-floor)"/>
+              <circle cx="100" cy="100" r="96" fill="url(#g-sphere)"/>
+              <ellipse cx="100" cy="132" rx="84" ry="18" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="2"/>
+              <ellipse cx="88" cy="46" rx="52" ry="24" fill="url(#g-band)"/>
+              <circle cx="66" cy="58" r="9" fill="#FFFFFF"/>
+            </svg>
+            <span class="sphere__tag">noa.c</span>
+          </div>
+
+          <article class="sat sat--a">
+            <span class="sat__disc jelly drop--blue" aria-hidden="true"><svg class="icon"><use href="#i-screen"/></svg></span>
+            <h3>Interface design</h3>
+            <p>Apps, players and kiosks. Clear screens with a bit of shine.</p>
+            <ul class="beads"><li>User flows</li><li>UI kits</li><li>Design systems</li></ul>
+          </article>
+          <article class="sat sat--b">
+            <span class="sat__disc jelly drop--lime" aria-hidden="true"><svg class="icon"><use href="#i-squish-wave"/></svg></span>
+            <h3>Motion and micro-interaction</h3>
+            <p>Buttons that squish, loaders that tell you something, transitions that keep you oriented.</p>
+            <ul class="beads"><li>Interaction specs</li><li>Rive files</li><li>Motion rules</li></ul>
+          </article>
+          <article class="sat sat--c">
+            <span class="sat__disc jelly drop--tang" aria-hidden="true"><svg class="icon"><use href="#i-sticker"/></svg></span>
+            <h3>Brand toys</h3>
+            <p>Sticker packs, mascots and loading animations for launches.</p>
+            <ul class="beads"><li>Sticker sets</li><li>Mascots</li><li>Launch loops</li></ul>
+          </article>
+          <article class="sat sat--d">
+            <span class="sat__disc jelly drop--gum" aria-hidden="true"><svg class="icon"><use href="#i-code-brackets"/></svg></span>
+            <h3>Prototypes in code</h3>
+            <p>Clickable HTML and CSS so the team can test on a real phone.</p>
+            <ul class="beads"><li>HTML prototypes</li><li>Test builds</li><li>Handover notes</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section kind" id="kind-words" aria-labelledby="kind-title">
+      <div class="container kind__grid">
+        <div class="kind__head">
+          <h2 id="kind-title" class="chrome-type">Messages from clients</h2>
+          <p class="kind__note">Clients and companies on this page are fictional.</p>
+        </div>
+        <div class="chat">
+          <div class="strip" aria-hidden="true"><span>Buddy chat</span><span class="strip__presence"><i class="dot dot--lime"></i>Online</span></div>
+          <div class="chat__body">
+            <figure class="msg">
+              <span class="avatar jelly" aria-hidden="true">IV</span>
+              <p class="msg__handle">ines_kelpco</p>
+              <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="bubble">
+                <blockquote><p>Our surfers check the app in the car park with sandy thumbs. Noa made every number big enough to read there.</p></blockquote>
+                <svg class="bubble__tail" viewBox="0 0 16 12" aria-hidden="true" focusable="false"><path d="M16 0H4C4 6 2 9 0 12C6 12 12 9 16 4Z"/></svg>
+              </div>
+              <figcaption>Ines Varga, product lead, Kelp and Co.</figcaption>
+            </figure>
+            <figure class="msg">
+              <span class="avatar jelly" aria-hidden="true">DM</span>
+              <p class="msg__handle">dario.kweek</p>
+              <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="bubble">
+                <blockquote><p>The player never stops when you change page. Listeners noticed in the first week and said so on air.</p></blockquote>
+                <svg class="bubble__tail" viewBox="0 0 16 12" aria-hidden="true" focusable="false"><path d="M16 0H4C4 6 2 9 0 12C6 12 12 9 16 4Z"/></svg>
+              </div>
+              <figcaption>Dario Mensah, station manager, Radio Kweek</figcaption>
+            </figure>
+            <figure class="msg">
+              <span class="avatar jelly" aria-hidden="true">LB</span>
+              <p class="msg__handle">lotte_popquiz</p>
+              <span class="typing" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="bubble">
+                <blockquote><p>The countdown graphic gets a cheer every night. It also never crashed during a live show.</p></blockquote>
+                <svg class="bubble__tail" viewBox="0 0 16 12" aria-hidden="true" focusable="false"><path d="M16 0H4C4 6 2 9 0 12C6 12 12 9 16 4Z"/></svg>
+              </div>
+              <figcaption>Lotte Brandsma, series producer, Pop Quiz Late</figcaption>
+            </figure>
+            <div class="msg msg--out">
+              <p class="bubble bubble--out"><span class="visually-hidden">Noa replied: </span>Thank you, this made my week.</p>
+              <p class="msg__read"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Read</p>
+            </div>
+          </div>
+          <div class="chat__input" aria-hidden="true"><span>noa.c is typing</span><span class="chat__send"><svg class="icon"><use href="#i-send"/></svg></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="phone reveal">
+          <div class="phone__lid">
+            <div class="phone__screen">
+              <p class="eyebrow">Say hi</p>
+              <h2 id="contact-title" class="chrome-type">Got a gadget that needs a face?</h2>
+              <p>Tell me what you are making. I reply within two working days.</p>
+              <a class="mail-link" href="mailto:hello@noacastellanos.example">hello@noacastellanos.example</a>
+            </div>
+          </div>
+          <div class="phone__hinge" aria-hidden="true"></div>
+          <div class="phone__base">
+            <form class="form" action="#contact" method="post">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+                <p class="field__error" id="f-name-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+                <p class="field__error" id="f-email-err" hidden></p>
+              </div>
+              <div class="field">
+                <label for="f-kind">What is it?</label>
+                <select id="f-kind" name="kind">
+                  <option>Interface</option>
+                  <option>Motion</option>
+                  <option>Prototype</option>
+                  <option>Brand toys</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-msg">A few lines about it</label>
+                <textarea id="f-msg" name="message" rows="5" required aria-describedby="f-msg-hint f-msg-err"></textarea>
+                <p class="field__hint" id="f-msg-hint">A few lines is plenty.</p>
+                <p class="field__error" id="f-msg-err" hidden></p>
+              </div>
+              <button class="jelly btn btn--submit" type="submit">Send message<svg class="icon" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button>
+              <p class="form__status" role="status" aria-live="polite"></p>
+            </form>
+            <div class="keypad" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer__mark" aria-hidden="true">noa.c</p>
+    <div class="container footer__row">
+      <p class="footer__name">Noa Castellanos, Rotterdam.</p>
+      <ul class="footer__social">
+        <li><a href="#"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-instagram"/></svg>Instagram</a></li>
+        <li><a href="#"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-vimeo"/></svg>Vimeo</a></li>
+        <li><a href="#"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-link"/></svg>Read.cv</a></li>
+      </ul>
+      <a class="footer__top" href="#top"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chevron-up"/></svg>Back to top</a>
+      <p class="footer__small">Template by Samuel. Names and projects are fictional.</p>
+    </div>
+  </footer>
+</body>
+</html>
